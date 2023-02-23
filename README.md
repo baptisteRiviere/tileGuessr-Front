@@ -4,7 +4,7 @@ tileGuessr is a simple web-based game where players have to find a location base
 
 # Installation
 
-The game is built using HTML, CSS, and JavaScript, and can be run on any web browser. To run the game on your local machine, simply clone this repository and install a server architecture like LAMP in Linux or WAMP in Windows.
+The game is built using HTML, CSS, and JavaScript, and can be run on any web browser. To run the game on your local machine, simply clone this repository and open the src/html/index.html in your navigator.
 
 ## How to Play
 
