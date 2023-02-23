@@ -2,7 +2,7 @@
 
 tileGuessr is a simple web-based game where players have to find a location based on satellite images. This is a personal project developed by students at ENSG-Géomatique school.
 
-#Installation
+# Installation
 
 The game is built using HTML, CSS, and JavaScript, and can be run on any web browser. To run the game on your local machine, simply clone this repository and install a server architecture like LAMP in Linux or WAMP in Windows.
 
