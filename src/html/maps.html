@@ -7,20 +7,19 @@
         content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui' />
     <title>tileGuessr</title>
 
-    <style>
-        #map {
-            height: 180px;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/map.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
         integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
 </head>
 
 <body>
-    <div id='map'></div>
+    <div id='tileMap' class="map"></div>
+    <div id='guessingMap' class="map"></div>
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
         integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
     <script src="../js/maps.js"></script>
+    <button id="respawnButton" class="button" role="button">respawn</button>
+    <button id="guessButton" class="button" role="button">guess</button>
 </body>
 
 </html>
