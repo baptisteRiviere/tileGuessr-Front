@@ -27,22 +27,21 @@ body {
 
 .map {
     margin: 1%;
-    margin-left: 0px;
-    margin-right: 0px;
+    margin: 0.5vw;
     border-radius: 25px;
     grid-row: 1;
 }
 
-.respawnButton {
-    grid-column: 1;
-}
-
-.guessButton {
+#buttons {
     grid-column: 2;
+    grid-row: 2;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    margin: 0;
 }
 
 .button {
-    grid-row: 2;
     align-items: center;
     appearance: none;
     background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
@@ -54,7 +53,8 @@ body {
     cursor: pointer;
     display: inline-flex;
     font-family: "JetBrains Mono", monospace;
-    height: 48px;
+    height: 5vw;
+    width: 10vw;
     justify-content: center;
     line-height: 1;
     list-style: none;
