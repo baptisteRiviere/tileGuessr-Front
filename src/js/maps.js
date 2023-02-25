@@ -2,14 +2,8 @@
 window.onload = (event) => {
     let guessButton = document.getElementById("guessButton");
     let respawnButton = document.getElementById("respawnButton");
-    let htmlMessages = document.getElementById("messages");
-
-    let distanceMessage = document.createElement('p');
-    let successMessage = document.createElement('p');
-    let factMessage = document.createElement('p');
-    htmlMessages.appendChild(distanceMessage);
-    htmlMessages.appendChild(successMessage);
-    htmlMessages.appendChild(factMessage);
+    let htmlScore = document.getElementById("score");
+    let htlmMessage = document.getElementById("message");
 
     // choosing a minimal zoom
     let tileMapMinZoom = 10;
@@ -27,13 +21,17 @@ window.onload = (event) => {
         lat: Math.random() * 160 - 80
     }
     */
-    let tileResearched = capitals[Math.floor(Math.random() * capitals.length)];
+    //let tileResearched = capitals[Math.floor(Math.random() * capitals.length)];
+    let tileResearched = capitals[0];
 
     // Generating satellite map
     let tileMap = L.map('tileMap', {
         maxZoom: 21,
         minZoom: tileMapMinZoom,
+        keyboard: false,
+        zoomControl: false
     }).setView(tileResearched, tileMapMinZoom);
+
     googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
         subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
     }).addTo(tileMap);
@@ -45,17 +43,15 @@ window.onload = (event) => {
         [tileResearched.bounds._southWest.lat, tileResearched.bounds._southWest.lng],
         [tileResearched.bounds._northEast.lat, tileResearched.bounds._southWest.lng]
     ]);
-    console.log(tileResearched)
-    tileMap.setMaxBounds(tileResearched.bounds);
 
-    // Creating the researched marker
-    let researchedMarker = new L.Marker(tileResearched);
-    researchedMarker.addTo(tileMap);
+    tileMap.setMaxBounds(tileResearched.bounds);
 
     // Generating guessing map
     let guessingMap = L.map('guessingMap', {
         minZoom: 2,
         maxZoom: 19,
+        keyboard: false,
+        zoomControl: false,
         maxBounds: [[-90, -200], [+90, +200]]
     }).setView([0, 0], 2);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -76,18 +72,25 @@ window.onload = (event) => {
         tileMap.setView(tileResearched, tileMapMinZoom);
     })
 
-    // event listener to guess
-    guessButton.addEventListener('click', () => {
+    // event listeners to guess
+    guessButton.addEventListener('click', guess);
+    document.addEventListener('keyup', event => {
+        event.preventDefault();
+        if (event.code === 'Space') {
+            guess();
+        }
+    })
+
+    function guess() {
         counter += 1;
         guessedLatLng = guessingMarker.getLatLng();
         let dist = getDistance(tileResearched, guessedLatLng);
-        distanceMessage.textContent = Math.ceil(dist) / 1000 + " km";
+        htmlScore.textContent = Math.ceil(dist) / 1000 + " km";
         if (isInsideTile(guessedLatLng, tileResearched)) {
             tileResearched.polygon.addTo(guessingMap);
-            successMessage.textContent = "You succeed by trying " + counter + " times !";
-            factMessage.textContent = tileResearched.desc;
+            htlmMessage.innerText = "You succeed by trying " + counter + " times !" + tileResearched.desc;
         }
-    })
+    }
 
 };
 
