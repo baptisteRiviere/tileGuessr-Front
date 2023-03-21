@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>tileGuessr</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/widgets.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+</head>
+
+<body>
+    <div id="title"><img src="img/tileguessr.png"></div>
+    <div id="information">
+        <p id="score" style="font-size: 2vw;">Click on the country where this capital comes from:</p>
+        <p id="description" style="font-size: 1vw;margin:5px;"></p>
+
+    </div>
+    <div id="tileMap" class="map"></div>
+    <div id="guessingMap" class="map"></div>
+    <div id="buttomTab">
+        <button id="respawnButton" class="button">Respawn</button>
+        <button id="guessButton" class="button" role="button">Guess</button>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

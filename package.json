@@ -1,0 +1,22 @@
+{
+  "name": "tileguessr",
+  "version": "1.0.0",
+  "description": "tileGuessr is a simple web-based game where players have to find a location based on satellite images. This is a personal project developed by students at ENSG-Géomatique school.",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baptisteRiviere/tileGuessr.git"
+  },
+  "author": "Baptiste Rivière - Léa Frédoc",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/baptisteRiviere/tileGuessr/issues"
+  },
+  "homepage": "https://github.com/baptisteRiviere/tileGuessr#readme",
+  "dependencies": {
+    "gh-pages": "^5.0.0"
+  }
+}

@@ -1,0 +1,407 @@
+/* ---------- GENERIC WIDGET SETTINGS : ----------------------------------------------------------------------------- */
+
+/* Define widget position according to its position settings. */
+.top-widget {
+    top: 10px;
+}
+
+.bottom-widget {
+    bottom: 10px;
+}
+
+.left-widget {
+    left: 10px;
+}
+
+.right-widget {
+    right: 10px;
+}
+
+
+
+/* ---------- NAVIGATION WIDGET SETTINGS : -------------------------------------------------------------------------- */
+
+#widgets-navigation {
+    position: absolute;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    bottom: 10%;
+    margin: 0.5vw;
+    padding: 0px;
+}
+
+/* Define navigation menu flex direction according to its position and direction settings */
+.column-widget.top-widget {
+    flex-direction: column;
+}
+
+.column-widget.bottom-widget {
+    flex-direction: column-reverse;
+}
+
+.row-widget.left-widget {
+    flex-direction: row;
+}
+
+.row-widget.right-widget {
+    flex-direction: row-reverse;
+}
+
+/* Define spacing between each navigation widgets according to position and direction settings. */
+#widgets-navigation.column-widget.top-widget>*:not(:first-child),
+#widgets-navigation.column-widget.bottom-widget>*:not(:last-child) {
+    margin-top: 5px;
+}
+
+#widgets-navigation.column-widget.top-widget>*:not(:last-child),
+#widgets-navigation.column-widget.bottom-widget>*:not(:first-child) {
+    margin-bottom: 5px;
+}
+
+#widgets-navigation.row-widget.left-widget>*:not(:first-child),
+#widgets-navigation.row-widget.right-widget>*:not(:last-child) {
+    margin-left: 5px;
+}
+
+#widgets-navigation.row-widget.left-widget>*:not(:last-child),
+#widgets-navigation.row-widget.right-widget>*:not(:first-child) {
+    margin-right: 5px;
+}
+
+
+
+/* ---------- NAVIGATION BUTTON BAR : ------------------------------------------------------------------------------- */
+
+/* Define button-bar flex direction according to widget position and direction settings. */
+#widgets-navigation .widget-button-bar {
+    display: flex;
+}
+
+#widgets-navigation.column-widget.top-widget .widget-button-bar {
+    flex-direction: column;
+}
+
+#widgets-navigation.column-widget.bottom-widget .widget-button-bar {
+    flex-direction: column-reverse;
+}
+
+#widgets-navigation.row-widget.left-widget .widget-button-bar {
+    flex-direction: row;
+}
+
+#widgets-navigation.row-widget.right-widget .widget-button-bar {
+    flex-direction: row-reverse;
+}
+
+
+
+/* ---------- BUTTONS GENERIC STYLE : ------------------------------------------------------------------------------- */
+
+#widgets-navigation .widget-button {
+    background-color: #313336bb;
+    border: 1px solid #222222;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 900;
+    font-size: 15px;
+}
+
+#widgets-navigation .widget-button:hover {
+    cursor: pointer;
+}
+
+#widgets-navigation .widget-button:active {
+    background-color: #222222;
+}
+
+
+
+/* ---------- BUTTONS SHAPE AND POSITION WITHIN BUTTON-BAR : -------------------------------------------------------- */
+
+#widgets-navigation .widget-button-bar>.widget-button {
+    height: 30px;
+    width: 30px;
+
+    color: white;
+}
+
+/* Buttons shape and position within a column direction widget group. */
+#widgets-navigation.column-widget.top-widget .widget-button-bar>.widget-button:first-child:not(:only-child),
+#widgets-navigation.column-widget.bottom-widget .widget-button-bar>.widget-button:last-child:not(:only-child) {
+    border-radius: 7px 7px 0 0;
+}
+
+#widgets-navigation.column-widget.top-widget .widget-button-bar>.widget-button:last-child:not(:only-child),
+#widgets-navigation.column-widget.bottom-widget .widget-button-bar>.widget-button:first-child:not(:only-child) {
+    border-radius: 0 0 7px 7px;
+}
+
+#widgets-navigation.column-widget.top-widget .widget-button-bar>.widget-button:not(:last-child),
+#widgets-navigation.column-widget.bottom-widget .widget-button-bar>.widget-button:not(:first-child) {
+    margin-bottom: -1px;
+}
+
+/* Buttons shape and position within a row direction widget group. */
+#widgets-navigation.row-widget.left-widget .widget-button-bar>.widget-button:first-child:not(:only-child),
+#widgets-navigation.row-widget.right-widget .widget-button-bar>.widget-button:last-child:not(:only-child) {
+    border-radius: 7px 0 0 7px;
+}
+
+#widgets-navigation.row-widget.left-widget .widget-button-bar>.widget-button:last-child:not(:only-child),
+#widgets-navigation.row-widget.right-widget .widget-button-bar>.widget-button:first-child:not(:only-child) {
+    border-radius: 0 7px 7px 0;
+}
+
+#widgets-navigation.row-widget.left-widget .widget-button-bar>.widget-button:not(:last-child),
+#widgets-navigation.row-widget.right-widget .widget-button-bar>.widget-button:not(:first-child) {
+    margin-right: -1px;
+}
+
+/* Buttons shape and position within a single button button-bar. */
+#widgets-navigation .widget-button-bar>.widget-button:only-child {
+    border-radius: 7px;
+}
+
+
+
+/* ---------- SPECIFIC SHAPE AND POSITION FOR ZOOM-IN AND ZOOM-OUT BUTTON-BAR AND BUTTONS : ------------------------- */
+
+#zoom-button-bar {
+    display: flex;
+}
+
+#widgets-navigation.column-widget #zoom-button-bar {
+    flex-direction: column;
+}
+
+#widgets-navigation.row-widget #zoom-button-bar {
+    flex-direction: row-reverse;
+}
+
+/* Zoom buttons shape and position within a COLUMN direction widget group. */
+#widgets-navigation.column-widget #zoom-button-bar>.widget-button:first-child:not(:only-child) {
+    border-radius: 7px 7px 0 0;
+}
+
+#widgets-navigation.column-widget #zoom-button-bar>.widget-button:last-child:not(:only-child) {
+    border-radius: 0 0 7px 7px;
+}
+
+#widgets-navigation.column-widget.bottom-widget #zoom-button-bar>.widget-button:not(:last-child) {
+    margin-top: 0;
+    margin-bottom: -1px;
+}
+
+/* Zoom buttons shape and position within a ROW direction navigation menu. */
+#widgets-navigation.row-widget #zoom-button-bar>.widget-button:first-child:not(:only-child) {
+    border-radius: 0 7px 7px 0;
+}
+
+#widgets-navigation.row-widget #zoom-button-bar>.widget-button:last-child:not(:only-child) {
+    border-radius: 7px 0 0 7px;
+}
+
+#widgets-navigation.row-widget.left-widget #zoom-button-bar>.widget-button:not(:last-child) {
+    margin-right: 0;
+    margin-left: -1px;
+}
+
+/* Zoom button shape and position if user decides to show only one of the two zoom buttons. */
+#widgets-navigation #zoom-button-bar>.widget-button:only-child {
+    border-radius: 7px;
+}
+
+/* Style of zoom buttons content. */
+#widgets-navigation .widget-zoom-button-logo {
+    width: 50%;
+    height: 50%;
+
+    background-image: url('https://raw.githubusercontent.com/iTowns/iTowns2-sample-data/master/GUI/widget-logo.svg');
+    background-size: 100%;
+}
+
+#widgets-navigation #zoom-out-logo {
+    background-position: center -100%;
+}
+
+
+
+/* ---------- SPECIFIC COMPASS SETTINGS : --------------------------------------------------------------------------- */
+
+#widgets-navigation #compass {
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+
+    background-image: url('https://raw.githubusercontent.com/iTowns/iTowns2-sample-data/master/GUI/compass.svg');
+    background-repeat: no-repeat;
+    background-size: auto 90%;
+    background-position: center;
+}
+
+
+
+/* ---------- MINIMAP WIDGET SETTINGS : ----------------------------------------------------------------------------- */
+
+#widgets-minimap {
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    bottom: 10%;
+    border: 1px solid #222222;
+    border-radius: 7px;
+    overflow: hidden;
+
+    user-select: none;
+
+    margin: 0.5vw;
+    padding: 0px;
+}
+
+#widgets-minimap #cursor-wrapper {
+    position: absolute;
+    z-index: 11;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    font-size: 40px;
+    color: #222222;
+}
+
+
+
+/* ---------- SCALE WIDGET SETTINGS : ------------------------------------------------------------------------------- */
+
+#widgets-scale {
+    user-select: none;
+
+    position: absolute;
+    z-index: 10;
+    padding: 0 10px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+
+    border: 1px solid #ffffffcc;
+    border-radius: 0 0 7px 7px;
+    border-top: none;
+
+    background-image: linear-gradient(#31333600, #313336ff);
+
+    color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    bottom: 10%;
+    margin: 0.5vw;
+    padding: 0px;
+}
+
+#widgets-scale.left-widget {
+    justify-content: flex-start;
+}
+
+#widgets-scale.right-widget {
+    justify-content: flex-end;
+}
+
+
+
+/* ---------- SEARCHBAR WIDGET SETTINGS : --------------------------------------------------------------------------- */
+
+#widgets-searchbar {
+    position: absolute;
+    z-index: 10;
+}
+
+#widgets-searchbar>form {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    border-radius: 7px;
+}
+
+#widgets-searchbar.top-widget>form {
+    flex-direction: column;
+}
+
+#widgets-searchbar.bottom-widget>form {
+    flex-direction: column-reverse;
+}
+
+#widgets-searchbar>form.focus {
+    box-shadow: 0 0 10px #222222;
+}
+
+
+
+/* ---------- SEARCHBAR INPUT AND SUGGESTIONS : --------------------------------------------------------------------- */
+
+#widgets-searchbar:not(.bottom-widget) form>*:last-child:not(:only-child),
+#widgets-searchbar.bottom-widget form>*:first-child:not(:only-child) {
+    border-radius: 0 0 7px 7px;
+}
+
+#widgets-searchbar:not(.bottom-widget) form>*:first-child:not(:only-child),
+#widgets-searchbar.bottom-widget form>*:last-child:not(:only-child) {
+    border-radius: 7px 7px 0 0;
+}
+
+#widgets-searchbar form>*:only-child {
+    border-radius: 7px;
+}
+
+#widgets-searchbar:not(.bottom-widget) form>*:not(:first-child):not(:last-child) {
+    border-bottom: none;
+}
+
+#widgets-searchbar.bottom-widget form>*:not(:first-child):not(:last-child) {
+    border-top: none;
+}
+
+#widgets-searchbar form>* {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 10px;
+    background-color: #313336bb;
+    border: 1px solid #222222;
+    color: #ffffff;
+    font-family: Arial;
+}
+
+#widgets-searchbar form>input::placeholder {
+    color: #ffffff80;
+}
+
+#widgets-searchbar form>input:focus {
+    outline: none !important;
+}
+
+#widgets-searchbar form>div {
+    display: flex;
+    align-items: center;
+}
+
+#widgets-searchbar form>div.active {
+    background-color: #222222;
+}
+
+#widgets-searchbar form>div:hover {
+    cursor: pointer;
+}
+
+#widgets-searchbar form>div>p {
+    margin: 8px 0;
+}
