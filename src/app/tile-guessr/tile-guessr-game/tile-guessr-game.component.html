@@ -5,6 +5,8 @@
         <p id="description" style="font-size: 2vw;">{{description}}</p>
     </div>
 
+    <p style="color: aliceblue; font-size: 40px;">{{this.remainingTime/1000}}</p>
+
     <div leaflet id="satelliteMap" class="map" [leafletOptions]="satelliteMapOptions"
         [(leafletCenter)]="satelliteMapCenter" [leafletMaxBounds]="satelliteMaxBounds">
         <div [leafletLayer]="materializedBounds"></div>
