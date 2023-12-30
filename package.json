@@ -1,22 +1,42 @@
 {
-  "name": "tileguessr",
-  "version": "1.0.0",
-  "description": "tileGuessr is a simple web-based game where players have to find a location based on satellite images. This is a personal project developed by students at ENSG-Géomatique school.",
-  "main": "index.js",
+  "name": "jeux-carto",
+  "version": "0.0.0",
   "scripts": {
-    "deploy": "gh-pages -d dist"
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/baptisteRiviere/tileGuessr.git"
-  },
-  "author": "Baptiste Rivière - Léa Frédoc",
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/baptisteRiviere/tileGuessr/issues"
-  },
-  "homepage": "https://github.com/baptisteRiviere/tileGuessr#readme",
+  "private": true,
   "dependencies": {
-    "gh-pages": "^5.0.0"
+    "@angular/animations": "^16.2.0",
+    "@angular/common": "^16.2.0",
+    "@angular/compiler": "^16.2.0",
+    "@angular/core": "^16.2.0",
+    "@angular/forms": "^16.2.0",
+    "@angular/platform-browser": "^16.2.0",
+    "@angular/platform-browser-dynamic": "^16.2.0",
+    "@angular/router": "^16.2.0",
+    "@asymmetrik/ngx-leaflet": "^16.0.1",
+    "@types/geojson": "^7946.0.13",
+    "@types/leaflet": "^1.9.6",
+    "leaflet": "^1.9.4",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.13.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^16.2.5",
+    "@angular/cli": "^16.2.5",
+    "@angular/compiler-cli": "^16.2.0",
+    "@types/jasmine": "~4.3.0",
+    "jasmine-core": "~4.6.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "typescript": "~5.1.3"
   }
 }

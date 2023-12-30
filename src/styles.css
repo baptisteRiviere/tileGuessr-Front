@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+html {
+    overflow: hidden;
+    font-family: Montserrat, sans-serif;
+    font-size: 1vw;
+    font-weight: bold;
+    background: radial-gradient(66.5% 221.21% at 136.03% -61.44%, rgba(161, 155, 217, .4) 0%, rgba(161, 155, 217, 0) 92.09%),
+        radial-gradient(93.54% 126.91% at 29.15% -56.29%, rgba(233, 69, 96, .7) 0%, rgba(233, 69, 96, 0) 92.09%),
+        radial-gradient(86.19% 101.84% at -17.13% -24.8%, rgba(0, 162, 254, .7) 0%, rgba(0, 162, 254, 0) 92.09%),
+        #1a1a2e;
+    background-size: cover;
+    background-position: bottom;
+    height: 100%;
+}
+
+.main-container {
+    height: 100%;
+}

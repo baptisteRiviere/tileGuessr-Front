@@ -1,0 +1,22 @@
+<div id="game-window">
+    <div id="title">{{title}}</div>
+
+    <div id="information">
+        <p id="description" style="font-size: 2vw;">{{description}}</p>
+    </div>
+
+    <div leaflet id="satelliteMap" class="map" [leafletOptions]="satelliteMapOptions"
+        [(leafletCenter)]="satelliteMapCenter" [leafletMaxBounds]="satelliteMaxBounds">
+        <div [leafletLayer]="materializedBounds"></div>
+    </div>
+
+    <div leaflet id="guessingMap" class="map" maxbounds="guessingMapMaxBounds" [leafletOptions]="guessingMapOptions"
+        (leafletClick)="onGuessingMapClicked($event)">
+        <div [leafletLayer]="guessingMarker"></div>
+    </div>
+
+    <div id="buttomTab">
+        <button id="respawnButton" class="button" (click)="onRespawnClicked()">Respawn</button>
+        <button id=" guessButton" class="button" role="button" (click)="onGuessClicked()">Guess</button>
+    </div>
+</div>

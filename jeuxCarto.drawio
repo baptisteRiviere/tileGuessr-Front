@@ -1,0 +1,63 @@
+<mxfile host="app.diagrams.net" modified="2023-10-07T18:03:39.878Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/118.0" etag="rbZ2LgZzgJ0IU9frnXip" version="21.3.2" type="device" pages="2">
+  <diagram name="Page-1" id="FySKuJFDIisSvG1uI1ND">
+    <mxGraphModel dx="1050" dy="530" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="jEr38FQi9azqxoP1WdaG-1" value="&lt;div style=&quot;color: rgb(248, 248, 242); background-color: rgb(39, 40, 34); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 19px;&quot;&gt;&lt;div&gt;AppModule&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="130" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="jEr38FQi9azqxoP1WdaG-2" value="&lt;div style=&quot;color: rgb(248, 248, 242); background-color: rgb(39, 40, 34); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 19px;&quot;&gt;&lt;div&gt;AppModule&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="140" width="130" height="90" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="4zS5bWPvw7r1QlOAFbZz" name="Page-2">
+    <mxGraphModel dx="1050" dy="1699" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Ml0pEvkz12PRE0DPWus4-1" value="&lt;div&gt;/&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Display jeux carto&lt;/div&gt;&lt;div&gt;AppComponent&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="160" width="170" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="Ml0pEvkz12PRE0DPWus4-2" value="&lt;div&gt;/tileGuessr/welcome&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="80" width="170" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="Ml0pEvkz12PRE0DPWus4-3" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="Ml0pEvkz12PRE0DPWus4-1" target="Ml0pEvkz12PRE0DPWus4-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="160" y="420" as="sourcePoint" />
+            <mxPoint x="210" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ml0pEvkz12PRE0DPWus4-4" value="&lt;div&gt;/tileGuessr/world&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="-10" width="170" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="Ml0pEvkz12PRE0DPWus4-5" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="Ml0pEvkz12PRE0DPWus4-2" target="Ml0pEvkz12PRE0DPWus4-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="320" y="209" as="sourcePoint" />
+            <mxPoint x="410" y="181" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ml0pEvkz12PRE0DPWus4-6" value="&lt;div&gt;/tileGuessr/???&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="690" y="130" width="170" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="Ml0pEvkz12PRE0DPWus4-7" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="Ml0pEvkz12PRE0DPWus4-2" target="Ml0pEvkz12PRE0DPWus4-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="580" y="128" as="sourcePoint" />
+            <mxPoint x="690" y="92" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ml0pEvkz12PRE0DPWus4-8" value="&lt;div&gt;/departements/welcome&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="270" width="170" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="Ml0pEvkz12PRE0DPWus4-9" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="Ml0pEvkz12PRE0DPWus4-1" target="Ml0pEvkz12PRE0DPWus4-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="320" y="209" as="sourcePoint" />
+            <mxPoint x="410" y="181" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
