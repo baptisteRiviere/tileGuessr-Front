@@ -4,10 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --output-path docs",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "deploy": "ng build --output-path docs --base-href /tileguessr"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
