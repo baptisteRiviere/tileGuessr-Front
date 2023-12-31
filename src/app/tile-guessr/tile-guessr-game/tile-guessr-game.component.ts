@@ -1,12 +1,19 @@
-import { Time } from '@angular/common';
 import { Component, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { Feature, FeatureCollection, Point } from 'geojson';
 import { tileLayer, MapOptions, LatLng, LatLngExpression, Circle, LatLngBounds, Rectangle } from 'leaflet';
 import { Subject, takeUntil, timer } from 'rxjs';
 
+const DEFAULT_DESCRIPTION = "Where is this location ?"
 const SATELLITE_MAP_MIN_ZOOM = 12
 const NUMBER_OF_ROUNDS = 5
-const MILLISECONDS_IN_A_ROUND = 5000
+const MILLISECONDS_IN_A_ROUND = 1000 * 60 * 3
+const GameStatus = {
+  LOADING: "LOADING",
+  WAITING_FOR_START: "WAITING_FOR_START",
+  PLAYING: "PLAYING",
+  RESULT: "RESULT",
+  ENDED: "ENDED"
+}
 
 interface Round {
   latitude: number,
@@ -21,11 +28,12 @@ interface Round {
 })
 export class TileGuessrGameComponent implements OnInit, OnDestroy {
   private rounds: Round[] = []
-  private currentRoundIndex: number = -1
-  protected readonly title: string = "Tile Guessr"
-  protected description: string = "Find the city:"
-  protected remainingTime: number = MILLISECONDS_IN_A_ROUND
   private destroyTimer$ = new Subject<void>();
+  protected readonly title: string = "Tile Guessr"
+  protected currentRoundIndex: number = -1
+  protected description: string = DEFAULT_DESCRIPTION
+  protected remainingTime: number = MILLISECONDS_IN_A_ROUND
+  protected gameStatus: string = GameStatus.ENDED
   protected coordinatesToGuess: LatLng = new LatLng(0, 0)
   protected satelliteMapCenter: LatLng = new LatLng(0, 0)
   protected satelliteMaxBounds: LatLngBounds = new LatLngBounds(this.coordinatesToGuess, this.coordinatesToGuess)
@@ -80,24 +88,26 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
   /////// LIFECYCLE HOOKS
   ///////////////////////////////////////////////////////////////////////
 
-  public async ngOnInit() {
-    this.currentRoundIndex = -1
-    const roundsDrawed = await this.drawRounds()
-    if (roundsDrawed) {
-      // Starting the game
-      this.launchNextRound()
-    }
+  public ngOnInit() {
+    this.initGame()
   }
 
   ngOnDestroy(): void {
     this.destroyTimer$.complete()
   }
 
-
   ///////////////////////////////////////////////////////////////////////
   /////// GAME LOGIC METHODS
   ///////////////////////////////////////////////////////////////////////
 
+  private async initGame() {
+    this.gameStatus = GameStatus.LOADING
+    this.currentRoundIndex = -1
+    const roundsDrawed = await this.drawRounds()
+    if (roundsDrawed) {
+      this.gameStatus = GameStatus.WAITING_FOR_START
+    }
+  }
 
   private async drawRounds(): Promise<boolean> {
     const response = await fetch('assets/cities.geojson')
@@ -121,8 +131,13 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
     }
   }
 
+  private displayResult(dist: number) {
+    const currentRound: Round = this.rounds[this.currentRoundIndex]
+    this.description = `You were ${Math.round(dist / 1000)} km from ${currentRound.name}`
+  }
 
   private launchNextRound() {
+    this.description = DEFAULT_DESCRIPTION
     this.currentRoundIndex++;
 
     if (this.currentRoundIndex < this.rounds.length) {
@@ -136,19 +151,30 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
       this.coordinatesToGuess = coordinates.clone()
       this.satelliteMapCenter = coordinates.clone()
 
+      // changing game status
+      this.gameStatus = GameStatus.PLAYING
+
       // launching counter
       this.launchCounter()
     }
   }
 
   private guess(): void {
-    if (this.currentRoundIndex < this.rounds.length) {
-      const dist = this.guessingMarker.getLatLng().distanceTo(this.coordinatesToGuess)
-      const currentRound: Round = this.rounds[this.currentRoundIndex]
-      this.description = `You were ${Math.round(dist / 1000)} km from ${currentRound.name}`
+    // stoping timer 
+    this.stopCounter()
 
-      this.launchNextRound()
+    if (this.currentRoundIndex < this.rounds.length - 1) {
+
+      // computing distance and getting current round
+      const dist = this.guessingMarker.getLatLng().distanceTo(this.coordinatesToGuess)
+
+      // changing game status
+      this.gameStatus = GameStatus.RESULT
+
+      // diplaying result
+      this.displayResult(dist)
     } else {
+      this.gameStatus = GameStatus.ENDED
       this.description = 'end of the game'
     }
   }
@@ -162,6 +188,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
     timer(0, 1000).pipe(takeUntil(this.destroyTimer$)).subscribe(() => {
       if (this.remainingTime <= 0) {
         this.stopCounter()
+        this.guess()
       } else {
         this.remainingTime -= 1000
       }
@@ -170,7 +197,6 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
 
   private stopCounter(): void {
     this.destroyTimer$.next();
-    this.guess()
   }
 
 
@@ -186,6 +212,21 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
   ///////////////////////////////////////////////////////////////////////
   /////// LISTENERS
   ///////////////////////////////////////////////////////////////////////
+
+  protected onPlayAgainClicked() {
+    // initializing game
+    this.initGame()
+  }
+
+  protected onStartClicked() {
+    // Starting the game
+    this.launchNextRound()
+  }
+
+  protected onLaunchNextRoundClicked() {
+    // launching next round
+    this.launchNextRound()
+  }
 
   protected onGuessingMapClicked(event: { latlng: LatLngExpression; }) {
     this.guessingMarker.setLatLng(event.latlng)

@@ -3,9 +3,10 @@
 
     <div id="information">
         <p id="description" style="font-size: 2vw;">{{description}}</p>
+        <p style="color: aliceblue; font-size: 40px;">
+            time : {{this.remainingTime/1000}} - round {{this.currentRoundIndex + 1 }}
+        </p>
     </div>
-
-    <p style="color: aliceblue; font-size: 40px;">{{this.remainingTime/1000}}</p>
 
     <div leaflet id="satelliteMap" class="map" [leafletOptions]="satelliteMapOptions"
         [(leafletCenter)]="satelliteMapCenter" [leafletMaxBounds]="satelliteMaxBounds">
@@ -18,7 +19,15 @@
     </div>
 
     <div id="buttomTab">
-        <button id="respawnButton" class="button" (click)="onRespawnClicked()">Respawn</button>
-        <button id=" guessButton" class="button" role="button" (click)="onGuessClicked()">Guess</button>
+        <button *ngIf="gameStatus=='WAITING_FOR_START'" id="startGameButton" class="button"
+            (click)="onStartClicked()">Start</button>
+        <button *ngIf="gameStatus=='PLAYING'" id="respawnButton" class="button"
+            (click)="onRespawnClicked()">Respawn</button>
+        <button *ngIf="gameStatus=='PLAYING'" id="guessButton" class="button" role="button"
+            (click)="onGuessClicked()">Guess</button>
+        <button *ngIf="gameStatus=='RESULT'" id="launchNextRoundButton" class="button" role="button"
+            (click)="onLaunchNextRoundClicked()">Launch next round</button>
+        <button *ngIf="gameStatus=='ENDED'" id="playAgainButton" class="button" role="button"
+            (click)="onPlayAgainClicked()">Play again</button>
     </div>
 </div>
