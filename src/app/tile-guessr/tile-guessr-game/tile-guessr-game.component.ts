@@ -4,6 +4,7 @@ import { tileLayer, MapOptions, LatLng, LatLngExpression, Circle, LatLngBounds, 
 import { Subject, takeUntil, timer } from 'rxjs';
 
 const DEFAULT_DESCRIPTION = "Where is this location ?"
+const BOUND_SIZE_IN_METTERS = 10000
 const SATELLITE_MAP_MIN_ZOOM = 12
 const NUMBER_OF_ROUNDS = 5
 const MILLISECONDS_IN_A_ROUND = 1000 * 60 * 3
@@ -45,16 +46,10 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
     color: 'red',
     radius: 100
   })
-  protected guessingMapMaxBounds = {
-    northEast: {
-      lat: 90,
-      lng: 200
-    },
-    southWest: {
-      lat: -90,
-      lng: -200
-    }
-  }
+  protected guessingMapMaxBounds = new LatLngBounds(
+    new LatLng(90, 200),
+    new LatLng(-90, -200)
+  )
 
 
   protected satelliteMapOptions: MapOptions = {
@@ -143,13 +138,18 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
     if (this.currentRoundIndex < this.rounds.length) {
       const currentRound: Round = this.currentRound
       const coordinates = new LatLng(currentRound.latitude, currentRound.longitude)
-      const southWest = new LatLng(currentRound.latitude - 0.1, currentRound.longitude - 0.2)
-      const northEast = new LatLng(currentRound.latitude + 0.1, currentRound.longitude + 0.2)
 
-      this.satelliteMaxBounds = new LatLngBounds(southWest, northEast)
-      this.materializedBounds.setBounds(this.satelliteMaxBounds)
+      // each boundary is BOUND_SIZE_IN_METTERS/2 meters apart from coordinates
+      this.satelliteMaxBounds = coordinates.toBounds(BOUND_SIZE_IN_METTERS)
       this.coordinatesToGuess = coordinates.clone()
-      this.satelliteMapCenter = coordinates.clone()
+      this.materializedBounds.setBounds(this.satelliteMaxBounds)
+
+      // TODO : this is a temporary fix
+      // the value assigned to satelliteMaxBounds automatically update the map canvas view in a bounds corner
+      // but satelliteMapCenter has to be updated before, that's not what happened without this timeout
+      setTimeout(() => {
+        this.satelliteMapCenter = coordinates.clone()
+      }, 100);
 
       // changing game status
       this.gameStatus = GameStatus.PLAYING

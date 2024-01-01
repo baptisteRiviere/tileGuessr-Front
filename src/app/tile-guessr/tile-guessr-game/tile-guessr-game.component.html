@@ -13,8 +13,8 @@
         <div [leafletLayer]="materializedBounds"></div>
     </div>
 
-    <div leaflet id="guessingMap" class="map" maxbounds="guessingMapMaxBounds" [leafletOptions]="guessingMapOptions"
-        (leafletClick)="onGuessingMapClicked($event)">
+    <div leaflet id="guessingMap" class="map" [leafletOptions]="guessingMapOptions"
+        (leafletClick)="onGuessingMapClicked($event)" [leafletMaxBounds]="guessingMapMaxBounds">
         <div [leafletLayer]="guessingMarker"></div>
     </div>
 
