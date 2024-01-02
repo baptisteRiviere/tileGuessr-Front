@@ -1,8 +1,8 @@
 <div id="game-window">
     <div id="informationContainer">
-        <p id="round">round {{this.currentRoundIndex + 1}} / 5</p>
+        <p id="round" *ngIf="gameStatus=='PLAYING'">round {{this.currentRoundIndex + 1}} / 5</p>
         <p id="description">{{description}}</p>
-        <p id="time">
+        <p id="time" *ngIf="gameStatus=='PLAYING'">
             time : {{this.remainingTime/1000}}
         </p>
     </div>

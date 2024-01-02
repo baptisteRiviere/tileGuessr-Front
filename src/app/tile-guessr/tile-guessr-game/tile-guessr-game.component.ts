@@ -3,7 +3,9 @@ import { Point } from 'geojson';
 import { tileLayer, MapOptions, LatLng, LatLngExpression, Circle, LatLngBounds, Rectangle, FeatureGroup, geoJSON, Layer } from 'leaflet';
 import { Subject, takeUntil, timer } from 'rxjs';
 
-const DEFAULT_DESCRIPTION = "Where is this location ?"
+const DEFAULT_LOADING_DESCRIPTION = "Loading game"
+const DEFAULT_STARTING_DESCRIPTION = "Are you ready ?"
+const DEFAULT_PLAYING_DESCRIPTION = "Where is this location ?"
 const BOUND_SIZE_IN_METTERS = 10000
 const SATELLITE_MAP_MIN_ZOOM = 12
 const NUMBER_OF_ROUNDS = 5
@@ -32,7 +34,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
   private rounds: Round[] = []
   private destroyTimer$ = new Subject<void>();
   protected currentRoundIndex: number = -1
-  protected description: string = DEFAULT_DESCRIPTION
+  protected description: string = DEFAULT_LOADING_DESCRIPTION
   protected remainingTime: number = MILLISECONDS_IN_A_ROUND
   protected gameStatus: string = GameStatus.ENDED
   protected coordinatesToGuess: LatLng = new LatLng(0, 0)
@@ -98,8 +100,14 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
   ///////////////////////////////////////////////////////////////////////
 
   private async initGame() {
+
+    // Displaying title and changing game status to prevent loading
     this.gameStatus = GameStatus.LOADING
+    this.description = DEFAULT_LOADING_DESCRIPTION
+
     try {
+
+      // initializing index
       this.currentRoundIndex = -1
 
       // getting geojson file
@@ -113,7 +121,8 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
       // drawing rounds
       await this.drawRounds(placesLayer.getLayers())
 
-      // changing game status to start the game
+      // Displaying title and changing game status to start the game
+      this.description = DEFAULT_STARTING_DESCRIPTION
       this.gameStatus = GameStatus.WAITING_FOR_START
 
     } catch (e) {
@@ -146,7 +155,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
   }
 
   private launchNextRound() {
-    this.description = DEFAULT_DESCRIPTION
+    this.description = DEFAULT_PLAYING_DESCRIPTION
     this.currentRoundIndex++;
 
     if (this.currentRoundIndex < this.rounds.length) {
@@ -181,19 +190,17 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
     // stoping timer 
     this.stopCounter()
 
-    if (this.currentRoundIndex < this.rounds.length - 1) {
+    // computing distance and getting current round
+    const dist = this.guessingMarker.getLatLng().distanceTo(this.coordinatesToGuess)
 
-      // computing distance and getting current round
-      const dist = this.guessingMarker.getLatLng().distanceTo(this.coordinatesToGuess)
+    // changing game status
+    this.gameStatus = GameStatus.RESULT
 
-      // changing game status
-      this.gameStatus = GameStatus.RESULT
+    // diplaying result
+    this.displayResult(dist)
 
-      // diplaying result
-      this.displayResult(dist)
-    } else {
+    if (this.currentRoundIndex == this.rounds.length - 1) {
       this.gameStatus = GameStatus.ENDED
-      this.description = 'end of the game'
     }
   }
 
