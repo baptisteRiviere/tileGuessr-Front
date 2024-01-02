@@ -14,7 +14,8 @@
     </div>
 
     <div leaflet id="guessingMap" class="map" [leafletOptions]="guessingMapOptions"
-        (leafletClick)="onGuessingMapClicked($event)" [leafletMaxBounds]="guessingMapMaxBounds">
+        (leafletClick)="onGuessingMapClicked($event)" [leafletMaxBounds]="guessingMapMaxBounds"
+        [leafletFitBounds]="guessingMapFitBounds">
         <div [leafletLayer]="guessingMarker"></div>
     </div>
 

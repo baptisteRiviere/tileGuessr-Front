@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
-import { Feature, FeatureCollection, Point } from 'geojson';
-import { tileLayer, MapOptions, LatLng, LatLngExpression, Circle, LatLngBounds, Rectangle } from 'leaflet';
+import { Point } from 'geojson';
+import { tileLayer, MapOptions, LatLng, LatLngExpression, Circle, LatLngBounds, Rectangle, FeatureGroup, geoJSON, Layer } from 'leaflet';
 import { Subject, takeUntil, timer } from 'rxjs';
 
 const DEFAULT_DESCRIPTION = "Where is this location ?"
@@ -13,7 +13,8 @@ const GameStatus = {
   WAITING_FOR_START: "WAITING_FOR_START",
   PLAYING: "PLAYING",
   RESULT: "RESULT",
-  ENDED: "ENDED"
+  ENDED: "ENDED",
+  ERROR: "ERROR"
 }
 
 interface Round {
@@ -46,10 +47,12 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
     color: 'red',
     radius: 100
   })
-  protected guessingMapMaxBounds = new LatLngBounds(
+  private defaultGuessingMapBounds = new LatLngBounds(
     new LatLng(90, 200),
     new LatLng(-90, -200)
   )
+  protected guessingMapMaxBounds = this.defaultGuessingMapBounds
+  protected guessingMapFitBounds = this.guessingMapMaxBounds
 
 
   protected satelliteMapOptions: MapOptions = {
@@ -97,32 +100,44 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
 
   private async initGame() {
     this.gameStatus = GameStatus.LOADING
-    this.currentRoundIndex = -1
-    const roundsDrawed = await this.drawRounds()
-    if (roundsDrawed) {
+    try {
+      this.currentRoundIndex = -1
+
+      // getting geojson file
+      const response = await fetch('assets/cities.geojson')
+      const placesLayer: FeatureGroup = geoJSON(await response.json())
+      this.defaultGuessingMapBounds = placesLayer.getBounds()
+
+      // fitting guessing map bounds in the playing area
+      this.guessingMapFitBounds = this.defaultGuessingMapBounds
+
+      // drawing rounds
+      await this.drawRounds(placesLayer.getLayers())
+
+      // changing game status to start the game
       this.gameStatus = GameStatus.WAITING_FOR_START
+
+    } catch (e) {
+      this.gameStatus = GameStatus.ERROR
+      console.error(e)
     }
   }
 
-  private async drawRounds(): Promise<boolean> {
-    const response = await fetch('assets/cities.geojson')
-    const placesLayer: FeatureCollection = await response.json()
-    const places: Feature[] = placesLayer.features
-
+  private async drawRounds(places: Layer[]): Promise<void> {
     if (places.length >= NUMBER_OF_ROUNDS) {
       const choosenPlaces = places.sort(() => 0.5 - Math.random()).slice(0, NUMBER_OF_ROUNDS)
-      choosenPlaces.forEach((place: Feature) => {
-        const coordinates = (place.geometry as Point).coordinates
-        const name = place.properties == null ? undefined : place.properties["name"]
+      choosenPlaces.forEach((place: any) => {
+        // TODO : as any...
+        const coordinates = (place.feature.geometry as Point).coordinates
+        const name = place.feature.properties == null ? undefined : place.feature.properties["name"]
         this.rounds.push({
           latitude: coordinates[1],
           longitude: coordinates[0],
           name: name
         })
       })
-      return true
     } else {
-      return false
+      throw new Error('Not enough rounds');
     }
   }
 
@@ -138,6 +153,10 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
     if (this.currentRoundIndex < this.rounds.length) {
       const currentRound: Round = this.currentRound
       const coordinates = new LatLng(currentRound.latitude, currentRound.longitude)
+
+      // refit guessing map bounds to whole map
+      // TODO : no effects
+      this.guessingMapFitBounds = this.defaultGuessingMapBounds
 
       // each boundary is BOUND_SIZE_IN_METTERS/2 meters apart from coordinates
       this.satelliteMaxBounds = coordinates.toBounds(BOUND_SIZE_IN_METTERS)
