@@ -1,25 +1,28 @@
 <div id="game-window">
-    <div id="title">{{title}}</div>
-
-    <div id="information">
-        <p id="description" style="font-size: 2vw;">{{description}}</p>
-        <p style="color: aliceblue; font-size: 40px;">
-            time : {{this.remainingTime/1000}} - round {{this.currentRoundIndex + 1 }}
+    <div id="informationContainer">
+        <p id="round">round {{this.currentRoundIndex + 1}} / 5</p>
+        <p id="description">{{description}}</p>
+        <p id="time">
+            time : {{this.remainingTime/1000}}
         </p>
     </div>
 
-    <div leaflet id="satelliteMap" class="map" [leafletOptions]="satelliteMapOptions"
-        [(leafletCenter)]="satelliteMapCenter" [leafletMaxBounds]="satelliteMaxBounds">
-        <div [leafletLayer]="materializedBounds"></div>
+    <div class="mapContainer" id="satelliteMapContainer">
+        <div leaflet id="satelliteMap" class="map" [leafletOptions]="satelliteMapOptions"
+            [(leafletCenter)]="satelliteMapCenter" [leafletMaxBounds]="satelliteMaxBounds">
+            <div [leafletLayer]="materializedBounds"></div>
+        </div>
     </div>
 
-    <div leaflet id="guessingMap" class="map" [leafletOptions]="guessingMapOptions"
-        (leafletClick)="onGuessingMapClicked($event)" [leafletMaxBounds]="guessingMapMaxBounds"
-        [leafletFitBounds]="guessingMapFitBounds">
-        <div [leafletLayer]="guessingMarker"></div>
+    <div class="mapContainer" id="guessingMapContainer">
+        <div leaflet id="guessingMap" class="map" [leafletOptions]="guessingMapOptions"
+            (leafletClick)="onGuessingMapClicked($event)" [leafletMaxBounds]="guessingMapMaxBounds"
+            [leafletFitBounds]="guessingMapFitBounds">
+            <div [leafletLayer]="guessingMarker"></div>
+        </div>
     </div>
 
-    <div id="buttomTab">
+    <div id="buttonsContainer">
         <button *ngIf="gameStatus=='WAITING_FOR_START'" id="startGameButton" class="button"
             (click)="onStartClicked()">Start</button>
         <button *ngIf="gameStatus=='PLAYING'" id="respawnButton" class="button"

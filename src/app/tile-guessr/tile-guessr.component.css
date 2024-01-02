@@ -1,0 +1,26 @@
+:host {
+    height: 100%
+}
+
+#main-window {
+    height: 100%;
+    grid-template-rows: 10% 90%;
+    padding: 10px;
+    display: grid;
+}
+
+#title {
+    grid-row: 1;
+    font-size: 2vw;
+    color: white;
+}
+
+#mapsContainer {
+    grid-row: 2;
+    height: 100%;
+    padding: 3px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}

@@ -26,12 +26,11 @@ interface Round {
 @Component({
   selector: 'app-tg-map',
   templateUrl: './tile-guessr-game.component.html',
-  styleUrls: ['./tile-guessr-game.component.css']
+  styleUrls: ['./tile-guessr-game.component.css', '../tile-guessr-game.buttonSyle.css']
 })
 export class TileGuessrGameComponent implements OnInit, OnDestroy {
   private rounds: Round[] = []
   private destroyTimer$ = new Subject<void>();
-  protected readonly title: string = "Tile Guessr"
   protected currentRoundIndex: number = -1
   protected description: string = DEFAULT_DESCRIPTION
   protected remainingTime: number = MILLISECONDS_IN_A_ROUND
