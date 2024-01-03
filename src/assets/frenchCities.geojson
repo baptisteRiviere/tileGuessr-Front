@@ -1,0 +1,4634 @@
+{
+    "type": "FeatureCollection",
+    "name": "frenchCitiesMetropole",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "dijon"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.037471304,
+                    47.322850621
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "besancon"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.019309828,
+                    47.255181494
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "nevers"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.157096352,
+                    46.98810691
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "macon"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.818631488,
+                    46.321184227
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "chalon sur saone"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.852449903,
+                    46.789894335
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "auxerre"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.581678862,
+                    47.793807959
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "belfort"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.845198706,
+                    47.64696911
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "macon"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.818631488,
+                    46.321184227
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "macon"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.818631488,
+                    46.321184227
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "macon"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.818631488,
+                    46.321184227
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "macon"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.818631488,
+                    46.321184227
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "auxerre"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.581678862,
+                    47.793807959
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "montelimar"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.748427225,
+                    44.553792081
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "romans sur isere"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.038195502,
+                    45.054841799
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "valence"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.913645994,
+                    44.922561335
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "st quentin"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.277735921,
+                    49.847384589
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "st martin d heres"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.764999392,
+                    45.176170433
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "vienne"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.880866824,
+                    45.520830747
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "grenoble"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.721220642,
+                    45.182206145
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "roanne"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.079980987,
+                    46.045173995
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "st chamond"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.502048914,
+                    45.470082658
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "st etienne"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.378746004,
+                    45.43022811
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "roanne"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.079980987,
+                    46.045173995
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "st chamond"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.502048914,
+                    45.470082658
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "clermont ferrand"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.115399276,
+                    45.785911666
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "nice"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.237937874,
+                    43.712363989
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "vaulx en velin"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.926642064,
+                    45.786104103
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "venissieux"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.881206959,
+                    45.7042614
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "villeurbanne"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.889070834,
+                    45.770996568
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "thonon les bains"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.482051389,
+                    46.371148604
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "chambery"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.908826049,
+                    45.583611651
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "annecy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.118095198,
+                    45.901643496
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "annecy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.118095198,
+                    45.901643496
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "annecy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.118095198,
+                    45.901643496
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "clermont ferrand"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.115399276,
+                    45.785911666
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "echirolles"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.715311764,
+                    45.147068594
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "st etienne"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.378746004,
+                    45.43022811
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "st etienne"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.378746004,
+                    45.43022811
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "villefranche sur saone"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.730756927,
+                    45.987234635
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "annecy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.118095198,
+                    45.901643496
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "annecy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.118095198,
+                    45.901643496
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "annecy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.118095198,
+                    45.901643496
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "aix les bains"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.903940196,
+                    45.696880561
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "annecy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.118095198,
+                    45.901643496
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "annecy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.118095198,
+                    45.901643496
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "thonon les bains"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.482051389,
+                    46.371148604
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "annecy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.118095198,
+                    45.901643496
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "annemasse"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.243481991,
+                    46.191081755
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "grenoble"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.721220642,
+                    45.182206145
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "st chamond"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.502048914,
+                    45.470082658
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "st etienne"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.378746004,
+                    45.43022811
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "st etienne"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.378746004,
+                    45.43022811
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "st chamond"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.502048914,
+                    45.470082658
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "evreux"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.141523589,
+                    49.019784589
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "evreux"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.141523589,
+                    49.019784589
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "antibes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.105220285,
+                    43.587761948
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "grasse"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.931948216,
+                    43.655947795
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "cherbourg en cotentin"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.620931521,
+                    49.631756656
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "cherbourg en cotentin"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.620931521,
+                    49.631756656
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "cherbourg en cotentin"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.620931521,
+                    49.631756656
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "gap"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.064846144,
+                    44.580236774
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "gap"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.064846144,
+                    44.580236774
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "cannes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.004779118,
+                    43.552044875
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "le cannet"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.00509904,
+                    43.572966724
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "le cannet"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.00509904,
+                    43.572966724
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "nice"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.237937874,
+                    43.712363989
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "antibes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.105220285,
+                    43.587761948
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "grasse"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.931948216,
+                    43.655947795
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "grasse"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.931948216,
+                    43.655947795
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "le havre"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.140965046,
+                    49.498319485
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "le havre"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.140965046,
+                    49.498319485
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "le havre"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.140965046,
+                    49.498319485
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "rouen"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.093575536,
+                    49.441495678
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "caen"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.369888818,
+                    49.184977638
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "rouen"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.093575536,
+                    49.441495678
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "le havre"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.140965046,
+                    49.498319485
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "cherbourg en cotentin"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.620931521,
+                    49.631756656
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "cherbourg en cotentin"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.620931521,
+                    49.631756656
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "cherbourg en cotentin"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.620931521,
+                    49.631756656
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "cherbourg en cotentin"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.620931521,
+                    49.631756656
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "chartres"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.505663165,
+                    48.447093224
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "tours"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.696100282,
+                    47.398410522
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "tours"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.696100282,
+                    47.398410522
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "orleans"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.917316017,
+                    47.873503729
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "bourges"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.40464687,
+                    47.074946856
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "chateauroux"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.693667983,
+                    46.803185478
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "joue les tours"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.654057899,
+                    47.332940771
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "dreux"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.359438563,
+                    48.748672396
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "tours"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.696100282,
+                    47.398410522
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "blois"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.306088083,
+                    47.581535887
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "orleans"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.917316017,
+                    47.873503729
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "orleans"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.917316017,
+                    47.873503729
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "brest"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.502479359,
+                    48.400345079
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "quimper"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.091096788,
+                    47.99710101
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "st malo"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.980865007,
+                    48.640048719
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "st malo"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.980865007,
+                    48.640048719
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "st malo"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.980865007,
+                    48.640048719
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "rennes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.681868718,
+                    48.111680407
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "rennes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.681868718,
+                    48.111680407
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "st malo"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.980865007,
+                    48.640048719
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "vannes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.757100271,
+                    47.659791963
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "st brieuc"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.763309782,
+                    48.514851378
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "lorient"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.378920629,
+                    47.750711617
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "rennes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.681868718,
+                    48.111680407
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "st malo"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.980865007,
+                    48.640048719
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "cannes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.004779118,
+                    43.552044875
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "talence"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.591187687,
+                    44.805883691
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "bordeaux"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.573379306,
+                    44.857621613
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "merignac"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.681861039,
+                    44.832312873
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "st medard en jalles"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.784269206,
+                    44.88337539
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "mont de marsan"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.490480416,
+                    43.899526164
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "la rochelle"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.17347872,
+                    46.16242109
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "brive la gaillarde"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.519119374,
+                    45.143455253
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "la rochelle"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.17347872,
+                    46.16242109
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "la rochelle"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.17347872,
+                    46.16242109
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "pau"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.350142637,
+                    43.320042775
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "bayonne"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.466026395,
+                    43.492328407
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "niort"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.465257845,
+                    46.328491823
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "niort"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.465257845,
+                    46.328491823
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "niort"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.465257845,
+                    46.328491823
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "bordeaux"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.573379306,
+                    44.857621613
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "bordeaux"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.573379306,
+                    44.857621613
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "angouleme"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.145140856,
+                    45.647372131
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "anglet"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.515103364,
+                    43.490658951
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "chatellerault"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.552729712,
+                    46.815597468
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "limoges"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.248829946,
+                    45.854408855
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "limoges"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.248829946,
+                    45.854408855
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "limoges"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.248829946,
+                    45.854408855
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "bordeaux"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.573379306,
+                    44.857621613
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "bordeaux"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.573379306,
+                    44.857621613
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "niort"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.465257845,
+                    46.328491823
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "niort"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.465257845,
+                    46.328491823
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "chatellerault"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.552729712,
+                    46.815597468
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "poitiers"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.359570095,
+                    46.583644875
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "limoges"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.248829946,
+                    45.854408855
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "limoges"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.248829946,
+                    45.854408855
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "agen"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.625730523,
+                    44.202826475
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "martigues"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.049565722,
+                    43.379764276
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "vitrolles"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.263415824,
+                    43.449805347
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "aix en provence"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.398630399,
+                    43.536112304
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "aix en provence"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.398630399,
+                    43.536112304
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "arles"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.661799679,
+                    43.546935152
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "la ciotat"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.612770934,
+                    43.192551743
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "istres"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.950589268,
+                    43.550505683
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "aix en provence"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.398630399,
+                    43.536112304
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "aix en provence"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.398630399,
+                    43.536112304
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "aix en provence"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.398630399,
+                    43.536112304
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "aix en provence"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.398630399,
+                    43.536112304
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "arles"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.661799679,
+                    43.546935152
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "arles"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.661799679,
+                    43.546935152
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "arles"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.661799679,
+                    43.546935152
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "arles"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.661799679,
+                    43.546935152
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "aubagne"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.563232443,
+                    43.29362258
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "istres"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.950589268,
+                    43.550505683
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "martigues"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.049565722,
+                    43.379764276
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "arles"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.661799679,
+                    43.546935152
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "aubagne"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.563232443,
+                    43.29362258
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "martigues"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.049565722,
+                    43.379764276
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "salon de provence"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.067827841,
+                    43.646321793
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "arles"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.661799679,
+                    43.546935152
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "marignane"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.212042791,
+                    43.417591878
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "martigues"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.049565722,
+                    43.379764276
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "martigues"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.049565722,
+                    43.379764276
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "frejus"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.763726369,
+                    43.471998616
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "hyeres"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.158103808,
+                    43.116948473
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "st raphael"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.847487832,
+                    43.457632505
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "toulon"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.93259923,
+                    43.136537115
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "hyeres"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.158103808,
+                    43.116948473
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "hyeres"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.158103808,
+                    43.116948473
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "st raphael"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.847487832,
+                    43.457632505
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "st raphael"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.847487832,
+                    43.457632505
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "la seyne sur mer"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.870866841,
+                    43.08924215
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "la seyne sur mer"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.870866841,
+                    43.08924215
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "six fours les plages"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.827525565,
+                    43.0863928
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "carpentras"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.061441954,
+                    44.059401057
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "frejus"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.763726369,
+                    43.471998616
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "hyeres"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.158103808,
+                    43.116948473
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "hyeres"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.158103808,
+                    43.116948473
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "hyeres"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.158103808,
+                    43.116948473
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "st raphael"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.847487832,
+                    43.457632505
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "six fours les plages"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.827525565,
+                    43.0863928
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "avignon"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.841098248,
+                    43.935441391
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "hyeres"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.158103808,
+                    43.116948473
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "hyeres"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.158103808,
+                    43.116948473
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "hyeres"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.158103808,
+                    43.116948473
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "st raphael"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.847487832,
+                    43.457632505
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "st raphael"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.847487832,
+                    43.457632505
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "toulon"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.93259923,
+                    43.136537115
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "draguignan"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.454517999,
+                    43.535944749
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "hyeres"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.158103808,
+                    43.116948473
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "la seyne sur mer"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.870866841,
+                    43.08924215
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "six fours les plages"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.827525565,
+                    43.0863928
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "toulon"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.93259923,
+                    43.136537115
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "avignon"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.841098248,
+                    43.935441391
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "nimes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.347591011,
+                    43.844657847
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "toulouse"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.432094901,
+                    43.596037953
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "toulouse"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.432094901,
+                    43.596037953
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "nimes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.347591011,
+                    43.844657847
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "montpellier"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.869264054,
+                    43.61335437
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "montpellier"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.869264054,
+                    43.61335437
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "toulouse"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.432094901,
+                    43.596037953
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "montlucon"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.603705358,
+                    46.339028478
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "carcassonne"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.343422135,
+                    43.209415595
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "montpellier"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.869264054,
+                    43.61335437
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "narbonne"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.020200005,
+                    43.165034031
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "sete"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.645303295,
+                    43.391754096
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "carcassonne"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.343422135,
+                    43.209415595
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "narbonne"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.020200005,
+                    43.165034031
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "grasse"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.931948216,
+                    43.655947795
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "carcassonne"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.343422135,
+                    43.209415595
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "carcassonne"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.343422135,
+                    43.209415595
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "antibes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.105220285,
+                    43.587761948
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "menton"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.493340539,
+                    43.791862947
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "perpignan"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.898977872,
+                    42.696441301
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "antibes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.105220285,
+                    43.587761948
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "carcassonne"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.343422135,
+                    43.209415595
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "carcassonne"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.343422135,
+                    43.209415595
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "ales"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.088567807,
+                    44.125130044
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "nimes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.347591011,
+                    43.844657847
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "toulouse"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.432094901,
+                    43.596037953
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "castres"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.238251917,
+                    43.615625896
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "tarbes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.066150886,
+                    43.234659038
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "perpignan"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.898977872,
+                    42.696441301
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "colomiers"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.326965447,
+                    43.611715384
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "toulouse"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.432094901,
+                    43.596037953
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "toulouse"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.432094901,
+                    43.596037953
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "montpellier"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.869264054,
+                    43.61335437
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "albi"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.147453419,
+                    43.925846212
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "beziers"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.230859725,
+                    43.347466978
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "montauban"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.364081417,
+                    44.022262753
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "ajaccio"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.700937555,
+                    41.934723456
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "bastia"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.425134055,
+                    42.686420533
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "bastia"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.425134055,
+                    42.686420533
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "ajaccio"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.700937555,
+                    41.934723456
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "ajaccio"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.700937555,
+                    41.934723456
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "bastia"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.425134055,
+                    42.686420533
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "cagnes sur mer"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.152404366,
+                    43.672201175
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "st laurent du var"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.182232303,
+                    43.686382321
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "metz"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.195988106,
+                    49.10819284
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "thionville"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.12898128,
+                    49.37592052
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "thionville"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.12898128,
+                    49.37592052
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "thionville"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.12898128,
+                    49.37592052
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "bourg en bresse"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.245593605,
+                    46.205013838
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "chalons en champagne"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.378495641,
+                    48.964394287
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "bourg en bresse"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.245593605,
+                    46.205013838
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "reims"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.040155708,
+                    49.251726201
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "cagnes sur mer"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.152404366,
+                    43.672201175
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "nancy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.175258299,
+                    48.690068976
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "metz"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.195988106,
+                    49.10819284
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "thionville"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.12898128,
+                    49.37592052
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "haguenau"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.830454075,
+                    48.841990039
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "haguenau"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.830454075,
+                    48.841990039
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "reims"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.040155708,
+                    49.251726201
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "strasbourg"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.767760376,
+                    48.571265
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "mulhouse"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.325470995,
+                    47.748996149
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "mulhouse"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.325470995,
+                    47.748996149
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "nancy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.175258299,
+                    48.690068976
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "mulhouse"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.325470995,
+                    47.748996149
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "metz"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.195988106,
+                    49.10819284
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "troyes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.078437147,
+                    48.296733685
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "haguenau"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.830454075,
+                    48.841990039
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "schiltigheim"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.74641493,
+                    48.611980882
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "strasbourg"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.767760376,
+                    48.571265
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "strasbourg"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.767760376,
+                    48.571265
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "colmar"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.38487511,
+                    48.109938104
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "mulhouse"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.325470995,
+                    47.748996149
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "epinal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.479839946,
+                    48.163226366
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "douai"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.090847987,
+                    50.381769741
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "douai"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.090847987,
+                    50.381769741
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "roubaix"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.181903136,
+                    50.688368522
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "tourcoing"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.159652714,
+                    50.725815998
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "wattrelos"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.216663228,
+                    50.705547602
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "lens"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.821237683,
+                    50.437646936
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "nice"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.237937874,
+                    43.712363989
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "charleville mezieres"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.717044422,
+                    49.775018299
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "nice"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.237937874,
+                    43.712363989
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "cambrai"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.242132828,
+                    50.170291262
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "cambrai"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.242132828,
+                    50.170291262
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "dunkerque"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.33669497,
+                    51.030110046
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "dunkerque"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.33669497,
+                    51.030110046
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "dunkerque"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.33669497,
+                    51.030110046
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "lille"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.046986424,
+                    50.631855028
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "lille"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.046986424,
+                    50.631855028
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "dunkerque"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.33669497,
+                    51.030110046
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "dunkerque"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.33669497,
+                    51.030110046
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "dunkerque"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.33669497,
+                    51.030110046
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "calais"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.875252187,
+                    50.950594309
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "lille"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.046986424,
+                    50.631855028
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "lievin"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.772813142,
+                    50.424319541
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "boulogne sur mer"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.606125622,
+                    50.726777977
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "nice"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.237937874,
+                    43.712363989
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "nice"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.237937874,
+                    43.712363989
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "douai"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.090847987,
+                    50.381769741
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "dunkerque"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.33669497,
+                    51.030110046
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "dunkerque"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.33669497,
+                    51.030110046
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "dunkerque"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.33669497,
+                    51.030110046
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "lille"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.046986424,
+                    50.631855028
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "lille"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.046986424,
+                    50.631855028
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "valenciennes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.516178981,
+                    50.359106458
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "beauvais"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.086359455,
+                    49.436197631
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "compiegne"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.852896651,
+                    49.39926151
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "creil"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.484135084,
+                    49.253177564
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "arras"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.766050504,
+                    50.290017375
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "amiens"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.289706107,
+                    49.900410245
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "amiens"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.289706107,
+                    49.900410245
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "amiens"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.289706107,
+                    49.900410245
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "nantes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.548204252,
+                    47.232046411
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "reze"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.550014499,
+                    47.176656359
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "reze"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.550014499,
+                    47.176656359
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "cholet"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.877532437,
+                    47.045655014
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "cholet"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.877532437,
+                    47.045655014
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "laval"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.765729369,
+                    48.061104371
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "le mans"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.200118821,
+                    47.98867581
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "les sables d olonne"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.763932321,
+                    46.519807555
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "les sables d olonne"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.763932321,
+                    46.519807555
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "les sables d olonne"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.763932321,
+                    46.519807555
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "nantes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.548204252,
+                    47.232046411
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "angers"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.556221025,
+                    47.476657084
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "le mans"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.200118821,
+                    47.98867581
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "nantes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.548204252,
+                    47.232046411
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "st herblain"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.6340884,
+                    47.224879732
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "st nazaire"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.251139994,
+                    47.280283389
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "st nazaire"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.251139994,
+                    47.280283389
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "nantes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.548204252,
+                    47.232046411
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "la roche sur yon"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.407896452,
+                    46.667665899
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "angers"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.556221025,
+                    47.476657084
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "chelles"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.597093098,
+                    48.883978399
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "meaux"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.90006062,
+                    48.956861307
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "st germain en laye"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.096214868,
+                    48.937287576
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "boulogne billancourt"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.239066161,
+                    48.836400822
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "chatenay malabry"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.263584321,
+                    48.768150824
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "clamart"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.254300971,
+                    48.796455388
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "clamart"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.254300971,
+                    48.796455388
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "meudon"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.227332801,
+                    48.804093282
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "villepinte"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.536314005,
+                    48.959610617
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "villeneuve st georges"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.449089194,
+                    48.741877726
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "pontoise"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.094574042,
+                    49.051577748
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "mantes la jolie"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.69406992,
+                    48.998365533
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "trappes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.994019041,
+                    48.775754847
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "chelles"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.597093098,
+                    48.883978399
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "melun"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.657923631,
+                    48.544316452
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "poissy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.02742189,
+                    48.923459545
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "poissy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.02742189,
+                    48.923459545
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "st germain en laye"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.096214868,
+                    48.937287576
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "versailles"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.117410101,
+                    48.802292474
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "antony"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.299028344,
+                    48.749986765
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "pontoise"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.094574042,
+                    49.051577748
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "meudon"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.227332801,
+                    48.804093282
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "massy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.275240048,
+                    48.72750723
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "palaiseau"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.228671091,
+                    48.714797957
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "sevran"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.530589988,
+                    48.938717628
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "argenteuil"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.240388744,
+                    48.951531886
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "goussainville"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.46608247,
+                    49.024588139
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Paris"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.351533923651413,
+                    48.856627146174063
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Marseille"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.36884529186763,
+                    43.295962335576455
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Lyon"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.831928112544164,
+                    45.757719304155792
+                ]
+            }
+        }
+    ]
+}

@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { Point } from 'geojson';
 import { tileLayer, MapOptions, LatLng, LatLngExpression, Circle, LatLngBounds, Rectangle, FeatureGroup, geoJSON, Layer } from 'leaflet';
+import pickRandom from 'pick-random';
 import { Subject, takeUntil, timer } from 'rxjs';
 
 const DEFAULT_LOADING_DESCRIPTION = "Loading game"
@@ -111,7 +112,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
       this.currentRoundIndex = -1
 
       // getting geojson file
-      const response = await fetch('assets/cities.geojson')
+      const response = await fetch('assets/frenchCities.geojson')
       const placesLayer: FeatureGroup = geoJSON(await response.json())
       this.defaultGuessingMapBounds = placesLayer.getBounds()
 
@@ -133,7 +134,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
 
   private async drawRounds(places: Layer[]): Promise<void> {
     if (places.length >= NUMBER_OF_ROUNDS) {
-      const choosenPlaces = places.sort(() => 0.5 - Math.random()).slice(0, NUMBER_OF_ROUNDS)
+      const choosenPlaces = pickRandom(places, { count: NUMBER_OF_ROUNDS })
       choosenPlaces.forEach((place: any) => {
         // TODO : as any...
         const coordinates = (place.feature.geometry as Point).coordinates
