@@ -1,7 +1,20 @@
 <div class="header-bar"></div>
 <nav>
-  <a routerLink="/welcome" routerLinkActive="active">welcome</a>
-  <a routerLink="/tileGuessr" routerLinkActive="active">Tile Guessr</a>
+  <div class="card">
+    <p-toolbar>
+      <div class="p-toolbar-group-start">
+          <p-button [rounded]="true" routerLink="/welcome" label="Tile Guessr" icon="pi pi-map-marker"></p-button>
+          <p-button [rounded]="true" routerLink="/tileGuessr" label="Le jeu" icon="pi pi-globe"></p-button>
+
+      </div>
+      <div class="p-toolbar-group-end">
+          <span class="p-input-icon-left">
+            <p-button [rounded]="true" label="Crédits" icon="pi pi-info-circle"></p-button>
+            <p-button  [rounded]="true" onclick="window.open('https://github.com/baptisteRiviere/tileGuessr');return false;" label="" icon="pi pi-github"></p-button>
+          </span>
+      </div>
+    </p-toolbar>
+  </div>
 </nav>
 
 <router-outlet></router-outlet>
