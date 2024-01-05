@@ -4,13 +4,25 @@ import { tileLayer, MapOptions, LatLng, LatLngExpression, Circle, LatLngBounds, 
 import pickRandom from 'pick-random';
 import { Subject, takeUntil, timer } from 'rxjs';
 
+// Constants for messages
 const DEFAULT_LOADING_DESCRIPTION = "Loading game"
 const DEFAULT_STARTING_DESCRIPTION = "Are you ready ?"
 const DEFAULT_PLAYING_DESCRIPTION = "Where is this location ?"
+
+// Constants for mapping
 const BOUND_SIZE_IN_METTERS = 10000
 const SATELLITE_MAP_MIN_ZOOM = 12
 const NUMBER_OF_ROUNDS = 5
 const MILLISECONDS_IN_A_ROUND = 1000 * 60 * 3
+
+// Constants for score management
+const MAX_SCORE_FOR_DIST = 800 // max score reachable 
+const COEF_DIST = 0.8 // this means that player will have 0 points for dist if the guess is more than 0.8 * max bounds 
+const MAX_SCORE_FOR_TIME = 200
+const MIN_TIME_MS = 5 // Minimum time to guess for having the max amount of points
+const COEF_TIME = 0.8 // this means that player will have 0 points for time if the guess is more than 0.8 * the accorded time
+
+// Game status
 const GameStatus = {
   LOADING: "LOADING",
   WAITING_FOR_START: "WAITING_FOR_START",
@@ -34,10 +46,12 @@ interface Round {
 export class TileGuessrGameComponent implements OnInit, OnDestroy {
   private rounds: Round[] = []
   private destroyTimer$ = new Subject<void>();
+  protected roundScore: number = 0
+  protected gameScore: number = 0
   protected currentRoundIndex: number = -1
   protected description: string = DEFAULT_LOADING_DESCRIPTION
   protected remainingTime: number = MILLISECONDS_IN_A_ROUND
-  protected gameStatus: string = GameStatus.ENDED
+  protected gameStatus: string = GameStatus.LOADING
   protected coordinatesToGuess: LatLng = new LatLng(0, 0)
   protected satelliteMapCenter: LatLng = new LatLng(0, 0)
   protected satelliteMaxBounds: LatLngBounds = new LatLngBounds(this.coordinatesToGuess, this.coordinatesToGuess)
@@ -108,8 +122,10 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
 
     try {
 
-      // initializing index
+      // initializing index and scores
       this.currentRoundIndex = -1
+      this.roundScore = 0
+      this.gameScore = 0
 
       // getting geojson file
       const response = await fetch('assets/frenchCities.geojson')
@@ -150,8 +166,10 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
     }
   }
 
-  private displayResult(dist: number) {
+  private displayResult(score: number, dist: number, guessedIntoTheTile: boolean) {
     const currentRound: Round = this.rounds[this.currentRoundIndex]
+    this.roundScore = score
+    this.gameScore += score
     this.description = `You were ${Math.round(dist / 1000)} km from ${currentRound.name}`
   }
 
@@ -189,19 +207,84 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
 
   private guess(): void {
     // stoping timer 
-    this.stopCounter()
+    const remainingTimeInMs = this.stopCounter()
 
     // computing distance and getting current round
-    const dist = this.guessingMarker.getLatLng().distanceTo(this.coordinatesToGuess)
+    const distInMeters = this.guessingMarker.getLatLng().distanceTo(this.coordinatesToGuess)
+
+    // checking if the player guessed into the tile
+    const guessedIntoTheTile = this.satelliteMaxBounds.contains(this.guessingMarker.getLatLng())
+
+    // computing the score
+    const score = this.computeRoundScore(remainingTimeInMs, distInMeters, guessedIntoTheTile)
 
     // changing game status
     this.gameStatus = GameStatus.RESULT
 
     // diplaying result
-    this.displayResult(dist)
+    this.displayResult(score, distInMeters, guessedIntoTheTile)
 
-    if (this.currentRoundIndex == this.rounds.length - 1) {
+    if (this.currentRoundIndex >= this.rounds.length - 1) {
       this.gameStatus = GameStatus.ENDED
+    }
+  }
+
+  ///////////////////////////////////////////////////////////////////////
+  /////// SCORE COMPUTING METHODS
+  ///////////////////////////////////////////////////////////////////////
+
+  private computeRoundScore(remainingTimeInMs: number, distScoreInMeters: number, guessedIntoTheTile: boolean) {
+    let distScore = MAX_SCORE_FOR_DIST // by default, MAX SCORE is assigned to dist score
+    if (!guessedIntoTheTile) {
+      // But if the player didn't guessed into the tile the dist score is recomputed
+      distScore = this.secretScoreFunction(
+        distScoreInMeters,
+        MAX_SCORE_FOR_DIST,
+        BOUND_SIZE_IN_METTERS / 2, // the half size of the bounding box
+        this.defaultGuessingMapBounds // max bounds size for the entire map
+          .getSouthEast()
+          .distanceTo(
+            this.defaultGuessingMapBounds.getNorthEast()
+          ) * COEF_DIST
+      )
+    }
+
+    // computing score for time 
+    const timeScore = this.secretScoreFunction(
+      MILLISECONDS_IN_A_ROUND - remainingTimeInMs,
+      MAX_SCORE_FOR_TIME,
+      MIN_TIME_MS,
+      MILLISECONDS_IN_A_ROUND * COEF_TIME,
+    )
+
+    // rounding
+    return Math.floor(distScore + timeScore)
+  }
+
+  /*
+  This is the mathematical function used to compute the score as
+    f(x) = maxY if x < A
+    f(c) = 0 if x > B
+    f(x) = a*cos(b(x-h))+ k otherwise
+
+  for the function parameters, f respects the following rules :
+    a = maxY /2 
+    k = maxY /2
+    h = A
+    f(B) = 0 => permit to compute b
+  */
+  private secretScoreFunction(x: number, maxY: number, A: number, B: number): number {
+    if (x < A) {
+      return maxY
+    } else if (x > B) {
+      return 0
+    } else {
+      // parameters are recomputing each time
+      const a: number = maxY / 2
+      const k: number = maxY / 2
+      const h: number = A
+      const b = Math.acos(- k / a) / (B - h)
+      return a * Math.cos(b * (x - h)) + k
     }
   }
 
@@ -221,8 +304,9 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
     });
   }
 
-  private stopCounter(): void {
+  private stopCounter(): number {
     this.destroyTimer$.next();
+    return this.remainingTime
   }
 
 
