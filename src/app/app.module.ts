@@ -7,6 +7,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { RouteNotFoundComponent } from './route-not-found/route-not-found.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { TileGuessrModule } from './tile-guessr/tile-guessr.module';
+import { ToolbarModule } from 'primeng/toolbar';
+import { ButtonModule } from 'primeng/button';
 
 
 
@@ -20,7 +22,9 @@ import { TileGuessrModule } from './tile-guessr/tile-guessr.module';
     BrowserModule,
     AppRoutingModule,
     LeafletModule,
-    TileGuessrModule
+    TileGuessrModule,
+    ToolbarModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

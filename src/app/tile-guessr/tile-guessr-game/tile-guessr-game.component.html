@@ -2,6 +2,8 @@
     <div id="informationContainer">
         <p id="round" *ngIf="gameStatus=='PLAYING'">round {{this.currentRoundIndex + 1}} / 5</p>
         <p id="description">{{description}}</p>
+        <p id="roundScore" *ngIf="gameStatus=='RESULT'">Score : {{roundScore}}</p>
+        <p id="gameScore" *ngIf="gameStatus=='ENDED'">Total Score : {{gameScore}}</p>
         <p id="time" *ngIf="gameStatus=='PLAYING'">
             time : {{this.remainingTime/1000}}
         </p>
