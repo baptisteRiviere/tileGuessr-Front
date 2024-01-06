@@ -55,7 +55,11 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
   protected coordinatesToGuess: LatLng = new LatLng(0, 0)
   protected satelliteMapCenter: LatLng = new LatLng(0, 0)
   protected satelliteMaxBounds: LatLngBounds = new LatLngBounds(this.coordinatesToGuess, this.coordinatesToGuess)
-  protected materializedBounds: Rectangle = new Rectangle(this.satelliteMaxBounds, {
+  protected materializedSatelliteMapTile: Rectangle = new Rectangle(this.satelliteMaxBounds, {
+    fill: false,
+    color: 'red'
+  })
+  protected materializedGuessingMapTile: Rectangle = new Rectangle(this.satelliteMaxBounds, {
     fill: false,
     color: 'red'
   })
@@ -190,7 +194,8 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
       // each boundary is BOUND_SIZE_IN_METTERS/2 meters apart from coordinates
       this.satelliteMaxBounds = coordinates.toBounds(BOUND_SIZE_IN_METTERS)
       this.coordinatesToGuess = coordinates.clone()
-      this.materializedBounds.setBounds(this.satelliteMaxBounds)
+      this.materializedGuessingMapTile.setBounds(this.satelliteMaxBounds)
+      this.materializedSatelliteMapTile.setBounds(this.satelliteMaxBounds)
 
       // TODO : this is a temporary fix
       // the value assigned to satelliteMaxBounds automatically update the map canvas view in a bounds corner

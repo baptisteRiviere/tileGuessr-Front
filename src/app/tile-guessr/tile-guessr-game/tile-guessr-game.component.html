@@ -12,7 +12,7 @@
     <div class="mapContainer" id="satelliteMapContainer">
         <div leaflet id="satelliteMap" class="map" [leafletOptions]="satelliteMapOptions"
             [(leafletCenter)]="satelliteMapCenter" [leafletMaxBounds]="satelliteMaxBounds">
-            <div [leafletLayer]="materializedBounds"></div>
+            <div [leafletLayer]="materializedSatelliteMapTile"></div>
         </div>
     </div>
 
@@ -21,6 +21,7 @@
             (leafletClick)="onGuessingMapClicked($event)" [leafletMaxBounds]="guessingMapMaxBounds"
             [leafletFitBounds]="guessingMapFitBounds">
             <div [leafletLayer]="guessingMarker"></div>
+            <div *ngIf="gameStatus=='RESULT'" [leafletLayer]="materializedGuessingMapTile"></div>
         </div>
     </div>
 
