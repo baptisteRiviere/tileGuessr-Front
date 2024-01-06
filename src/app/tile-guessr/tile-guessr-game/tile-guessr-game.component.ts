@@ -136,7 +136,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
       this.guessingMapFitBounds = this.defaultGuessingMapBounds
 
       // drawing rounds
-      await this.drawRounds(placesLayer.getLayers())
+      this.rounds = await this.drawRounds(placesLayer.getLayers())
 
       // Displaying title and changing game status to start the game
       this.description = DEFAULT_STARTING_DESCRIPTION
@@ -148,19 +148,21 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
     }
   }
 
-  private async drawRounds(places: Layer[]): Promise<void> {
+  private async drawRounds(places: Layer[]): Promise<Round[]> {
+    let choosenRounds: Round[] = []
     if (places.length >= NUMBER_OF_ROUNDS) {
       const choosenPlaces = pickRandom(places, { count: NUMBER_OF_ROUNDS })
       choosenPlaces.forEach((place: any) => {
         // TODO : as any...
         const coordinates = (place.feature.geometry as Point).coordinates
         const name = place.feature.properties == null ? undefined : place.feature.properties["name"]
-        this.rounds.push({
+        choosenRounds.push({
           latitude: coordinates[1],
           longitude: coordinates[0],
           name: name
         })
       })
+      return choosenRounds
     } else {
       throw new Error('Not enough rounds');
     }
