@@ -11,6 +11,9 @@ export class TileGuessrComponent {
     name: "French cities",
     id: "frenchCities"
   }, {
+    name: "random in France",
+    id: "randomFrance"
+  }, {
     name: "For testing",
     id: "testCities"
   }]
