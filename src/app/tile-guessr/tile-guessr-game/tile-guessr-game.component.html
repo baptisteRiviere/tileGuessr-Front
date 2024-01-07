@@ -20,7 +20,7 @@
         <div leaflet id="guessingMap" class="map" [leafletOptions]="guessingMapOptions"
             (leafletClick)="onGuessingMapClicked($event)" [leafletMaxBounds]="guessingMapMaxBounds"
             [leafletFitBounds]="guessingMapFitBounds">
-            <div *ngIf="showGuessingMarker" [leafletLayer]="guessingMarker"></div>
+            <div *ngIf="guessingMarker != undefined" [leafletLayer]="guessingMarker"></div>
             <div *ngIf="gameStatus=='RESULT'" [leafletLayer]="materializedGuessingMapTile"></div>
         </div>
     </div>

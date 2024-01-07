@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { Point } from 'geojson';
-import { tileLayer, MapOptions, LatLng, LatLngExpression, Circle, LatLngBounds, Rectangle, FeatureGroup, geoJSON, Layer, PathOptions } from 'leaflet';
+import { tileLayer, MapOptions, LatLng, LatLngExpression, Circle, LatLngBounds, Rectangle, FeatureGroup, geoJSON, Layer, PathOptions, CircleOptions } from 'leaflet';
 import pickRandom from 'pick-random';
 import { Subject, takeUntil, timer } from 'rxjs';
 
@@ -48,6 +48,10 @@ const NOT_FOUNDED_TILE_RECTANGLE_STYLE: PathOptions = {
   fillColor: "#f88958",
   opacity: 0.75
 }
+const GUESSING_MARKER_OPTIONS: CircleOptions = {
+  color: 'red',
+  radius: 100
+}
 
 interface Round {
   latitude: number,
@@ -74,11 +78,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
   protected satelliteMaxBounds: LatLngBounds = new LatLngBounds(this.coordinatesToGuess, this.coordinatesToGuess)
   protected materializedSatelliteMapTile: Rectangle = new Rectangle(this.satelliteMaxBounds)
   protected materializedGuessingMapTile: Rectangle = new Rectangle(this.satelliteMaxBounds)
-  protected guessingMarker: Circle = new Circle(new LatLng(0, 0), {
-    color: 'red',
-    radius: 100
-  })
-  protected showGuessingMarker: boolean = false
+  protected guessingMarker: Circle | undefined = undefined
   private defaultGuessingMapBounds = new LatLngBounds(
     new LatLng(90, 200),
     new LatLng(-90, -200)
@@ -184,7 +184,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
     }
   }
 
-  private displayResult(score: number, dist: number, guessedIntoTheTile: boolean) {
+  private displayResult(score: number, dist: number | undefined, guessedIntoTheTile: boolean) {
 
     // getting current round
     const currentRound: Round = this.rounds[this.currentRoundIndex]
@@ -194,7 +194,11 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
     this.gameScore += score
 
     // displaying description
-    this.description = `You were ${Math.round(dist / 1000)} km from ${currentRound.name}`
+    if (dist == undefined) {
+      this.description = `You forgot to click on the map ! You were in ${currentRound.name}`
+    } else {
+      this.description = `You were ${Math.round(dist / 1000)} km from ${currentRound.name}`
+    }
 
     // if the player guessed into the tile, display materialized tiles in green
     if (guessedIntoTheTile) {
@@ -211,7 +215,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
     this.currentRoundIndex++;
 
     // reinitializing maps
-    this.showGuessingMarker = false
+    this.guessingMarker = undefined
     this.guessingMapFitBounds = this.defaultGuessingMapBounds // TODO : no effects
 
     if (this.currentRoundIndex < this.rounds.length) {
@@ -248,11 +252,17 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
     // stoping timer 
     const remainingTimeInMs = this.stopCounter()
 
-    // computing distance and getting current round
-    const distInMeters = this.guessingMarker.getLatLng().distanceTo(this.coordinatesToGuess)
+    // init dist and boolean for check if inside the tile
+    let distInMeters: number | undefined = undefined
+    let guessedIntoTheTile: boolean = false
 
-    // checking if the player guessed into the tile
-    const guessedIntoTheTile = this.satelliteMaxBounds.contains(this.guessingMarker.getLatLng())
+    if (this.guessingMarker != undefined) {
+      // computing distance and getting current round
+      distInMeters = this.guessingMarker.getLatLng().distanceTo(this.coordinatesToGuess)
+
+      // checking if the player guessed into the tile
+      guessedIntoTheTile = this.satelliteMaxBounds.contains(this.guessingMarker.getLatLng())
+    }
 
     // computing the score
     const score = this.computeRoundScore(remainingTimeInMs, distInMeters, guessedIntoTheTile)
@@ -268,20 +278,25 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
   /////// SCORE COMPUTING METHODS
   ///////////////////////////////////////////////////////////////////////
 
-  private computeRoundScore(remainingTimeInMs: number, distScoreInMeters: number, guessedIntoTheTile: boolean) {
+  private computeRoundScore(remainingTimeInMs: number, distScoreInMeters: number | undefined, guessedIntoTheTile: boolean) {
     let distScore = MAX_SCORE_FOR_DIST // by default, MAX SCORE is assigned to dist score
     if (!guessedIntoTheTile) {
-      // But if the player didn't guessed into the tile the dist score is recomputed
-      distScore = this.secretScoreFunction(
-        distScoreInMeters,
-        MAX_SCORE_FOR_DIST,
-        BOUND_SIZE_IN_METTERS / 2, // the half size of the bounding box
-        this.defaultGuessingMapBounds // max bounds size for the entire map
-          .getSouthEast()
-          .distanceTo(
-            this.defaultGuessingMapBounds.getNorthEast()
-          ) * COEF_DIST
-      )
+      if (distScoreInMeters == undefined) {
+        // the player didn't click on the map
+        distScore = 0
+      } else {
+        // But if the player didn't guessed into the tile the dist score is recomputed
+        distScore = this.secretScoreFunction(
+          distScoreInMeters,
+          MAX_SCORE_FOR_DIST,
+          BOUND_SIZE_IN_METTERS / 2, // the half size of the bounding box
+          this.defaultGuessingMapBounds // max bounds size for the entire map
+            .getSouthEast()
+            .distanceTo(
+              this.defaultGuessingMapBounds.getNorthEast()
+            ) * COEF_DIST
+        )
+      }
     }
 
     // computing score for time 
@@ -379,8 +394,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
 
   protected onGuessingMapClicked(event: { latlng: LatLngExpression; }) {
     if (this.gameStatus == GameStatus.PLAYING) {
-      this.guessingMarker.setLatLng(event.latlng)
-      this.showGuessingMarker = true
+      this.guessingMarker = new Circle(event.latlng, GUESSING_MARKER_OPTIONS)
     }
   }
 
@@ -393,7 +407,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
   }
 
   protected onEndGame() {
-    this.description = "Congratulation !"
+    this.description = "End of the game"
     this.gameStatus = GameStatus.ENDED
   }
 
