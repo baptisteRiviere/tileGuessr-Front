@@ -19,7 +19,7 @@ const MILLISECONDS_IN_A_ROUND = 1000 * 60 * 3
 const MAX_SCORE_FOR_DIST = 800 // max score reachable 
 const COEF_DIST = 0.8 // this means that player will have 0 points for dist if the guess is more than 0.8 * max bounds 
 const MAX_SCORE_FOR_TIME = 200
-const MIN_TIME_MS = 5 // Minimum time to guess for having the max amount of points
+const MIN_TIME_MS = 5000 // Minimum time to guess for having the max amount of points
 const COEF_TIME = 0.8 // this means that player will have 0 points for time if the guess is more than 0.8 * the accorded time
 
 // Game status
@@ -334,7 +334,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
     const timeScore = this.secretScoreFunction(
       MILLISECONDS_IN_A_ROUND - remainingTimeInMs,
       MAX_SCORE_FOR_TIME,
-      MILLISECONDS_IN_A_ROUND - MIN_TIME_MS,
+      MIN_TIME_MS,
       MILLISECONDS_IN_A_ROUND * COEF_TIME,
     )
 
