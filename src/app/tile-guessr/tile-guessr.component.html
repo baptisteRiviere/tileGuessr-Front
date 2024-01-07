@@ -3,7 +3,10 @@
     <p id="title">Welcome to tile guessr, you can choose where you will play</p>
 
     <div id="mapsContainer">
-        <button class="button" (click)="gotoDetail()">French cities</button>
+        <li *ngFor="let availableMap of availableMaps" style="width: 20vw; height: 5vw;">
+            <button class="button" style="width:100%;height: 100%;"
+                (click)="gotoDetail(availableMap.id)">{{availableMap.name}}</button>
+        </li>
     </div>
 
 </div>

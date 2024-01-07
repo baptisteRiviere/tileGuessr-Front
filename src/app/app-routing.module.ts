@@ -9,9 +9,8 @@ const routes: Routes = [
   { path: '', redirectTo: '/welcome', pathMatch: 'full' },
   { path: 'welcome', component: WelcomeComponent },
   { path: 'tileGuessr', component: TileGuessrComponent },
-  { path: 'tileGuessr/map', component: TileGuessrGameComponent },
+  { path: 'tileGuessr/map/:id', component: TileGuessrGameComponent },
   { path: '**', component: RouteNotFoundComponent },
-
 ];
 
 @NgModule({

@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Point } from 'geojson';
 import { tileLayer, MapOptions, LatLng, LatLngExpression, Circle, LatLngBounds, Rectangle, FeatureGroup, geoJSON, Layer, PathOptions, CircleOptions, Polyline, PolylineOptions } from 'leaflet';
 import pickRandom from 'pick-random';
@@ -118,7 +119,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
   /////// CONSTRUCTOR
   ///////////////////////////////////////////////////////////////////////
 
-  constructor(private cdr: ChangeDetectorRef) { }
+  constructor(private route: ActivatedRoute) { }
 
 
   ///////////////////////////////////////////////////////////////////////
@@ -151,7 +152,8 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
       this.gameScore = 0
 
       // getting geojson file
-      const response = await fetch('assets/frenchCities.geojson')
+      const id = this.route.snapshot.paramMap.get("id")
+      const response = await fetch(`assets/${id}.geojson`)
       const placesLayer: FeatureGroup = geoJSON(await response.json())
       this.defaultGuessingMapBounds = placesLayer.getBounds()
 

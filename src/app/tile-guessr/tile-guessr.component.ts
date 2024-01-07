@@ -7,12 +7,20 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./tile-guessr.component.css', 'tile-guessr-game.buttonSyle.css']
 })
 export class TileGuessrComponent {
+  protected availableMaps = [{
+    name: "French cities",
+    id: "frenchCities"
+  }, {
+    name: "For testing",
+    id: "testCities"
+  }]
+
   constructor(
     private route: ActivatedRoute,
     private router: Router
   ) { }
 
-  gotoDetail(): void {
-    this.router.navigate(['./map'], { relativeTo: this.route });
+  gotoDetail(mapId: string): void {
+    this.router.navigate(['./map', mapId], { relativeTo: this.route });
   }
 }
