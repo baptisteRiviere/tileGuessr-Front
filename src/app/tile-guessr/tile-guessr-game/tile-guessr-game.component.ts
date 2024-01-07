@@ -253,10 +253,6 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
 
     // diplaying result
     this.displayResult(score, distInMeters, guessedIntoTheTile)
-
-    if (this.currentRoundIndex >= this.rounds.length - 1) {
-      this.gameStatus = GameStatus.ENDED
-    }
   }
 
   ///////////////////////////////////////////////////////////////////////
@@ -349,6 +345,10 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
     return this.rounds[this.currentRoundIndex]
   }
 
+  get currentRoundIsTheLast(): boolean {
+    return this.currentRoundIndex == NUMBER_OF_ROUNDS - 1
+  }
+
   ///////////////////////////////////////////////////////////////////////
   /////// LISTENERS
   ///////////////////////////////////////////////////////////////////////
@@ -381,6 +381,11 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
 
   protected onRespawnClicked() {
     this.satelliteMapCenter = this.coordinatesToGuess.clone()
+  }
+
+  protected onEndGame() {
+    this.description = "Congratulation !"
+    this.gameStatus = GameStatus.ENDED
   }
 
 }

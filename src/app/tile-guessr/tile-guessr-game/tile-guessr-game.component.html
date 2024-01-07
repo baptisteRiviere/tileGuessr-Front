@@ -9,14 +9,14 @@
         </p>
     </div>
 
-    <div class="mapContainer" id="satelliteMapContainer">
+    <div *ngIf="['PLAYING','RESULT'].includes(gameStatus)" class="mapContainer" id="satelliteMapContainer">
         <div leaflet id="satelliteMap" class="map" [leafletOptions]="satelliteMapOptions"
             [(leafletCenter)]="satelliteMapCenter" [leafletMaxBounds]="satelliteMaxBounds">
             <div [leafletLayer]="materializedSatelliteMapTile"></div>
         </div>
     </div>
 
-    <div class="mapContainer" id="guessingMapContainer">
+    <div *ngIf="['PLAYING','RESULT'].includes(gameStatus)" class="mapContainer" id="guessingMapContainer">
         <div leaflet id="guessingMap" class="map" [leafletOptions]="guessingMapOptions"
             (leafletClick)="onGuessingMapClicked($event)" [leafletMaxBounds]="guessingMapMaxBounds"
             [leafletFitBounds]="guessingMapFitBounds">
@@ -32,8 +32,14 @@
             (click)="onRespawnClicked()">Respawn</button>
         <button *ngIf="gameStatus=='PLAYING'" id="guessButton" class="button" role="button"
             (click)="onGuessClicked()">Guess</button>
-        <button *ngIf="gameStatus=='RESULT'" id="launchNextRoundButton" class="button" role="button"
-            (click)="onLaunchNextRoundClicked()">Launch next round</button>
+        <button *ngIf="gameStatus=='RESULT' && (!currentRoundIsTheLast)" id="launchNextRoundButton" class="button"
+            role="button" (click)="onLaunchNextRoundClicked()">
+            Launch next round
+        </button>
+        <button *ngIf="gameStatus=='RESULT' && (currentRoundIsTheLast)" id="launchOverviewRoundButton" class="button"
+            role="button" (click)="onEndGame()">
+            End game
+        </button>
         <button *ngIf="gameStatus=='ENDED'" id="playAgainButton" class="button" role="button"
             (click)="onPlayAgainClicked()">Play again</button>
     </div>
