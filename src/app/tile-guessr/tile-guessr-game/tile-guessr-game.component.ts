@@ -200,13 +200,6 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
     this.roundScore = score
     this.gameScore += score
 
-    // displaying description
-    if (dist == undefined) {
-      this.description = `You forgot to click on the map ! You were in ${currentRound.name}`
-    } else {
-      this.description = `You were ${Math.round(dist / 1000)} km from ${currentRound.name}`
-    }
-
     if (guessedIntoTheTile) {
       // if the player guessed into the tile, display materialized tiles in green
       this.materializedGuessingMapTile.setStyle(FOUNDED_TILE_RECTANGLE_STYLE)
@@ -214,20 +207,33 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
 
       // centering map on tile
       this.guessingMapFitBounds = this.materializedGuessingMapTile.getBounds()
+
+      // displaying tailored description
+      this.description = `Congratulations, you found ${currentRound.name}`
     } else {
       // otherwise display materialized tiles in orange
       this.materializedGuessingMapTile.setStyle(NOT_FOUNDED_TILE_RECTANGLE_STYLE)
       this.materializedSatelliteMapTile.setStyle(NOT_FOUNDED_TILE_RECTANGLE_STYLE)
 
       if (this.guessingMarker != undefined) {
+        if (dist != undefined) {
+          // displaying tailored description
+          this.description = `You were ${Math.round(dist / 1000)} km from ${currentRound.name}`
+        }
+
         // adding a line between the guessing marker and the tile
         this.resultLine = new Polyline(
           [this.coordinatesToGuess, this.guessingMarker.getLatLng()],
           RESULT_LINE_OPTIONS
         )
+
         // centering the map to the line
         this.guessingMapFitBounds = this.resultLine.getBounds()
+
       } else {
+        // displaying tailored description
+        this.description = `You forgot to click on the map ! You were in ${currentRound.name}`
+
         // centering map on tile
         this.guessingMapFitBounds = this.materializedGuessingMapTile.getBounds()
       }
