@@ -72,6 +72,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
     color: 'red',
     radius: 100
   })
+  protected showGuessingMarker: boolean = false
   private defaultGuessingMapBounds = new LatLngBounds(
     new LatLng(90, 200),
     new LatLng(-90, -200)
@@ -200,13 +201,14 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
     this.description = DEFAULT_PLAYING_DESCRIPTION
     this.currentRoundIndex++;
 
+    // reinitializing maps
+    this.showGuessingMarker = false
+    this.guessingMapFitBounds = this.defaultGuessingMapBounds // TODO : no effects
+
     if (this.currentRoundIndex < this.rounds.length) {
       const currentRound: Round = this.currentRound
       const coordinates = new LatLng(currentRound.latitude, currentRound.longitude)
 
-      // refit guessing map bounds to whole map
-      // TODO : no effects
-      this.guessingMapFitBounds = this.defaultGuessingMapBounds
 
       // display materialized tiles in red again
       this.materializedGuessingMapTile.setStyle(DEFAULT_RECTANGLE_STYLE)
@@ -367,7 +369,10 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
   }
 
   protected onGuessingMapClicked(event: { latlng: LatLngExpression; }) {
-    this.guessingMarker.setLatLng(event.latlng)
+    if (this.gameStatus == GameStatus.PLAYING) {
+      this.guessingMarker.setLatLng(event.latlng)
+      this.showGuessingMarker = true
+    }
   }
 
   protected onGuessClicked() {
