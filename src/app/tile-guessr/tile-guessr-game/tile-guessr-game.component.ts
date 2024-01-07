@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Point } from 'geojson';
-import { tileLayer, MapOptions, LatLng, LatLngExpression, Circle, LatLngBounds, Rectangle, FeatureGroup, geoJSON, Layer } from 'leaflet';
+import { tileLayer, MapOptions, LatLng, LatLngExpression, Circle, LatLngBounds, Rectangle, FeatureGroup, geoJSON, Layer, PathOptions, CircleOptions, Polyline, PolylineOptions } from 'leaflet';
 import pickRandom from 'pick-random';
 import { Subject, takeUntil, timer } from 'rxjs';
 
@@ -19,7 +20,7 @@ const MILLISECONDS_IN_A_ROUND = 1000 * 60 * 3
 const MAX_SCORE_FOR_DIST = 800 // max score reachable 
 const COEF_DIST = 0.8 // this means that player will have 0 points for dist if the guess is more than 0.8 * max bounds 
 const MAX_SCORE_FOR_TIME = 200
-const MIN_TIME_MS = 5 // Minimum time to guess for having the max amount of points
+const MIN_TIME_MS = 5000 // Minimum time to guess for having the max amount of points
 const COEF_TIME = 0.8 // this means that player will have 0 points for time if the guess is more than 0.8 * the accorded time
 
 // Game status
@@ -30,6 +31,33 @@ const GameStatus = {
   RESULT: "RESULT",
   ENDED: "ENDED",
   ERROR: "ERROR"
+}
+
+const DEFAULT_RECTANGLE_STYLE: PathOptions = {
+  fill: false,
+  color: 'red'
+}
+const FOUNDED_TILE_RECTANGLE_STYLE: PathOptions = {
+  color: "#55ff33",
+  fill: true,
+  fillColor: "#a3ee95",
+  opacity: 0.75
+}
+const NOT_FOUNDED_TILE_RECTANGLE_STYLE: PathOptions = {
+  color: "#f88958",
+  fill: true,
+  fillColor: "#f88958",
+  opacity: 0.75
+}
+const GUESSING_MARKER_OPTIONS: CircleOptions = {
+  color: 'red',
+  radius: 100
+}
+const RESULT_LINE_OPTIONS: PolylineOptions = {
+  color: 'gray',
+  weight: 3,
+  dashArray: '10, 10',
+  opacity: .9
 }
 
 interface Round {
@@ -55,14 +83,10 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
   protected coordinatesToGuess: LatLng = new LatLng(0, 0)
   protected satelliteMapCenter: LatLng = new LatLng(0, 0)
   protected satelliteMaxBounds: LatLngBounds = new LatLngBounds(this.coordinatesToGuess, this.coordinatesToGuess)
-  protected materializedBounds: Rectangle = new Rectangle(this.satelliteMaxBounds, {
-    fill: false,
-    color: 'red'
-  })
-  protected guessingMarker: Circle = new Circle(new LatLng(0, 0), {
-    color: 'red',
-    radius: 100
-  })
+  protected materializedSatelliteMapTile: Rectangle = new Rectangle(this.satelliteMaxBounds)
+  protected materializedGuessingMapTile: Rectangle = new Rectangle(this.satelliteMaxBounds)
+  protected guessingMarker: Circle | undefined = undefined
+  protected resultLine: Polyline | undefined = undefined
   private defaultGuessingMapBounds = new LatLngBounds(
     new LatLng(90, 200),
     new LatLng(-90, -200)
@@ -95,7 +119,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
   /////// CONSTRUCTOR
   ///////////////////////////////////////////////////////////////////////
 
-  constructor(private cdr: ChangeDetectorRef) { }
+  constructor(private route: ActivatedRoute) { }
 
 
   ///////////////////////////////////////////////////////////////////////
@@ -128,7 +152,8 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
       this.gameScore = 0
 
       // getting geojson file
-      const response = await fetch('assets/frenchCities.geojson')
+      const id = this.route.snapshot.paramMap.get("id")
+      const response = await fetch(`assets/${id}.geojson`)
       const placesLayer: FeatureGroup = geoJSON(await response.json())
       this.defaultGuessingMapBounds = placesLayer.getBounds()
 
@@ -136,7 +161,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
       this.guessingMapFitBounds = this.defaultGuessingMapBounds
 
       // drawing rounds
-      await this.drawRounds(placesLayer.getLayers())
+      this.rounds = await this.drawRounds(placesLayer.getLayers())
 
       // Displaying title and changing game status to start the game
       this.description = DEFAULT_STARTING_DESCRIPTION
@@ -148,47 +173,98 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
     }
   }
 
-  private async drawRounds(places: Layer[]): Promise<void> {
+  private async drawRounds(places: Layer[]): Promise<Round[]> {
+    let choosenRounds: Round[] = []
     if (places.length >= NUMBER_OF_ROUNDS) {
       const choosenPlaces = pickRandom(places, { count: NUMBER_OF_ROUNDS })
       choosenPlaces.forEach((place: any) => {
         // TODO : as any...
         const coordinates = (place.feature.geometry as Point).coordinates
         const name = place.feature.properties == null ? undefined : place.feature.properties["name"]
-        this.rounds.push({
+        choosenRounds.push({
           latitude: coordinates[1],
           longitude: coordinates[0],
           name: name
         })
       })
+      return choosenRounds
     } else {
       throw new Error('Not enough rounds');
     }
   }
 
-  private displayResult(score: number, dist: number, guessedIntoTheTile: boolean) {
+  private displayResult(score: number, dist: number | undefined, guessedIntoTheTile: boolean) {
+
+    // getting current round
     const currentRound: Round = this.rounds[this.currentRoundIndex]
+
+    // managing the score
     this.roundScore = score
     this.gameScore += score
-    this.description = `You were ${Math.round(dist / 1000)} km from ${currentRound.name}`
+
+    if (guessedIntoTheTile) {
+      // if the player guessed into the tile, display materialized tiles in green
+      this.materializedGuessingMapTile.setStyle(FOUNDED_TILE_RECTANGLE_STYLE)
+      this.materializedSatelliteMapTile.setStyle(FOUNDED_TILE_RECTANGLE_STYLE)
+
+      // centering map on tile
+      this.guessingMapFitBounds = this.materializedGuessingMapTile.getBounds()
+
+      // displaying tailored description
+      this.description = `Congratulations, you found ${currentRound.name}`
+    } else {
+      // otherwise display materialized tiles in orange
+      this.materializedGuessingMapTile.setStyle(NOT_FOUNDED_TILE_RECTANGLE_STYLE)
+      this.materializedSatelliteMapTile.setStyle(NOT_FOUNDED_TILE_RECTANGLE_STYLE)
+
+      if (this.guessingMarker != undefined) {
+        if (dist != undefined) {
+          // displaying tailored description
+          this.description = `You were ${Math.round(dist / 1000)} km from ${currentRound.name}`
+        }
+
+        // adding a line between the guessing marker and the tile
+        this.resultLine = new Polyline(
+          [this.coordinatesToGuess, this.guessingMarker.getLatLng()],
+          RESULT_LINE_OPTIONS
+        )
+
+        // centering the map to the line
+        this.guessingMapFitBounds = this.resultLine.getBounds()
+
+      } else {
+        // displaying tailored description
+        this.description = `You forgot to click on the map ! You were in ${currentRound.name}`
+
+        // centering map on tile
+        this.guessingMapFitBounds = this.materializedGuessingMapTile.getBounds()
+      }
+    }
   }
 
   private launchNextRound() {
     this.description = DEFAULT_PLAYING_DESCRIPTION
     this.currentRoundIndex++;
 
+    // reinitializing objects on maps
+    this.guessingMarker = undefined
+    this.resultLine = undefined
+    this.guessingMapFitBounds = this.defaultGuessingMapBounds // TODO : no effects
+
     if (this.currentRoundIndex < this.rounds.length) {
       const currentRound: Round = this.currentRound
       const coordinates = new LatLng(currentRound.latitude, currentRound.longitude)
 
-      // refit guessing map bounds to whole map
-      // TODO : no effects
-      this.guessingMapFitBounds = this.defaultGuessingMapBounds
+
+      // display materialized tiles in red again
+      this.materializedGuessingMapTile.setStyle(DEFAULT_RECTANGLE_STYLE)
+      this.materializedSatelliteMapTile.setStyle(DEFAULT_RECTANGLE_STYLE)
 
       // each boundary is BOUND_SIZE_IN_METTERS/2 meters apart from coordinates
       this.satelliteMaxBounds = coordinates.toBounds(BOUND_SIZE_IN_METTERS)
       this.coordinatesToGuess = coordinates.clone()
-      this.materializedBounds.setBounds(this.satelliteMaxBounds)
+      this.materializedGuessingMapTile.setBounds(this.satelliteMaxBounds)
+      this.materializedSatelliteMapTile.setBounds(this.satelliteMaxBounds)
 
       // TODO : this is a temporary fix
       // the value assigned to satelliteMaxBounds automatically update the map canvas view in a bounds corner
@@ -209,11 +285,17 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
     // stoping timer 
     const remainingTimeInMs = this.stopCounter()
 
-    // computing distance and getting current round
-    const distInMeters = this.guessingMarker.getLatLng().distanceTo(this.coordinatesToGuess)
+    // init dist and boolean for check if inside the tile
+    let distInMeters: number | undefined = undefined
+    let guessedIntoTheTile: boolean = false
 
-    // checking if the player guessed into the tile
-    const guessedIntoTheTile = this.satelliteMaxBounds.contains(this.guessingMarker.getLatLng())
+    if (this.guessingMarker != undefined) {
+      // computing distance and getting current round
+      distInMeters = this.guessingMarker.getLatLng().distanceTo(this.coordinatesToGuess)
+
+      // checking if the player guessed into the tile
+      guessedIntoTheTile = this.satelliteMaxBounds.contains(this.guessingMarker.getLatLng())
+    }
 
     // computing the score
     const score = this.computeRoundScore(remainingTimeInMs, distInMeters, guessedIntoTheTile)
@@ -223,30 +305,31 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
 
     // diplaying result
     this.displayResult(score, distInMeters, guessedIntoTheTile)
-
-    if (this.currentRoundIndex >= this.rounds.length - 1) {
-      this.gameStatus = GameStatus.ENDED
-    }
   }
 
   ///////////////////////////////////////////////////////////////////////
   /////// SCORE COMPUTING METHODS
   ///////////////////////////////////////////////////////////////////////
 
-  private computeRoundScore(remainingTimeInMs: number, distScoreInMeters: number, guessedIntoTheTile: boolean) {
+  private computeRoundScore(remainingTimeInMs: number, distScoreInMeters: number | undefined, guessedIntoTheTile: boolean) {
     let distScore = MAX_SCORE_FOR_DIST // by default, MAX SCORE is assigned to dist score
     if (!guessedIntoTheTile) {
-      // But if the player didn't guessed into the tile the dist score is recomputed
-      distScore = this.secretScoreFunction(
-        distScoreInMeters,
-        MAX_SCORE_FOR_DIST,
-        BOUND_SIZE_IN_METTERS / 2, // the half size of the bounding box
-        this.defaultGuessingMapBounds // max bounds size for the entire map
-          .getSouthEast()
-          .distanceTo(
-            this.defaultGuessingMapBounds.getNorthEast()
-          ) * COEF_DIST
-      )
+      if (distScoreInMeters == undefined) {
+        // the player didn't click on the map
+        distScore = 0
+      } else {
+        // But if the player didn't guessed into the tile the dist score is recomputed
+        distScore = this.secretScoreFunction(
+          distScoreInMeters,
+          MAX_SCORE_FOR_DIST,
+          BOUND_SIZE_IN_METTERS / 2, // the half size of the bounding box
+          this.defaultGuessingMapBounds // max bounds size for the entire map
+            .getSouthEast()
+            .distanceTo(
+              this.defaultGuessingMapBounds.getNorthEast()
+            ) * COEF_DIST
+        )
+      }
     }
 
     // computing score for time 
@@ -319,6 +402,10 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
     return this.rounds[this.currentRoundIndex]
   }
 
+  get currentRoundIsTheLast(): boolean {
+    return this.currentRoundIndex == NUMBER_OF_ROUNDS - 1
+  }
+
   ///////////////////////////////////////////////////////////////////////
   /////// LISTENERS
   ///////////////////////////////////////////////////////////////////////
@@ -339,7 +426,9 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
   }
 
   protected onGuessingMapClicked(event: { latlng: LatLngExpression; }) {
-    this.guessingMarker.setLatLng(event.latlng)
+    if (this.gameStatus == GameStatus.PLAYING) {
+      this.guessingMarker = new Circle(event.latlng, GUESSING_MARKER_OPTIONS)
+    }
   }
 
   protected onGuessClicked() {
@@ -348,6 +437,11 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
 
   protected onRespawnClicked() {
     this.satelliteMapCenter = this.coordinatesToGuess.clone()
+  }
+
+  protected onEndGame() {
+    this.description = "End of the game"
+    this.gameStatus = GameStatus.ENDED
   }
 
 }
