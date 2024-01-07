@@ -279,7 +279,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
     const timeScore = this.secretScoreFunction(
       MILLISECONDS_IN_A_ROUND - remainingTimeInMs,
       MAX_SCORE_FOR_TIME,
-      MIN_TIME_MS,
+      MILLISECONDS_IN_A_ROUND - MIN_TIME_MS,
       MILLISECONDS_IN_A_ROUND * COEF_TIME,
     )
 
