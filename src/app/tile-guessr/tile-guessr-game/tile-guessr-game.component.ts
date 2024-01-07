@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { Point } from 'geojson';
-import { tileLayer, MapOptions, LatLng, LatLngExpression, Circle, LatLngBounds, Rectangle, FeatureGroup, geoJSON, Layer, PathOptions, CircleOptions } from 'leaflet';
+import { tileLayer, MapOptions, LatLng, LatLngExpression, Circle, LatLngBounds, Rectangle, FeatureGroup, geoJSON, Layer, PathOptions, CircleOptions, Polyline, PolylineOptions } from 'leaflet';
 import pickRandom from 'pick-random';
 import { Subject, takeUntil, timer } from 'rxjs';
 
@@ -52,6 +52,12 @@ const GUESSING_MARKER_OPTIONS: CircleOptions = {
   color: 'red',
   radius: 100
 }
+const RESULT_LINE_OPTIONS: PolylineOptions = {
+  color: 'gray',
+  weight: 3,
+  dashArray: '10, 10',
+  opacity: .9
+}
 
 interface Round {
   latitude: number,
@@ -79,6 +85,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
   protected materializedSatelliteMapTile: Rectangle = new Rectangle(this.satelliteMaxBounds)
   protected materializedGuessingMapTile: Rectangle = new Rectangle(this.satelliteMaxBounds)
   protected guessingMarker: Circle | undefined = undefined
+  protected resultLine: Polyline | undefined = undefined
   private defaultGuessingMapBounds = new LatLngBounds(
     new LatLng(90, 200),
     new LatLng(-90, -200)
@@ -200,13 +207,30 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
       this.description = `You were ${Math.round(dist / 1000)} km from ${currentRound.name}`
     }
 
-    // if the player guessed into the tile, display materialized tiles in green
     if (guessedIntoTheTile) {
+      // if the player guessed into the tile, display materialized tiles in green
       this.materializedGuessingMapTile.setStyle(FOUNDED_TILE_RECTANGLE_STYLE)
       this.materializedSatelliteMapTile.setStyle(FOUNDED_TILE_RECTANGLE_STYLE)
+
+      // centering map on tile
+      this.guessingMapFitBounds = this.materializedGuessingMapTile.getBounds()
     } else {
+      // otherwise display materialized tiles in orange
       this.materializedGuessingMapTile.setStyle(NOT_FOUNDED_TILE_RECTANGLE_STYLE)
       this.materializedSatelliteMapTile.setStyle(NOT_FOUNDED_TILE_RECTANGLE_STYLE)
+
+      if (this.guessingMarker != undefined) {
+        // adding a line between the guessing marker and the tile
+        this.resultLine = new Polyline(
+          [this.coordinatesToGuess, this.guessingMarker.getLatLng()],
+          RESULT_LINE_OPTIONS
+        )
+        // centering the map to the line
+        this.guessingMapFitBounds = this.resultLine.getBounds()
+      } else {
+        // centering map on tile
+        this.guessingMapFitBounds = this.materializedGuessingMapTile.getBounds()
+      }
     }
   }
 
@@ -214,8 +238,9 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
     this.description = DEFAULT_PLAYING_DESCRIPTION
     this.currentRoundIndex++;
 
-    // reinitializing maps
+    // reinitializing objects on maps
     this.guessingMarker = undefined
+    this.resultLine = undefined
     this.guessingMapFitBounds = this.defaultGuessingMapBounds // TODO : no effects
 
     if (this.currentRoundIndex < this.rounds.length) {
