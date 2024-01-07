@@ -42,6 +42,12 @@ const FOUNDED_TILE_RECTANGLE_STYLE: PathOptions = {
   fillColor: "#a3ee95",
   opacity: 0.75
 }
+const NOT_FOUNDED_TILE_RECTANGLE_STYLE: PathOptions = {
+  color: "#f88958",
+  fill: true,
+  fillColor: "#f88958",
+  opacity: 0.75
+}
 
 interface Round {
   latitude: number,
@@ -194,6 +200,9 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
     if (guessedIntoTheTile) {
       this.materializedGuessingMapTile.setStyle(FOUNDED_TILE_RECTANGLE_STYLE)
       this.materializedSatelliteMapTile.setStyle(FOUNDED_TILE_RECTANGLE_STYLE)
+    } else {
+      this.materializedGuessingMapTile.setStyle(NOT_FOUNDED_TILE_RECTANGLE_STYLE)
+      this.materializedSatelliteMapTile.setStyle(NOT_FOUNDED_TILE_RECTANGLE_STYLE)
     }
   }
 
