@@ -10,12 +10,14 @@ const DEFAULT_LOADING_DESCRIPTION = "Loading game"
 const DEFAULT_STARTING_DESCRIPTION = "Are you ready ?"
 const DEFAULT_PLAYING_DESCRIPTION = "Where is this location ?"
 
+// TODO-API /getMapParameter?MapId
 // Constants for mapping
 const BOUND_SIZE_IN_METTERS = 10000
 const SATELLITE_MAP_MIN_ZOOM = 12
 const NUMBER_OF_ROUNDS = 5
 const MILLISECONDS_IN_A_ROUND = 1000 * 60 * 3
 
+// TODO-API : migrate to Back
 // Constants for score management
 const MAX_SCORE_FOR_DIST = 800 // max score reachable 
 const COEF_DIST = 0.8 // this means that player will have 0 points for dist if the guess is more than 0.8 * max bounds 
@@ -60,6 +62,7 @@ const RESULT_LINE_OPTIONS: PolylineOptions = {
   opacity: .9
 }
 
+// TODO-API : Hide round
 interface Round {
   latitude: number,
   longitude: number,
@@ -72,13 +75,14 @@ interface Round {
   styleUrls: ['./tile-guessr-game.component.css', '../tile-guessr-game.buttonSyle.css']
 })
 export class TileGuessrGameComponent implements OnInit, OnDestroy {
-  private rounds: Round[] = []
+  // TODO-API : migrate to Back
+  private rounds: Round[] = []  // this
   private destroyTimer$ = new Subject<void>();
-  protected roundScore: number = 0
-  protected gameScore: number = 0
-  protected currentRoundIndex: number = -1
+  protected roundScore: number = 0 // this
+  protected gameScore: number = 0 // this
+  protected currentRoundIndex: number = -1 // this
   protected description: string = DEFAULT_LOADING_DESCRIPTION
-  protected remainingTime: number = MILLISECONDS_IN_A_ROUND
+  protected remainingTime: number = MILLISECONDS_IN_A_ROUND // this fetch
   protected gameStatus: string = GameStatus.LOADING
   protected coordinatesToGuess: LatLng = new LatLng(0, 0)
   protected satelliteMapCenter: LatLng = new LatLng(0, 0)
@@ -147,20 +151,22 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
     try {
 
       // initializing index and scores
-      this.currentRoundIndex = -1
-      this.roundScore = 0
-      this.gameScore = 0
+      this.currentRoundIndex = -1 // TODO-API
+      this.roundScore = 0 // TODO-API /getRoundScore
+      this.gameScore = 0 // TODO-API /getGameScore
 
       // getting geojson file
+      // TODO-API /getRound
       const id = this.route.snapshot.paramMap.get("id")
       const response = await fetch(`assets/${id}.geojson`)
       const placesLayer: FeatureGroup = geoJSON(await response.json())
-      this.defaultGuessingMapBounds = placesLayer.getBounds()
+      this.defaultGuessingMapBounds = placesLayer.getBounds() // TODO-API /getMap => bounds
 
       // fitting guessing map bounds in the playing area
       this.guessingMapFitBounds = this.defaultGuessingMapBounds
 
       // drawing rounds
+      // TODO-API /drawRounds ? - /initGame ?
       this.rounds = await this.drawRounds(placesLayer.getLayers())
 
       // Displaying title and changing game status to start the game
@@ -174,6 +180,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
   }
 
   private async drawRounds(places: Layer[]): Promise<Round[]> {
+    // TODO-API
     let choosenRounds: Round[] = []
     if (places.length >= NUMBER_OF_ROUNDS) {
       const choosenPlaces = pickRandom(places, { count: NUMBER_OF_ROUNDS })
@@ -196,9 +203,10 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
   private displayResult(score: number, dist: number | undefined, guessedIntoTheTile: boolean) {
 
     // getting current round
-    const currentRound: Round = this.rounds[this.currentRoundIndex]
+    const currentRound: Round = this.rounds[this.currentRoundIndex] // TODO-API
 
     // managing the score
+    // TODO-API
     this.roundScore = score
     this.gameScore += score
 
@@ -242,18 +250,19 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
     }
   }
 
+  // TODO-API
   private launchNextRound() {
     this.description = DEFAULT_PLAYING_DESCRIPTION
-    this.currentRoundIndex++;
+    this.currentRoundIndex++; // TODO-API
 
     // reinitializing objects on maps
     this.guessingMarker = undefined
     this.resultLine = undefined
     this.guessingMapFitBounds = this.defaultGuessingMapBounds // TODO : no effects
 
-    if (this.currentRoundIndex < this.rounds.length) {
-      const currentRound: Round = this.currentRound
-      const coordinates = new LatLng(currentRound.latitude, currentRound.longitude)
+    if (this.currentRoundIndex < this.rounds.length) { // TODO-API
+      const currentRound: Round = this.currentRound // TODO-API
+      const coordinates = new LatLng(currentRound.latitude, currentRound.longitude) // TODO-API
 
 
       // display materialized tiles in red again
@@ -262,7 +271,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
 
       // each boundary is BOUND_SIZE_IN_METTERS/2 meters apart from coordinates
       this.satelliteMaxBounds = coordinates.toBounds(BOUND_SIZE_IN_METTERS)
-      this.coordinatesToGuess = coordinates.clone()
+      this.coordinatesToGuess = coordinates.clone() // TODO-API
       this.materializedGuessingMapTile.setBounds(this.satelliteMaxBounds)
       this.materializedSatelliteMapTile.setBounds(this.satelliteMaxBounds)
 
@@ -281,15 +290,16 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
     }
   }
 
+  // TODO-API
   private guess(): void {
     // stoping timer 
-    const remainingTimeInMs = this.stopCounter()
+    const remainingTimeInMs = this.stopCounter() // TODO-API
 
     // init dist and boolean for check if inside the tile
     let distInMeters: number | undefined = undefined
     let guessedIntoTheTile: boolean = false
 
-    if (this.guessingMarker != undefined) {
+    if (this.guessingMarker != undefined) { // TODO-API
       // computing distance and getting current round
       distInMeters = this.guessingMarker.getLatLng().distanceTo(this.coordinatesToGuess)
 
@@ -297,7 +307,8 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
       guessedIntoTheTile = this.satelliteMaxBounds.contains(this.guessingMarker.getLatLng())
     }
 
-    // computing the score
+    // TODO-API
+    // computing the score 
     const score = this.computeRoundScore(remainingTimeInMs, distInMeters, guessedIntoTheTile)
 
     // changing game status
@@ -310,6 +321,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
   ///////////////////////////////////////////////////////////////////////
   /////// SCORE COMPUTING METHODS
   ///////////////////////////////////////////////////////////////////////
+  // =====> TODO-API
 
   private computeRoundScore(remainingTimeInMs: number, distScoreInMeters: number | undefined, guessedIntoTheTile: boolean) {
     let distScore = MAX_SCORE_FOR_DIST // by default, MAX SCORE is assigned to dist score
@@ -398,11 +410,11 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
   ///////////////////////////////////////////////////////////////////////
 
 
-  get currentRound(): Round {
+  get currentRound(): Round { // TODO-API
     return this.rounds[this.currentRoundIndex]
   }
 
-  get currentRoundIsTheLast(): boolean {
+  get currentRoundIsTheLast(): boolean { // TODO-API
     return this.currentRoundIndex == NUMBER_OF_ROUNDS - 1
   }
 

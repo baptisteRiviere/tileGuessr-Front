@@ -9,6 +9,7 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { TileGuessrModule } from './tile-guessr/tile-guessr.module';
 import { ToolbarModule } from 'primeng/toolbar';
 import { ButtonModule } from 'primeng/button';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -24,7 +25,8 @@ import { ButtonModule } from 'primeng/button';
     LeafletModule,
     TileGuessrModule,
     ToolbarModule,
-    ButtonModule
+    ButtonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
