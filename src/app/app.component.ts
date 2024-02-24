@@ -6,15 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'jeuxCarto';
+  title = 'tileGuessr';
   items = [
     {
-        label: 'Update',
-        icon: 'pi pi-refresh'
+      label: 'Update',
+      icon: 'pi pi-refresh'
     },
     {
-        label: 'Delete',
-        icon: 'pi pi-times'
+      label: 'Delete',
+      icon: 'pi pi-times'
     }
-];
+  ];
 }
