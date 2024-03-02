@@ -39,10 +39,14 @@ export class TileGuessrComponent {
   ///////////////////////////////////////////////////////////////////////
 
   private fetchAvailableMaps() {
-    this._http.get<AvailableMapsReponse>('/api/getAvailableMaps')
-      .subscribe((availableMapsResponse) => {
-        this.availableMaps = availableMapsResponse.maps
-      });
+    // this._http.get<AvailableMapsReponse>('/api/getAvailableMaps')
+    //   .subscribe((availableMapsResponse) => {
+    //     this.availableMaps = availableMapsResponse.maps
+    //   });
+
+    fetch('/api')
+      .then(result => result.json())
+      .then(console.log)
   }
 
   ///////////////////////////////////////////////////////////////////////
