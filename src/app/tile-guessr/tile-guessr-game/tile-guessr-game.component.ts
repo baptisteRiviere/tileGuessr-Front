@@ -101,7 +101,8 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
     ],
     zoom: SATELLITE_MAP_MIN_ZOOM + 2,
     minZoom: SATELLITE_MAP_MIN_ZOOM,
-    maxBoundsViscosity: 1
+    maxBoundsViscosity: 1,
+    attributionControl: false,
   }
 
   protected guessingMapOptions: MapOptions = {
@@ -114,6 +115,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
     maxZoom: 19,
     keyboard: false,
     zoomControl: false,
+    attributionControl: false,
   };
 
   ///////////////////////////////////////////////////////////////////////

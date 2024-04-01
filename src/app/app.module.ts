@@ -9,6 +9,7 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { TileGuessrModule } from './tile-guessr/tile-guessr.module';
 import { ToolbarModule } from 'primeng/toolbar';
 import { ButtonModule } from 'primeng/button';
+import { CreditsComponent } from './credits/credits.component';
 
 
 
@@ -16,7 +17,8 @@ import { ButtonModule } from 'primeng/button';
   declarations: [
     AppComponent,
     WelcomeComponent,
-    RouteNotFoundComponent
+    RouteNotFoundComponent,
+    CreditsComponent
   ],
   imports: [
     BrowserModule,
