@@ -11,6 +11,9 @@ export class TileGuessrComponent {
     name: "French cities",
     id: "frenchCities"
   }, {
+    name: "Capitals",
+    id: "capitals"
+  }, {
     name: "random in France",
     id: "randomFrance"
   }, {
