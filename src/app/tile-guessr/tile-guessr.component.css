@@ -17,10 +17,44 @@
 
 #mapsContainer {
     grid-row: 2;
-    height: 100%;
     padding: 3px;
+}
+
+.mapsList {
+    height: 80%;
+    list-style-type: none;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: left;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.availableMap {
+    height: 5vw;
+    width: 100%;
+    margin: 5px;
+    border-radius: 10px;
+    background-image: radial-gradient(100% 100% at 100% 0, #17373f 0, #02051c 100%);
+    display: grid;
+    grid-template-columns: 80% 30%;
+}
+
+.mapName {
+    grid-column: 1;
+    font-size: 2vw;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 10vw;
+}
+
+.mapButton {
+    background-color: red;
+    max-width: 15vw;
+    max-height: 60%;
+    margin: 5px;
+    overflow: hidden;
+    grid-column: 2;
 }

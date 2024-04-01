@@ -9,12 +9,12 @@ export class AppComponent {
   title = 'jeuxCarto';
   items = [
     {
-        label: 'Update',
-        icon: 'pi pi-refresh'
+      label: 'Update',
+      icon: 'pi pi-refresh'
     },
     {
-        label: 'Delete',
-        icon: 'pi pi-times'
+      label: 'Delete',
+      icon: 'pi pi-times'
     }
-];
+  ];
 }
