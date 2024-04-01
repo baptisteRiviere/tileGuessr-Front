@@ -1,12 +1,15 @@
 <div id="main-window">
 
-    <p id="title">Welcome to tile guessr, you can choose where you will play</p>
+    <p id="title">Welcome to TileGuessr, choose your map !</p>
+
 
     <div id="mapsContainer">
-        <li *ngFor="let availableMap of availableMaps" style="width: 20vw; height: 5vw;">
-            <button class="button" style="width:100%;height: 100%;"
-                (click)="gotoDetail(availableMap.id)">{{availableMap.name}}</button>
-        </li>
+        <ul class="mapsList">
+            <li *ngFor="let availableMap of availableMaps" class="availableMap">
+                <p class="mapName">{{availableMap.name}}</p>
+                <button class="button mapButton" (click)="gotoDetail(availableMap.id)">Play</button>
+            </li>
+        </ul>
     </div>
 
 </div>
