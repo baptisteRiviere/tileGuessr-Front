@@ -1,0 +1,3462 @@
+{
+    "type": "FeatureCollection",
+    "name": "capitals",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Afghanistan",
+                "name": "Kabul",
+                "Population": 4011770
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    69.1725,
+                    34.5289
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Albania",
+                "name": "Tiranë (Tirana)",
+                "Population": 475577
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.8189,
+                    41.3275
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Algeria",
+                "name": "El Djazaïr  (Algiers)",
+                "Population": 2693542
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.042,
+                    36.7525
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "American Samoa",
+                "name": "Pago Pago",
+                "Population": 48526
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -170.7025,
+                    -14.2781
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Andorra",
+                "name": "Andorra la Vella",
+                "Population": 22614
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.5211,
+                    42.5078
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Angola",
+                "name": "Luanda",
+                "Population": 7774200
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    13.2343,
+                    -8.8368
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Anguilla",
+                "name": "The Valley",
+                "Population": 1402
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -63.0578,
+                    18.217
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Antigua and Barbuda",
+                "name": "St. John's",
+                "Population": 20764
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -61.8457,
+                    17.1172
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Argentina",
+                "name": "Buenos Aires",
+                "Population": 14966530
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -58.4004,
+                    -34.6051
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Armenia",
+                "name": "Yerevan",
+                "Population": 1080324
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    44.5146,
+                    40.182
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Aruba",
+                "name": "Oranjestad",
+                "Population": 29877
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -70.027,
+                    12.524
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Australia",
+                "name": "Canberra",
+                "Population": 447692
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    149.1281,
+                    -35.2835
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Austria",
+                "name": "Wien (Vienna)",
+                "Population": 1900547
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    16.3707,
+                    48.2064
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Azerbaijan",
+                "name": "Baku",
+                "Population": 2285729
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    49.892,
+                    40.3777
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Bahamas",
+                "name": "Nassau",
+                "Population": 279668
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.3431,
+                    25.0582
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Bahrain",
+                "name": "Al-Manamah (Manama)",
+                "Population": 564631
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    50.5832,
+                    26.2154
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Bangladesh",
+                "name": "Dhaka",
+                "Population": 19578421
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    90.4074,
+                    23.7104
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Barbados",
+                "name": "Bridgetown",
+                "Population": 89201
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -59.6167,
+                    13.1
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Belarus",
+                "name": "Minsk",
+                "Population": 2004672
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    27.5667,
+                    53.9
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Belgium",
+                "name": "Bruxelles-Brussel",
+                "Population": 2049510
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.3499,
+                    50.8467
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Belize",
+                "name": "Belmopan",
+                "Population": 22964
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.7667,
+                    17.25
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Benin",
+                "name": "Cotonou",
+                "Population": 685458
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.4183,
+                    6.3654
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Bermuda",
+                "name": "Hamilton",
+                "Population": 10073
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -64.778,
+                    32.2915
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Bhutan",
+                "name": "Thimphu",
+                "Population": 203297
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    89.6419,
+                    27.4661
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Bolivia (Plurinational State of)",
+                "name": "La Paz",
+                "Population": 1814087
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -68.15,
+                    -16.5
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Bosnia and Herzegovina",
+                "name": "Sarajevo",
+                "Population": 342577
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    18.3564,
+                    43.8486
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Botswana",
+                "name": "Gaborone",
+                "Population": 269338
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    25.9086,
+                    -24.6545
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Brazil",
+                "name": "Brasília",
+                "Population": 4469585
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -47.9297,
+                    -15.7797
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "British Virgin Islands",
+                "name": "Road Town",
+                "Population": 15137
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -64.6167,
+                    18.4167
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Brunei Darussalam",
+                "name": "Bandar Seri Begawan",
+                "Population": 40781
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    114.9481,
+                    4.9403
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Bulgaria",
+                "name": "Sofia",
+                "Population": 1272418
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.3242,
+                    42.6975
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Burkina Faso",
+                "name": "Ouagadougou",
+                "Population": 2531381
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.5383,
+                    12.3642
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Burundi",
+                "name": "Bujumbura",
+                "Population": 898968
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    29.3644,
+                    -3.3822
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Cabo Verde",
+                "name": "Praia",
+                "Population": 167504
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -23.5087,
+                    14.9215
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Cambodia",
+                "name": "Phnum Pénh (Phnom Penh)",
+                "Population": 1952329
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    104.916,
+                    11.5625
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Cameroon",
+                "name": "Yaoundé",
+                "Population": 3655656
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.5167,
+                    3.8667
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Canada",
+                "name": "Ottawa-Gatineau",
+                "Population": 1363159
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.698,
+                    45.4166
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Caribbean Netherlands",
+                "name": "Kralendijk",
+                "Population": 11313
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -68.2667,
+                    12.15
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Cayman Islands",
+                "name": "George Town",
+                "Population": 34875
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.3744,
+                    19.2866
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Central African Republic",
+                "name": "Bangui",
+                "Population": 850946
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    18.555,
+                    4.3612
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Chad",
+                "name": "N'Djaména",
+                "Population": 1322679
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    15.0444,
+                    12.1067
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Channel Islands",
+                "name": "St. Helier",
+                "Population": 34386
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.1049,
+                    49.188
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Channel Islands",
+                "name": "St. Peter Port",
+                "Population": 16271
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.5353,
+                    49.4598
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Chile",
+                "name": "Santiago",
+                "Population": 6680371
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -70.6483,
+                    -33.4569
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "China",
+                "name": "Beijing",
+                "Population": 19617963
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.3972,
+                    39.9075
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Colombia",
+                "name": "Bogotá",
+                "Population": 10574409
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.0818,
+                    4.6097
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Comoros",
+                "name": "Moroni",
+                "Population": 62351
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    43.2551,
+                    -11.7022
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Congo",
+                "name": "Brazzaville",
+                "Population": 2229693
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    15.2832,
+                    -4.2658
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Cook Islands",
+                "name": "Rarotonga",
+                "Population": 13067
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -159.76,
+                    -21.23
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Costa Rica",
+                "name": "San José",
+                "Population": 1357745
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.0807,
+                    9.9278
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Côte d'Ivoire",
+                "name": "Abidjan",
+                "Population": 4920776
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.0268,
+                    5.3453
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Croatia",
+                "name": "Zagreb",
+                "Population": 685587
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    15.978,
+                    45.8144
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Cuba",
+                "name": "La Habana (Havana)",
+                "Population": 2136468
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3785,
+                    23.1195
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Curaçao",
+                "name": "Willemstad",
+                "Population": 144037
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -68.9335,
+                    12.1084
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Cyprus",
+                "name": "Lefkosia (Nicosia)",
+                "Population": 269469
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    33.3669,
+                    35.1595
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Czechia",
+                "name": "Praha (Prague)",
+                "Population": 1291552
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    14.4208,
+                    50.088
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Dem. People's Republic of Korea",
+                "name": "P'yongyang",
+                "Population": 3037862
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    125.7543,
+                    39.0339
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Democratic Republic of the Congo",
+                "name": "Kinshasa",
+                "Population": 13171256
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    15.3136,
+                    -4.3276
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Denmark",
+                "name": "København (Copenhagen)",
+                "Population": 1320826
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.5655,
+                    55.6759
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Djibouti",
+                "name": "Djibouti",
+                "Population": 561564
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    43.1447,
+                    11.5877
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Dominica",
+                "name": "Roseau",
+                "Population": 14942
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -61.3881,
+                    15.3017
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Dominican Republic",
+                "name": "Santo Domingo",
+                "Population": 3172152
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -69.9018,
+                    18.4896
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Ecuador",
+                "name": "Quito",
+                "Population": 1822397
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -78.525,
+                    -0.2299
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Egypt",
+                "name": "Al-Qahirah (Cairo)",
+                "Population": 20076002
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    31.2394,
+                    30.0392
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "El Salvador",
+                "name": "San Salvador",
+                "Population": 1106698
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.1872,
+                    13.6894
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Equatorial Guinea",
+                "name": "Malabo",
+                "Population": 296770
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.7833,
+                    3.75
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Eritrea",
+                "name": "Asmara",
+                "Population": 895863
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    38.9333,
+                    15.3333
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Estonia",
+                "name": "Tallinn",
+                "Population": 437027
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    24.7535,
+                    59.437
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Ethiopia",
+                "name": "Addis Ababa",
+                "Population": 4399674
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    38.7469,
+                    9.025
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Faeroe Islands",
+                "name": "Tórshavn",
+                "Population": 20817
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.7716,
+                    62.0097
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Falkland Islands (Malvinas)",
+                "name": "Stanley",
+                "Population": 2269
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -57.8494,
+                    -51.7012
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Fiji",
+                "name": "Suva",
+                "Population": 178339
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    178.4415,
+                    -18.1416
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Finland",
+                "name": "Helsinki",
+                "Population": 1279096
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    24.9402,
+                    60.1692
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "France",
+                "name": "Paris",
+                "Population": 10900952
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.3488,
+                    48.8534
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "French Guiana",
+                "name": "Cayenne",
+                "Population": 57506
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -52.3333,
+                    4.9333
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "French Polynesia",
+                "name": "Papeete",
+                "Population": 136005
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -149.5667,
+                    -17.5333
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Gabon",
+                "name": "Libreville",
+                "Population": 813489
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.4537,
+                    0.3925
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Gambia",
+                "name": "Banjul",
+                "Population": 437161
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -16.6794,
+                    13.4531
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Georgia",
+                "name": "Tbilisi",
+                "Population": 1077333
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    44.8337,
+                    41.6941
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Germany",
+                "name": "Berlin",
+                "Population": 3552123
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    13.4105,
+                    52.5244
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Ghana",
+                "name": "Accra",
+                "Population": 2439389
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.1969,
+                    5.556
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Gibraltar",
+                "name": "Gibraltar",
+                "Population": 34733
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.3526,
+                    36.1447
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Greece",
+                "name": "Athínai (Athens)",
+                "Population": 3155600
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.749,
+                    37.9534
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Greenland",
+                "name": "Nuuk (Godthåb)",
+                "Population": 18406
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -51.7216,
+                    64.1835
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Grenada",
+                "name": "St.George's",
+                "Population": 39297
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -61.7485,
+                    12.0564
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Guadeloupe",
+                "name": "Basse-Terre",
+                "Population": 58397
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -61.7255,
+                    15.9985
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Guam",
+                "name": "Hagåtña",
+                "Population": 146905
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.7489,
+                    13.4757
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Guatemala",
+                "name": "Ciudad de Guatemala (Guatemala City)",
+                "Population": 2851104
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.5307,
+                    14.6127
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Guinea",
+                "name": "Conakry",
+                "Population": 1843121
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -13.6476,
+                    9.5716
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Guinea-Bissau",
+                "name": "Bissau",
+                "Population": 558399
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -15.5977,
+                    11.8636
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Guyana",
+                "name": "Georgetown",
+                "Population": 109934
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -58.1553,
+                    6.8045
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Haiti",
+                "name": "Port-au-Prince",
+                "Population": 2636763
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -72.335,
+                    18.5392
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Holy See",
+                "name": "Vatican City",
+                "Population": 801
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.4533,
+                    41.9024
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Honduras",
+                "name": "Tegucigalpa",
+                "Population": 1363041
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -87.2068,
+                    14.0818
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Hungary",
+                "name": "Budapest",
+                "Population": 1759497
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.0399,
+                    47.498
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Iceland",
+                "name": "Reykjavík",
+                "Population": 216364
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -21.8954,
+                    64.1355
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "India",
+                "name": "Delhi",
+                "Population": 28513682
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    77.2167,
+                    28.6667
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Indonesia",
+                "name": "Jakarta",
+                "Population": 10516927
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.8416,
+                    -6.2118
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Iran (Islamic Republic of)",
+                "name": "Tehran",
+                "Population": 8895947
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    51.4215,
+                    35.6944
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Iraq",
+                "name": "Baghdad",
+                "Population": 6811955
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    44.4009,
+                    33.3406
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Ireland",
+                "name": "Dublin",
+                "Population": 1201426
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.2489,
+                    53.3331
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Isle of Man",
+                "name": "Douglas",
+                "Population": 27171
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.4833,
+                    54.15
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Israel",
+                "name": "Jerusalem",
+                "Population": 907062
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2163,
+                    31.769
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Italy",
+                "name": "Roma (Rome)",
+                "Population": 4209710
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.4811,
+                    41.8947
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Jamaica",
+                "name": "Kingston",
+                "Population": 589083
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -76.7936,
+                    17.997
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Japan",
+                "name": "Tokyo",
+                "Population": 37468302
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    139.6917,
+                    35.6895
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Jordan",
+                "name": "Amman",
+                "Population": 2064582
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.945,
+                    31.9552
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Kazakhstan",
+                "name": "Astana",
+                "Population": 1068113
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    71.446,
+                    51.1801
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Kenya",
+                "name": "Nairobi",
+                "Population": 4385853
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    36.8167,
+                    -1.2833
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Kiribati",
+                "name": "Tarawa",
+                "Population": 64011
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    172.9813,
+                    1.3272
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Kuwait",
+                "name": "Al Kuwayt (Kuwait City)",
+                "Population": 2989270
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    47.9783,
+                    29.3697
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Kyrgyzstan",
+                "name": "Bishkek",
+                "Population": 996319
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    74.59,
+                    42.87
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Lao People's Democratic Republic",
+                "name": "Vientiane",
+                "Population": 664754
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    102.6,
+                    17.9667
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Latvia",
+                "name": "Riga",
+                "Population": 637089
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    24.1059,
+                    56.946
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Lebanon",
+                "name": "Bayrut (Beirut)",
+                "Population": 2385271
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.4833,
+                    33.9
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Lesotho",
+                "name": "Maseru",
+                "Population": 201851
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    27.4833,
+                    -29.3167
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Liberia",
+                "name": "Monrovia",
+                "Population": 1418300
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -10.7969,
+                    6.3005
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Libya",
+                "name": "Tarabulus (Tripoli)",
+                "Population": 1157746
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    13.1875,
+                    32.8752
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Liechtenstein",
+                "name": "Vaduz",
+                "Population": 5470
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.5215,
+                    47.1415
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Lithuania",
+                "name": "Vilnius",
+                "Population": 536055
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    25.2798,
+                    54.6892
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Luxembourg",
+                "name": "Luxembourg",
+                "Population": 119752
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.13,
+                    49.6117
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Madagascar",
+                "name": "Antananarivo",
+                "Population": 3058387
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    47.5361,
+                    -18.9137
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Malawi",
+                "name": "Lilongwe",
+                "Population": 1029639
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    33.7873,
+                    -13.9669
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Malaysia",
+                "name": "Kuala Lumpur",
+                "Population": 7563912
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.6865,
+                    3.1412
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Maldives",
+                "name": "Male",
+                "Population": 176851
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    73.5089,
+                    4.1748
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Mali",
+                "name": "Bamako",
+                "Population": 2446749
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.0,
+                    12.65
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Malta",
+                "name": "Valletta",
+                "Population": 212768
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    14.5147,
+                    35.8997
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Marshall Islands",
+                "name": "Majuro",
+                "Population": 30661
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    171.3803,
+                    7.0897
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Martinique",
+                "name": "Fort-de-France",
+                "Population": 79361
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -61.0733,
+                    14.6089
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Mauritania",
+                "name": "Nouakchott",
+                "Population": 1205414
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -15.9785,
+                    18.0858
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Mauritius",
+                "name": "Port Louis",
+                "Population": 149365
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    57.4989,
+                    -20.1619
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Mayotte",
+                "name": "Mamoudzou",
+                "Population": 6180
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    45.2272,
+                    -12.7794
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Mexico",
+                "name": "Ciudad de México (Mexico City)",
+                "Population": 21580827
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -99.1419,
+                    19.4273
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Micronesia (Fed. States of)",
+                "name": "Palikir",
+                "Population": 6996
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    158.1588,
+                    6.9174
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Monaco",
+                "name": "Monaco",
+                "Population": 38897
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.4167,
+                    43.7333
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Mongolia",
+                "name": "Ulaanbaatar",
+                "Population": 1520381
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.8832,
+                    47.9077
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Montenegro",
+                "name": "Podgorica",
+                "Population": 177177
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.2636,
+                    42.4411
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Montserrat",
+                "name": "Brades Estate",
+                "Population": 472
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -62.2106,
+                    16.7918
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Morocco",
+                "name": "Rabat",
+                "Population": 1846661
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.8326,
+                    34.0133
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Mozambique",
+                "name": "Maputo",
+                "Population": 1101771
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    32.5892,
+                    -25.9653
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Myanmar",
+                "name": "Nay Pyi Taw",
+                "Population": 500218
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    96.1297,
+                    19.745
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Namibia",
+                "name": "Windhoek",
+                "Population": 404280
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    17.0832,
+                    -22.5594
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Nauru",
+                "name": "Nauru",
+                "Population": 11312
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    166.9112,
+                    -0.5308
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Nepal",
+                "name": "Kathmandu",
+                "Population": 1329732
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    85.3206,
+                    27.7017
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Netherlands",
+                "name": "Amsterdam",
+                "Population": 1131690
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.8897,
+                    52.374
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "New Caledonia",
+                "name": "Nouméa",
+                "Population": 197787
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    166.4572,
+                    -22.2763
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "New Zealand",
+                "name": "Wellington",
+                "Population": 411346
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    174.7756,
+                    -41.2866
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Nicaragua",
+                "name": "Managua",
+                "Population": 1047923
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.2504,
+                    12.1328
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Niger",
+                "name": "Niamey",
+                "Population": 1213781
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.1098,
+                    13.5137
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Nigeria",
+                "name": "Abuja",
+                "Population": 2918518
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.4898,
+                    9.0574
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Niue",
+                "name": "Alofi",
+                "Population": 727
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -169.9213,
+                    -19.0585
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Northern Mariana Islands",
+                "name": "Saipan",
+                "Population": 50568
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.7545,
+                    15.2123
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Norway",
+                "name": "Oslo",
+                "Population": 1012225
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.7461,
+                    59.9127
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Oman",
+                "name": "Masqat (Muscat)",
+                "Population": 1446563
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    58.5922,
+                    23.6139
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Pakistan",
+                "name": "Islamabad",
+                "Population": 1061412
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    73.0594,
+                    33.7035
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Palau",
+                "name": "Koror",
+                "Population": 11410
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    134.4789,
+                    7.3426
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Panama",
+                "name": "Ciudad de Panamá (Panama City)",
+                "Population": 1783490
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.5196,
+                    8.9958
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Papua New Guinea",
+                "name": "Port Moresby",
+                "Population": 366862
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    147.1797,
+                    -9.4431
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Paraguay",
+                "name": "Asunción",
+                "Population": 3222199
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -57.6359,
+                    -25.3007
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Peru",
+                "name": "Lima",
+                "Population": 10390607
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.0282,
+                    -12.0432
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Philippines",
+                "name": "Manila",
+                "Population": 13482468
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    120.9822,
+                    14.6042
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Poland",
+                "name": "Warszawa (Warsaw)",
+                "Population": 1767798
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    21.0118,
+                    52.2298
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Portugal",
+                "name": "Lisboa (Lisbon)",
+                "Population": 2927316
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -9.1399,
+                    38.7169
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Puerto Rico",
+                "name": "San Juan",
+                "Population": 2454337
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -66.1057,
+                    18.4663
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Qatar",
+                "name": "Ad-Dawhah (Doha)",
+                "Population": 633401
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    51.5245,
+                    25.2747
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Republic of Korea",
+                "name": "Seoul",
+                "Population": 9963497
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    126.9778,
+                    37.5683
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Republic of Moldova",
+                "name": "Chişinău",
+                "Population": 509707
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    28.8575,
+                    47.0056
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Réunion",
+                "name": "Saint-Denis",
+                "Population": 147209
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    55.4504,
+                    -20.8823
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Romania",
+                "name": "Bucuresti (Bucharest)",
+                "Population": 1821380
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    26.1043,
+                    44.4328
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Russian Federation",
+                "name": "Moskva (Moscow)",
+                "Population": 12409738
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    37.6218,
+                    55.755
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Rwanda",
+                "name": "Kigali",
+                "Population": 1057836
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    30.0579,
+                    -1.9474
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Saint Helena",
+                "name": "Jamestown",
+                "Population": 603
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.7168,
+                    -15.9387
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Saint Kitts and Nevis",
+                "name": "Basseterre",
+                "Population": 14434
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -62.7261,
+                    17.2948
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Saint Lucia",
+                "name": "Castries",
+                "Population": 22258
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.991,
+                    14.006
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Saint Pierre and Miquelon",
+                "name": "Saint-Pierre",
+                "Population": 5723
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -56.1815,
+                    46.7738
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Saint Vincent and the Grenadines",
+                "name": "Kingstown",
+                "Population": 26636
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -61.2248,
+                    13.1587
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Samoa",
+                "name": "Apia",
+                "Population": 36066
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -171.7667,
+                    -13.8333
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "San Marino",
+                "name": "San Marino",
+                "Population": 4465
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.45,
+                    43.9333
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Sao Tome and Principe",
+                "name": "São Tomé",
+                "Population": 80099
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.7273,
+                    0.3365
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Saudi Arabia",
+                "name": "Ar-Riyadh (Riyadh)",
+                "Population": 6906595
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    46.7096,
+                    24.6905
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Senegal",
+                "name": "Dakar",
+                "Population": 2978419
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -17.4441,
+                    14.6937
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Serbia",
+                "name": "Beograd (Belgrade)",
+                "Population": 1389351
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    20.4633,
+                    44.8176
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Seychelles",
+                "name": "Victoria",
+                "Population": 28091
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    55.45,
+                    -4.6167
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Sierra Leone",
+                "name": "Freetown",
+                "Population": 1135949
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -13.2299,
+                    8.484
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Singapore",
+                "name": "Singapore",
+                "Population": 5791901
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.8501,
+                    1.2897
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Sint Maarten (Dutch part)",
+                "name": "Philipsburg",
+                "Population": 40552
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -63.0458,
+                    18.026
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Slovakia",
+                "name": "Bratislava",
+                "Population": 429920
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    17.1067,
+                    48.1482
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Slovenia",
+                "name": "Ljubljana",
+                "Population": 286491
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    14.5051,
+                    46.0511
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Solomon Islands",
+                "name": "Honiara",
+                "Population": 81801
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    159.95,
+                    -9.4333
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Somalia",
+                "name": "Muqdisho (Mogadishu)",
+                "Population": 2081624
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    45.3435,
+                    2.0416
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "South Africa",
+                "name": "Cape Town",
+                "Population": 4430367
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    18.4232,
+                    -33.9258
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "South Sudan",
+                "name": "Juba",
+                "Population": 368914
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    31.5825,
+                    4.8517
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Spain",
+                "name": "Madrid",
+                "Population": 6497124
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.7026,
+                    40.4165
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Sri Lanka",
+                "name": "Colombo",
+                "Population": 599821
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    79.8478,
+                    6.9319
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "State of Palestine",
+                "name": "Al-Quds[East Jerusalem]",
+                "Population": 275086
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2339,
+                    31.7834
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Sudan",
+                "name": "Al-Khartum (Khartoum)",
+                "Population": 5534079
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    32.5324,
+                    15.5518
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Suriname",
+                "name": "Paramaribo",
+                "Population": 239457
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -55.1668,
+                    5.8664
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Swaziland",
+                "name": "Mbabane",
+                "Population": 68010
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    31.1333,
+                    -26.3167
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Sweden",
+                "name": "Stockholm",
+                "Population": 1582968
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    18.0649,
+                    59.3326
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Switzerland",
+                "name": "Bern",
+                "Population": 422153
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.4474,
+                    46.9481
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Syrian Arab Republic",
+                "name": "Dimashq (Damascus)",
+                "Population": 2319545
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    36.3084,
+                    33.5086
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Tajikistan",
+                "name": "Dushanbe",
+                "Population": 872653
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    68.7791,
+                    38.5358
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "TFYR Macedonia",
+                "name": "Skopje",
+                "Population": 584208
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    21.4333,
+                    42.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Thailand",
+                "name": "Krung Thep (Bangkok)",
+                "Population": 10156316
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    100.5252,
+                    13.722
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Timor-Leste",
+                "name": "Dili",
+                "Population": 281135
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    125.5668,
+                    -8.5601
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Togo",
+                "name": "Lomé",
+                "Population": 1745744
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.2123,
+                    6.1375
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Tokelau",
+                "name": "Tokelau",
+                "Population": 0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -171.25,
+                    -9.38
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Tonga",
+                "name": "Nuku'alofa",
+                "Population": 22904
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -175.2032,
+                    -21.1394
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Trinidad and Tobago",
+                "name": "Port of Spain",
+                "Population": 544417
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -61.5166,
+                    10.6662
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Tunisia",
+                "name": "Tunis",
+                "Population": 2290777
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.1658,
+                    36.819
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Turkey",
+                "name": "Ankara",
+                "Population": 4919074
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    32.8543,
+                    39.9199
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Turkmenistan",
+                "name": "Ashgabat",
+                "Population": 810186
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    58.3833,
+                    37.95
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Turks and Caicos Islands",
+                "name": "Cockburn Town",
+                "Population": 5447
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -71.1419,
+                    21.4612
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Tuvalu",
+                "name": "Funafuti",
+                "Population": 7042
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    179.1991,
+                    -8.5189
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Uganda",
+                "name": "Kampala",
+                "Population": 2986352
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    32.5822,
+                    0.3163
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Ukraine",
+                "name": "Kyiv (Kiev)",
+                "Population": 2956706
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    30.5186,
+                    50.4454
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "United Arab Emirates",
+                "name": "Abu Zaby (Abu Dhabi)",
+                "Population": 1419699
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    54.3618,
+                    24.4648
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "United Kingdom",
+                "name": "London",
+                "Population": 9046485
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.1257,
+                    51.5085
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "United Republic of Tanzania",
+                "name": "Dodoma",
+                "Population": 261645
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.7395,
+                    -6.1722
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "United States Virgin Islands",
+                "name": "Charlotte Amalie",
+                "Population": 52322
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -64.9307,
+                    18.3419
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Uruguay",
+                "name": "Montevideo",
+                "Population": 1736989
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -56.1674,
+                    -34.8335
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Uzbekistan",
+                "name": "Tashkent",
+                "Population": 2463969
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    69.2163,
+                    41.2647
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Vanuatu",
+                "name": "Port Vila",
+                "Population": 52690
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    168.3219,
+                    -17.7338
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Venezuela (Bolivarian Republic of)",
+                "name": "Caracas",
+                "Population": 2934560
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -66.8792,
+                    10.488
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Viet Nam",
+                "name": "Hà Noi",
+                "Population": 4282738
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.8412,
+                    21.0245
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Wallis and Futuna Islands",
+                "name": "Matu-Utu",
+                "Population": 1025
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -176.1745,
+                    -13.2816
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Western Sahara",
+                "name": "El Aaiún",
+                "Population": 232388
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -13.2014,
+                    27.1532
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Yemen",
+                "name": "Sana'a'",
+                "Population": 2779317
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    44.2078,
+                    15.3531
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Zambia",
+                "name": "Lusaka",
+                "Population": 2523844
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    28.2771,
+                    -15.4134
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Country": "Zimbabwe",
+                "name": "Harare",
+                "Population": 1515016
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    31.0539,
+                    -17.8294
+                ]
+            }
+        }
+    ]
+}
