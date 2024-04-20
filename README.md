@@ -15,3 +15,10 @@ The second generation of the game is due to its new architecture into angular fr
 ## License
 
 This project is licensed under the MIT License - see the LICENSE.md file for details.
+
+## Deploy
+
+```sh
+# build and merge dev -> main
+npm run build
+```
