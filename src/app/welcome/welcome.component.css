@@ -1,5 +1,11 @@
-.simpleButton {
-    width: 10vw;
-    height: 10vw;
-    font-size: 2vw;
+#welcome-div {
+    max-height: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome-image {
+    height: 500px
 }

@@ -68,3 +68,9 @@
 canvas {
     display: block
 }
+
+#buttonsContainer .button {
+    background-color: #f90;
+    height: 70%;
+    width: 20%;
+}

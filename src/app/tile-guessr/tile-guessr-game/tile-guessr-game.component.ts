@@ -12,7 +12,7 @@ const DEFAULT_PLAYING_DESCRIPTION = "Where is this location ?"
 
 // Constants for mapping
 const BOUND_SIZE_IN_METTERS = 10000
-const SATELLITE_MAP_MIN_ZOOM = 12
+const SATELLITE_MAP_MIN_ZOOM = 13
 const NUMBER_OF_ROUNDS = 5
 const MILLISECONDS_IN_A_ROUND = 1000 * 60 * 3
 
@@ -100,7 +100,9 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
       tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', { maxZoom: 18, attribution: '...', subdomains: ['mt0', 'mt1', 'mt2', 'mt3'] })
     ],
     zoom: SATELLITE_MAP_MIN_ZOOM + 2,
-    minZoom: SATELLITE_MAP_MIN_ZOOM
+    minZoom: SATELLITE_MAP_MIN_ZOOM,
+    maxBoundsViscosity: 1,
+    attributionControl: false,
   }
 
   protected guessingMapOptions: MapOptions = {
@@ -113,6 +115,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
     maxZoom: 19,
     keyboard: false,
     zoomControl: false,
+    attributionControl: false,
   };
 
   ///////////////////////////////////////////////////////////////////////
