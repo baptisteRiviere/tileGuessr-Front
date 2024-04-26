@@ -1,3 +1,4 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Point } from 'geojson';
@@ -11,10 +12,11 @@ const DEFAULT_STARTING_DESCRIPTION = "Are you ready ?"
 const DEFAULT_PLAYING_DESCRIPTION = "Where is this location ?"
 
 // Constants for mapping
-const BOUND_SIZE_IN_METTERS = 10000
-const SATELLITE_MAP_MIN_ZOOM = 13
-const NUMBER_OF_ROUNDS = 5
-const MILLISECONDS_IN_A_ROUND = 1000 * 60 * 3
+const DEFAULT_BOUND_SIZE_IN_METERS = 10000
+const DEFAULT_SATELLITE_MAP_MIN_ZOOM = 13
+const DEFAULT_INIT_ZOOM = 16
+const DEFAULT_NUMBER_OF_ROUNDS = 5
+const DEFAULT_MILLISECONDS_IN_A_ROUND = 1000 * 60 * 3
 
 // Constants for score management
 const MAX_SCORE_FOR_DIST = 800 // max score reachable 
@@ -63,7 +65,10 @@ const RESULT_LINE_OPTIONS: PolylineOptions = {
 interface Round {
   latitude: number,
   longitude: number,
-  name: string | undefined
+  name: string | undefined,
+  initZoom: number,
+  mapMinZoom: number,
+  boundSizeInMeters: number,
 }
 
 @Component({
@@ -78,11 +83,13 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
   protected gameScore: number = 0
   protected currentRoundIndex: number = -1
   protected description: string = DEFAULT_LOADING_DESCRIPTION
-  protected remainingTime: number = MILLISECONDS_IN_A_ROUND
+  protected remainingTime: number = DEFAULT_MILLISECONDS_IN_A_ROUND
   protected gameStatus: string = GameStatus.LOADING
   protected coordinatesToGuess: LatLng = new LatLng(0, 0)
   protected satelliteMapCenter: LatLng = new LatLng(0, 0)
   protected satelliteMaxBounds: LatLngBounds = new LatLngBounds(this.coordinatesToGuess, this.coordinatesToGuess)
+  protected satelliteMapZoom: number = DEFAULT_INIT_ZOOM
+  protected satelliteMapMinZoom: number = DEFAULT_SATELLITE_MAP_MIN_ZOOM
   protected materializedSatelliteMapTile: Rectangle = new Rectangle(this.satelliteMaxBounds)
   protected materializedGuessingMapTile: Rectangle = new Rectangle(this.satelliteMaxBounds)
   protected guessingMarker: Circle | undefined = undefined
@@ -99,8 +106,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
     layers: [
       tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', { maxZoom: 18, attribution: '...', subdomains: ['mt0', 'mt1', 'mt2', 'mt3'] })
     ],
-    zoom: SATELLITE_MAP_MIN_ZOOM + 2,
-    minZoom: SATELLITE_MAP_MIN_ZOOM,
+    minZoom: DEFAULT_SATELLITE_MAP_MIN_ZOOM,
     maxBoundsViscosity: 1,
     attributionControl: false,
   }
@@ -122,7 +128,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
   /////// CONSTRUCTOR
   ///////////////////////////////////////////////////////////////////////
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private changeDetectorRef: ChangeDetectorRef) { }
 
 
   ///////////////////////////////////////////////////////////////////////
@@ -178,16 +184,28 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
 
   private async drawRounds(places: Layer[]): Promise<Round[]> {
     let choosenRounds: Round[] = []
-    if (places.length >= NUMBER_OF_ROUNDS) {
-      const choosenPlaces = pickRandom(places, { count: NUMBER_OF_ROUNDS })
+    if (places.length >= DEFAULT_NUMBER_OF_ROUNDS) {
+      const choosenPlaces = pickRandom(places, { count: DEFAULT_NUMBER_OF_ROUNDS })
       choosenPlaces.forEach((place: any) => {
         // TODO : as any...
         const coordinates = (place.feature.geometry as Point).coordinates
         const name = place.feature.properties == null ? undefined : place.feature.properties["name"]
+        const mapMinZoom = place.feature?.properties["mapMinZoom"] == null ?
+          DEFAULT_SATELLITE_MAP_MIN_ZOOM :
+          place.feature.properties["mapMinZoom"]
+        const boundSizeInMeters = place.feature?.properties["boundSizeInMeters"] == null ?
+          DEFAULT_BOUND_SIZE_IN_METERS :
+          place.feature.properties["boundSizeInMeters"]
+        const initZoom = place.feature?.properties["initZoom"] == null ?
+          DEFAULT_INIT_ZOOM :
+          place.feature.properties["initZoom"]
         choosenRounds.push({
           latitude: coordinates[1],
           longitude: coordinates[0],
-          name: name
+          name: name,
+          mapMinZoom: mapMinZoom,
+          initZoom: initZoom,
+          boundSizeInMeters: boundSizeInMeters
         })
       })
       return choosenRounds
@@ -252,29 +270,33 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
     // reinitializing objects on maps
     this.guessingMarker = undefined
     this.resultLine = undefined
-    this.guessingMapFitBounds = this.defaultGuessingMapBounds // TODO : no effects
+    this.guessingMapFitBounds = this.defaultGuessingMapBounds
 
     if (this.currentRoundIndex < this.rounds.length) {
       const currentRound: Round = this.currentRound
       const coordinates = new LatLng(currentRound.latitude, currentRound.longitude)
 
-
       // display materialized tiles in red again
       this.materializedGuessingMapTile.setStyle(DEFAULT_RECTANGLE_STYLE)
       this.materializedSatelliteMapTile.setStyle(DEFAULT_RECTANGLE_STYLE)
 
-      // each boundary is BOUND_SIZE_IN_METTERS/2 meters apart from coordinates
-      this.satelliteMaxBounds = coordinates.toBounds(BOUND_SIZE_IN_METTERS)
+      // each boundary is DEFAULT_BOUND_SIZE_IN_METERS/2 meters apart from coordinates
+      this.satelliteMaxBounds = coordinates.toBounds(currentRound.boundSizeInMeters)
       this.coordinatesToGuess = coordinates.clone()
       this.materializedGuessingMapTile.setBounds(this.satelliteMaxBounds)
       this.materializedSatelliteMapTile.setBounds(this.satelliteMaxBounds)
 
+      // updating zoom constraints
+      this.satelliteMapMinZoom = currentRound.mapMinZoom
+
       // TODO : this is a temporary fix
+      // https://angular.io/errors/NG0100
       // the value assigned to satelliteMaxBounds automatically update the map canvas view in a bounds corner
       // but satelliteMapCenter has to be updated before, that's not what happened without this timeout
       setTimeout(() => {
         this.satelliteMapCenter = coordinates.clone()
-      }, 100);
+        this.satelliteMapZoom = currentRound.initZoom
+      }, 0);
 
       // changing game status
       this.gameStatus = GameStatus.PLAYING
@@ -325,7 +347,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
         distScore = this.secretScoreFunction(
           distScoreInMeters,
           MAX_SCORE_FOR_DIST,
-          BOUND_SIZE_IN_METTERS / 2, // the half size of the bounding box
+          this.currentRound.boundSizeInMeters / 2, // the half size of the bounding box
           this.defaultGuessingMapBounds // max bounds size for the entire map
             .getSouthEast()
             .distanceTo(
@@ -337,10 +359,10 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
 
     // computing score for time 
     const timeScore = this.secretScoreFunction(
-      MILLISECONDS_IN_A_ROUND - remainingTimeInMs,
+      DEFAULT_MILLISECONDS_IN_A_ROUND - remainingTimeInMs,
       MAX_SCORE_FOR_TIME,
       MIN_TIME_MS,
-      MILLISECONDS_IN_A_ROUND * COEF_TIME,
+      DEFAULT_MILLISECONDS_IN_A_ROUND * COEF_TIME,
     )
 
     // rounding
@@ -379,7 +401,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
   ///////////////////////////////////////////////////////////////////////
 
   private launchCounter(): void {
-    this.remainingTime = MILLISECONDS_IN_A_ROUND
+    this.remainingTime = DEFAULT_MILLISECONDS_IN_A_ROUND
     timer(0, 1000).pipe(takeUntil(this.destroyTimer$)).subscribe(() => {
       if (this.remainingTime <= 0) {
         this.stopCounter()
@@ -406,7 +428,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
   }
 
   get currentRoundIsTheLast(): boolean {
-    return this.currentRoundIndex == NUMBER_OF_ROUNDS - 1
+    return this.currentRoundIndex == DEFAULT_NUMBER_OF_ROUNDS - 1
   }
 
   ///////////////////////////////////////////////////////////////////////

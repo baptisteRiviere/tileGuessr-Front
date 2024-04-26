@@ -11,7 +11,8 @@
 
     <div *ngIf="['PLAYING','RESULT'].includes(gameStatus)" class="mapContainer" id="satelliteMapContainer">
         <div leaflet id="satelliteMap" class="map" [leafletOptions]="satelliteMapOptions"
-            [(leafletCenter)]="satelliteMapCenter" [leafletMaxBounds]="satelliteMaxBounds">
+            [(leafletCenter)]="satelliteMapCenter" [leafletMaxBounds]="satelliteMaxBounds"
+            [(leafletZoom)]="satelliteMapZoom" [leafletMinZoom]="satelliteMapMinZoom">
             <div [leafletLayer]="materializedSatelliteMapTile"></div>
         </div>
     </div>
