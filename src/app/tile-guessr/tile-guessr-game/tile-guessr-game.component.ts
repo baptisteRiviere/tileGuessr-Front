@@ -2,7 +2,7 @@ import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Point } from 'geojson';
-import { tileLayer, MapOptions, LatLng, LatLngExpression, Circle, LatLngBounds, Rectangle, FeatureGroup, geoJSON, Layer, PathOptions, CircleOptions, Polyline, PolylineOptions } from 'leaflet';
+import { tileLayer, MapOptions, LatLng, LatLngExpression, Circle, LatLngBounds, Rectangle, FeatureGroup, geoJSON, Layer, PathOptions, CircleOptions, Polyline, PolylineOptions, CircleMarker } from 'leaflet';
 import pickRandom from 'pick-random';
 import { Subject, takeUntil, timer } from 'rxjs';
 
@@ -54,8 +54,8 @@ const NOT_FOUNDED_TILE_RECTANGLE_STYLE: PathOptions = {
   opacity: 0.75
 }
 const GUESSING_MARKER_OPTIONS: CircleOptions = {
-  color: 'red',
-  radius: 100
+  color: 'blue',
+  radius: 8
 }
 const RESULT_LINE_OPTIONS: PolylineOptions = {
   color: 'gray',
@@ -94,7 +94,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
   protected satelliteMapMinZoom: number = DEFAULT_SATELLITE_MAP_MIN_ZOOM
   protected materializedSatelliteMapTile: Rectangle = new Rectangle(this.satelliteMaxBounds)
   protected materializedGuessingMapTile: Rectangle = new Rectangle(this.satelliteMaxBounds)
-  protected guessingMarker: Circle | undefined = undefined
+  protected guessingMarker: CircleMarker | undefined = undefined
   protected resultLine: Polyline | undefined = undefined
   private defaultGuessingMapBounds = new LatLngBounds(
     new LatLng(90, 200),
@@ -461,7 +461,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
 
   protected onGuessingMapClicked(event: { latlng: LatLngExpression; }) {
     if (this.gameStatus == GameStatus.PLAYING) {
-      this.guessingMarker = new Circle(event.latlng, GUESSING_MARKER_OPTIONS)
+      this.guessingMarker = new CircleMarker(event.latlng, GUESSING_MARKER_OPTIONS)
     }
   }
 
