@@ -17,6 +17,8 @@ const DEFAULT_SATELLITE_MAP_MIN_ZOOM = 13
 const DEFAULT_INIT_ZOOM = 16
 const DEFAULT_NUMBER_OF_ROUNDS = 5
 const DEFAULT_MILLISECONDS_IN_A_ROUND = 1000 * 60 * 3
+const DEFAULT_SATELLITE_MAX_ZOOM = 21
+const DEFAULT_GUESSING_MAP_MIN_ZOOM = 20
 
 // Constants for score management
 const MAX_SCORE_FOR_DIST = 800 // max score reachable 
@@ -104,7 +106,11 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
 
   protected satelliteMapOptions: MapOptions = {
     layers: [
-      tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', { maxZoom: 18, attribution: '...', subdomains: ['mt0', 'mt1', 'mt2', 'mt3'] })
+      tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+        maxZoom: DEFAULT_SATELLITE_MAX_ZOOM,
+        attribution: '...',
+        subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+      })
     ],
     minZoom: DEFAULT_SATELLITE_MAP_MIN_ZOOM,
     maxBoundsViscosity: 1,
@@ -113,7 +119,10 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
 
   protected guessingMapOptions: MapOptions = {
     layers: [
-      tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '...' })
+      tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: DEFAULT_GUESSING_MAP_MIN_ZOOM,
+        attribution: '...'
+      })
     ],
     zoom: 2,
     center: new LatLng(0, 0),
