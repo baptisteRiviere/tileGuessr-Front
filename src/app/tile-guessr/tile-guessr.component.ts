@@ -14,11 +14,17 @@ export class TileGuessrComponent {
     name: "Capitals",
     id: "capitals"
   }, {
-    name: "random in France",
+    name: "Random in France",
     id: "randomFrance"
   }, {
-    name: "For testing",
-    id: "testCities"
+    name: "Paris",
+    id: "paris"
+  }, {
+    name: "Lyon",
+    id: "lyon"
+  }, {
+    name: "Nantes",
+    id: "nantes"
   }]
 
   constructor(
