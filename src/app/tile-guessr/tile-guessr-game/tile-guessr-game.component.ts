@@ -1,10 +1,11 @@
 import { ThisReceiver } from '@angular/compiler';
-import { Component, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, OnDestroy, HostBinding, ViewChild, ElementRef, ViewChildren, QueryList } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Point } from 'geojson';
 import { tileLayer, MapOptions, LatLng, LatLngExpression, Circle, LatLngBounds, Rectangle, FeatureGroup, geoJSON, Layer, PathOptions, CircleOptions, Polyline, PolylineOptions, CircleMarker } from 'leaflet';
 import pickRandom from 'pick-random';
 import { Subject, takeUntil, timer } from 'rxjs';
+import { TileGuessrUtils } from '../tile-guessr-utils';
 
 // Constants for messages
 const DEFAULT_LOADING_DESCRIPTION = "Loading game"
@@ -79,6 +80,9 @@ interface Round {
   styleUrls: ['./tile-guessr-game.component.css', '../tile-guessr-game.buttonSyle.css']
 })
 export class TileGuessrGameComponent implements OnInit, OnDestroy {
+  // define view children to go ahead ngif
+  @ViewChildren('satelliteMap') satelliteMapComponents: QueryList<ElementRef>;
+
   private rounds: Round[] = []
   private destroyTimer$ = new Subject<void>();
   protected roundScore: number = 0
@@ -295,8 +299,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
       this.materializedGuessingMapTile.setBounds(this.satelliteMaxBounds)
       this.materializedSatelliteMapTile.setBounds(this.satelliteMaxBounds)
 
-      // updating zoom constraints
-      this.satelliteMapMinZoom = currentRound.mapMinZoom
+      this.satelliteMapMinZoom = this.getSatelliteMinZoom()
 
       // TODO : this is a temporary fix
       // https://angular.io/errors/NG0100
@@ -313,6 +316,26 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
       // launching counter
       this.launchCounter()
     }
+  }
+
+  private getSatelliteMinZoom(): number {
+    // updating zoom constraints
+    let maxZoom: number = DEFAULT_SATELLITE_MAP_MIN_ZOOM
+    if (this.satelliteMapComponents.length > 0) {
+      const elemntDimensions = this.satelliteMapComponents
+        .map((item: ElementRef) => {
+          return {
+            height: item.nativeElement.offsetHeight,
+            width: item.nativeElement.offsetWidth
+          }
+        })[0]
+
+      maxZoom = TileGuessrUtils.computeMinZoom(
+        this.satelliteMaxBounds,
+        elemntDimensions
+      )
+    }
+    return maxZoom
   }
 
   private guess(): void {
