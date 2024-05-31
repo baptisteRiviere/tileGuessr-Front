@@ -1,10 +1,11 @@
-import { ThisReceiver } from '@angular/compiler';
-import { Component, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { Point } from 'geojson';
-import { tileLayer, MapOptions, LatLng, LatLngExpression, Circle, LatLngBounds, Rectangle, FeatureGroup, geoJSON, Layer, PathOptions, CircleOptions, Polyline, PolylineOptions, CircleMarker } from 'leaflet';
+import { tileLayer, MapOptions, LatLng, LatLngExpression, LatLngBounds, Rectangle, FeatureGroup, geoJSON, Layer, PathOptions, CircleOptions, Polyline, PolylineOptions, CircleMarker } from 'leaflet';
 import pickRandom from 'pick-random';
 import { Subject, takeUntil, timer } from 'rxjs';
+import { GameService } from '../services/game.service';
+import { IGameMap, IRound } from '../interfaces/game';
+import { ActivatedRoute } from '@angular/router';
 
 // Constants for messages
 const DEFAULT_LOADING_DESCRIPTION = "Loading game"
@@ -64,22 +65,14 @@ const RESULT_LINE_OPTIONS: PolylineOptions = {
   opacity: .9
 }
 
-interface Round {
-  latitude: number,
-  longitude: number,
-  name: string | undefined,
-  initZoom: number,
-  mapMinZoom: number,
-  boundSizeInMeters: number,
-}
-
 @Component({
   selector: 'app-tg-map',
   templateUrl: './tile-guessr-game.component.html',
   styleUrls: ['./tile-guessr-game.component.css', '../tile-guessr-game.buttonSyle.css']
 })
 export class TileGuessrGameComponent implements OnInit, OnDestroy {
-  private rounds: Round[] = []
+  private gameMapId: string | undefined = undefined
+  private rounds: IRound[] = []
   private destroyTimer$ = new Subject<void>();
   protected roundScore: number = 0
   protected gameScore: number = 0
@@ -137,15 +130,26 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
   /////// CONSTRUCTOR
   ///////////////////////////////////////////////////////////////////////
 
-  constructor(private route: ActivatedRoute, private changeDetectorRef: ChangeDetectorRef) { }
+  constructor(
+    private route: ActivatedRoute,
+    private changeDetectorRef: ChangeDetectorRef,
+    private gameService: GameService
+  ) { }
 
 
   ///////////////////////////////////////////////////////////////////////
   /////// LIFECYCLE HOOKS
   ///////////////////////////////////////////////////////////////////////
 
-  public ngOnInit() {
-    this.initGame()
+  public async ngOnInit() {
+    this.gameMapId = this.route.snapshot.paramMap.get("id") ?? undefined
+    if (this.gameMapId != undefined) {
+      const gameMap: IGameMap | undefined = 
+        await this.gameService.fetchGameMapFromId(this.gameMapId)
+      if (gameMap != undefined) {
+        this.initGame(gameMap)
+      }
+    }
   }
 
   ngOnDestroy(): void {
@@ -156,77 +160,42 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
   /////// GAME LOGIC METHODS
   ///////////////////////////////////////////////////////////////////////
 
-  private async initGame() {
-
+  private async initGame(gameMap: IGameMap) {
+    
     // Displaying title and changing game status to prevent loading
     this.gameStatus = GameStatus.LOADING
     this.description = DEFAULT_LOADING_DESCRIPTION
 
-    try {
+    // initializing index and scores
+    this.currentRoundIndex = -1
+    this.roundScore = 0
+    this.gameScore = 0
 
-      // initializing index and scores
-      this.currentRoundIndex = -1
-      this.roundScore = 0
-      this.gameScore = 0
+    // getting geojson file
+    this.defaultGuessingMapBounds = gameMap.features.getBounds()
 
-      // getting geojson file
-      const id = this.route.snapshot.paramMap.get("id")
-      const response = await fetch(`assets/${id}.geojson`)
-      const placesLayer: FeatureGroup = geoJSON(await response.json())
-      this.defaultGuessingMapBounds = placesLayer.getBounds()
+    // fitting guessing map bounds in the playing area
+    this.guessingMapFitBounds = this.defaultGuessingMapBounds
 
-      // fitting guessing map bounds in the playing area
-      this.guessingMapFitBounds = this.defaultGuessingMapBounds
-
-      // drawing rounds
-      this.rounds = await this.drawRounds(placesLayer.getLayers())
-
-      // Displaying title and changing game status to start the game
-      this.description = DEFAULT_STARTING_DESCRIPTION
-      this.gameStatus = GameStatus.WAITING_FOR_START
-
-    } catch (e) {
-      this.gameStatus = GameStatus.ERROR
-      console.error(e)
-    }
-  }
-
-  private async drawRounds(places: Layer[]): Promise<Round[]> {
-    let choosenRounds: Round[] = []
-    if (places.length >= DEFAULT_NUMBER_OF_ROUNDS) {
-      const choosenPlaces = pickRandom(places, { count: DEFAULT_NUMBER_OF_ROUNDS })
-      choosenPlaces.forEach((place: any) => {
-        // TODO : as any...
-        const coordinates = (place.feature.geometry as Point).coordinates
-        const name = place.feature.properties == null ? undefined : place.feature.properties["name"]
-        const mapMinZoom = place.feature?.properties["mapMinZoom"] == null ?
-          DEFAULT_SATELLITE_MAP_MIN_ZOOM :
-          place.feature.properties["mapMinZoom"]
-        const boundSizeInMeters = place.feature?.properties["boundSizeInMeters"] == null ?
-          DEFAULT_BOUND_SIZE_IN_METERS :
-          place.feature.properties["boundSizeInMeters"]
-        const initZoom = place.feature?.properties["initZoom"] == null ?
-          DEFAULT_INIT_ZOOM :
-          place.feature.properties["initZoom"]
-        choosenRounds.push({
-          latitude: coordinates[1],
-          longitude: coordinates[0],
-          name: name,
-          mapMinZoom: mapMinZoom,
-          initZoom: initZoom,
-          boundSizeInMeters: boundSizeInMeters
-        })
+    // drawing rounds
+    this.rounds = await this.gameService.drawRoundsFromGameMap(
+      gameMap,
+      DEFAULT_NUMBER_OF_ROUNDS,
+      {
+        satelliteMapMinZoom: DEFAULT_SATELLITE_MAP_MIN_ZOOM,
+        boundSizeInMeters: DEFAULT_BOUND_SIZE_IN_METERS,
+        initZoom: DEFAULT_INIT_ZOOM
       })
-      return choosenRounds
-    } else {
-      throw new Error('Not enough rounds');
-    }
+
+    // Displaying title and changing game status to start the game
+    this.description = DEFAULT_STARTING_DESCRIPTION
+    this.gameStatus = GameStatus.WAITING_FOR_START
   }
 
   private displayResult(score: number, dist: number | undefined, guessedIntoTheTile: boolean) {
 
     // getting current round
-    const currentRound: Round = this.rounds[this.currentRoundIndex]
+    const currentRound: IRound = this.rounds[this.currentRoundIndex]
 
     // managing the score
     this.roundScore = score
@@ -282,7 +251,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
     this.guessingMapFitBounds = this.defaultGuessingMapBounds
 
     if (this.currentRoundIndex < this.rounds.length) {
-      const currentRound: Round = this.currentRound
+      const currentRound: IRound = this.currentRound
       const coordinates = new LatLng(currentRound.latitude, currentRound.longitude)
 
       // display materialized tiles in red again
@@ -432,7 +401,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
   ///////////////////////////////////////////////////////////////////////
 
 
-  get currentRound(): Round {
+  get currentRound(): IRound {
     return this.rounds[this.currentRoundIndex]
   }
 
@@ -443,11 +412,6 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
   ///////////////////////////////////////////////////////////////////////
   /////// LISTENERS
   ///////////////////////////////////////////////////////////////////////
-
-  protected onPlayAgainClicked() {
-    // initializing game
-    this.initGame()
-  }
 
   protected onStartClicked() {
     // Starting the game
