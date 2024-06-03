@@ -39,7 +39,6 @@ export class TileGuessrComponent {
   ) { }
 
   gotoDetail(mapId: string): void {
-    this.gameService.fetchGameMapFromId(mapId)
     this.router.navigate(['./details', mapId], { relativeTo: this.route });
   }
 }

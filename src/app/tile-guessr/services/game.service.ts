@@ -1,37 +1,41 @@
 import { Injectable } from '@angular/core';
-import { IGameMap, IRound, IRoundOption } from '../interfaces/game'
+import { IGameMap, IGameMapProperties } from '../interfaces/game'
 import { geoJSON } from 'leaflet';
 import pickRandom from 'pick-random';
 import { Point } from 'geojson';
+import { IRound, IRoundOption } from '../interfaces/round';
+import { HttpClient } from '@angular/common/http';
+import { map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GameService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   /*
-  * Fetch game map
+  * Fetch game map and return it as an observable
   */
-  public async fetchGameMapFromId(id: string) {
-    let gameMap: IGameMap | undefined = undefined
-    try {
-      const response = await fetch(`assets/${id}.geojson`)
-      const jsonResponse = await response.json()
+  public fetchGameMapFromId$(id: string): Observable<IGameMap> {
+    return this.http.get(`assets/${id}.geojson`).pipe(
+      map((res: any) => {
+        return {
+          id: id,
+          properties: res.properties,
+          features: geoJSON(res)
+        }
+      })
+      // TODO : handle error
+    )
+  }
 
-      gameMap = {
-        id: id,
-        properties: jsonResponse.properties,
-        features: geoJSON(jsonResponse)
-      }
-
-    } catch (e) {
-      console.log(e)
-      return undefined
-    }
-
-    return gameMap
+  /*
+  * Fetch game map and return its properties as an observable
+  */
+  public fetchGameMapPropertiesFromId$(id: string): Observable<IGameMapProperties> {
+    return this.fetchGameMapFromId$(id)
+      .pipe(map((gameMap: IGameMap) => gameMap.properties))
   }
 
   /*
@@ -41,7 +45,7 @@ export class GameService {
   * opt : Default options for a round
   */
   public drawRoundsFromGameMap(
-    gameMap: IGameMap, 
+    gameMap: IGameMap,
     numberOfRound: number,
     opt: IRoundOption
   ) {

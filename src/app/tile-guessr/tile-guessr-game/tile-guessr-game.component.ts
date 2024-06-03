@@ -1,10 +1,9 @@
 import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
-import { Point } from 'geojson';
-import { tileLayer, MapOptions, LatLng, LatLngExpression, LatLngBounds, Rectangle, FeatureGroup, geoJSON, Layer, PathOptions, CircleOptions, Polyline, PolylineOptions, CircleMarker } from 'leaflet';
-import pickRandom from 'pick-random';
-import { Subject, takeUntil, timer } from 'rxjs';
+import { tileLayer, MapOptions, LatLng, LatLngExpression, LatLngBounds, Rectangle, PathOptions, CircleOptions, Polyline, PolylineOptions, CircleMarker } from 'leaflet';
+import { Observable, Subject, takeUntil, timer } from 'rxjs';
 import { GameService } from '../services/game.service';
-import { IGameMap, IRound } from '../interfaces/game';
+import { IGameMap, GameStatus } from '../interfaces/game';
+import { IRound } from '../interfaces/round';
 import { ActivatedRoute } from '@angular/router';
 
 // Constants for messages
@@ -29,14 +28,14 @@ const MIN_TIME_MS = 5000 // Minimum time to guess for having the max amount of p
 const COEF_TIME = 0.8 // this means that player will have 0 points for time if the guess is more than 0.8 * the accorded time
 
 // Game status
-const GameStatus = {
-  LOADING: "LOADING",
-  WAITING_FOR_START: "WAITING_FOR_START",
-  PLAYING: "PLAYING",
-  RESULT: "RESULT",
-  ENDED: "ENDED",
-  ERROR: "ERROR"
-}
+// const GameStatus = {
+//   LOADING: "LOADING",
+//   WAITING_FOR_START: "WAITING_FOR_START",
+//   PLAYING: "PLAYING",
+//   RESULT: "RESULT",
+//   ENDED: "ENDED",
+//   ERROR: "ERROR"
+// }
 
 const DEFAULT_RECTANGLE_STYLE: PathOptions = {
   fill: false,
@@ -79,7 +78,9 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
   protected currentRoundIndex: number = -1
   protected description: string = DEFAULT_LOADING_DESCRIPTION
   protected remainingTime: number = DEFAULT_MILLISECONDS_IN_A_ROUND
-  protected gameStatus: string = GameStatus.LOADING
+  protected gameMap$: Observable<IGameMap> = new Observable<IGameMap>()
+  protected gameStatus: GameStatus = GameStatus.LOADING
+  protected gameStatusEnum = GameStatus
   protected coordinatesToGuess: LatLng = new LatLng(0, 0)
   protected satelliteMapCenter: LatLng = new LatLng(0, 0)
   protected satelliteMaxBounds: LatLngBounds = new LatLngBounds(this.coordinatesToGuess, this.coordinatesToGuess)
@@ -141,15 +142,15 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
   /////// LIFECYCLE HOOKS
   ///////////////////////////////////////////////////////////////////////
 
-  public async ngOnInit() {
+  public ngOnInit() {
     this.gameMapId = this.route.snapshot.paramMap.get("id") ?? undefined
     if (this.gameMapId != undefined) {
-      const gameMap: IGameMap | undefined = 
-        await this.gameService.fetchGameMapFromId(this.gameMapId)
-      if (gameMap != undefined) {
+      this.gameMap$ = this.gameService.fetchGameMapFromId$(this.gameMapId)
+      this.gameMap$.subscribe((gameMap) => {
         this.initGame(gameMap)
-      }
+      })
     }
+    // TODO : handle else
   }
 
   ngOnDestroy(): void {
@@ -161,7 +162,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
   ///////////////////////////////////////////////////////////////////////
 
   private async initGame(gameMap: IGameMap) {
-    
+
     // Displaying title and changing game status to prevent loading
     this.gameStatus = GameStatus.LOADING
     this.description = DEFAULT_LOADING_DESCRIPTION
