@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { GameService } from './services/game.service';
+import { GameInitService } from './services/game-init.service';
 
 
 @Component({
@@ -35,7 +35,6 @@ export class TileGuessrComponent {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private gameService: GameService
   ) { }
 
   gotoDetail(mapId: string): void {

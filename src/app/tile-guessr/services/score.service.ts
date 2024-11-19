@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { IRound } from "../interfaces/round";
+import { CircleMarker, LatLng, LatLngBounds } from "leaflet";
 
 // Constants for score management
 const MAX_SCORE_FOR_DIST = 800 // max score reachable 

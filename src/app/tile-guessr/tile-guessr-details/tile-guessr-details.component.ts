@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IGameMapProperties } from '../interfaces/game'
-import { GameService } from '../services/game.service';
+import { GameInitService } from '../services/game-init.service';
 import { map, Observable } from 'rxjs';
 
 
@@ -17,14 +17,14 @@ export class TileGuessrDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private gameService: GameService
+    private gameInitService: GameInitService
   ) { }
 
   public async ngOnInit() {
     this.gameMapId = this.route.snapshot.paramMap.get("id") ?? undefined
     if (this.gameMapId != undefined) {
       this.gameMapProperties$ =
-        this.gameService.fetchGameMapPropertiesFromId$(this.gameMapId)
+        this.gameInitService.fetchGameMapPropertiesFromId$(this.gameMapId)
     }
   }
 

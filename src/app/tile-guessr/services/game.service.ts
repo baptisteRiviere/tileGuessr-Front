@@ -1,88 +1,79 @@
-import { Injectable } from '@angular/core';
-import { IGameMap, IGameMapProperties } from '../interfaces/game'
-import { geoJSON } from 'leaflet';
-import pickRandom from 'pick-random';
-import { Point } from 'geojson';
-import { IRound, IRoundOption } from '../interfaces/round';
-import { HttpClient } from '@angular/common/http';
-import { map, Observable } from 'rxjs';
+import { Injectable } from "@angular/core";
+import { IRound, IRoundOption } from "../interfaces/round";
+import { GameInitService } from "./game-init.service";
+import { IGameMap } from "../interfaces/game";
+import { LatLng, LatLngBounds } from "leaflet";
+import { defaultMappingOptions } from '../parameters/mapping-options.default'
+import { BehaviorSubject, Observable } from "rxjs";
+import { IGuessResult, RoundService } from "./round.service";
+
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class GameService {
+    constructor(
+        private gameInitService: GameInitService,
+        private roundService: RoundService
+    ) { }
 
-  constructor(private http: HttpClient) { }
+    private rounds: IRound[] = []
 
-  /*
-  * Fetch game map and return it as an observable
-  */
-  public fetchGameMapFromId$(id: string): Observable<IGameMap> {
-    return this.http.get(`assets/${id}.geojson`).pipe(
-      map((res: any) => {
-        return {
-          id: id,
-          properties: res.properties,
-          features: geoJSON(res)
-        }
-      })
-      // TODO : handle error
+    // Current Round Index
+    private roundIndex: BehaviorSubject<number> = new BehaviorSubject(0);
+    public currentRoundIndex = this.roundIndex.asObservable();
+
+    // Game Score TODO
+    private gameScore: BehaviorSubject<number> = new BehaviorSubject(0)
+    public currentGameScore = this.gameScore.asObservable();
+
+    // Timer TODO
+
+    private guessingMapBounds: LatLngBounds = new LatLngBounds(
+        new LatLng(90, 200),
+        new LatLng(-90, -200)
     )
-  }
 
-  /*
-  * Fetch game map and return its properties as an observable
-  */
-  public fetchGameMapPropertiesFromId$(id: string): Observable<IGameMapProperties> {
-    return this.fetchGameMapFromId$(id)
-      .pipe(map((gameMap: IGameMap) => gameMap.properties))
-  }
-
-  /*
-  * Draw rounds in features
-  * 
-  * gameMap : game map
-  * opt : Default options for a round
-  */
-  public drawRoundsFromGameMap(
-    gameMap: IGameMap,
-    numberOfRound: number,
-    opt: IRoundOption
-  ) {
-    // init result
-    let choosenRounds: IRound[] = []
-
-    // checking number of features
-    let places = gameMap.features.getLayers()
-    if (places.length >= numberOfRound) {
-      // randomly picking places in features 
-      const choosenPlaces = pickRandom(places, { count: numberOfRound })
-      choosenPlaces.forEach((place: any) => {
-        // TODO : as any...
-        const coordinates = (place.feature.geometry as Point).coordinates
-        const name = place.feature.properties == null ? undefined : place.feature.properties["name"]
-        const mapMinZoom = place.feature?.properties["mapMinZoom"] == null ?
-          opt.satelliteMapMinZoom :
-          place.feature.properties["mapMinZoom"]
-        const boundSizeInMeters = place.feature?.properties["boundSizeInMeters"] == null ?
-          opt.boundSizeInMeters :
-          place.feature.properties["boundSizeInMeters"]
-        const initZoom = place.feature?.properties["initZoom"] == null ?
-          opt.initZoom :
-          place.feature.properties["initZoom"]
-        choosenRounds.push({
-          latitude: coordinates[1],
-          longitude: coordinates[0],
-          name: name,
-          mapMinZoom: mapMinZoom,
-          initZoom: initZoom,
-          boundSizeInMeters: boundSizeInMeters
-        })
-      })
-      return choosenRounds
-    } else {
-      throw new Error('Not enough rounds');
+    public getCurrentRound(): IRound {
+        return this.rounds[this.roundIndex.value]
     }
 
-  }
+    public incrementRoundIndex() { // TODO
+        this.roundIndex.next(this.roundIndex.value + 1)
+    }
+
+    public getGuessingMapBounds(): LatLngBounds {
+        return this.guessingMapBounds
+    }
+
+    public async initGame(gameMap: IGameMap): Promise<void> {
+        // initializing index and scores
+        this.roundIndex.next(-1)
+        // this.roundScore = 0
+        // this.gameScore = 0
+
+        // getting game map bounds
+        this.guessingMapBounds = gameMap.features.getBounds()
+
+        this.rounds = await this.gameInitService.drawRoundsFromGameMap(
+            gameMap,
+            defaultMappingOptions.numberOfRounds,
+            defaultMappingOptions
+        )
+    }
+
+    public async guess(
+        guessedCoordinates: LatLng,
+        satelliteMaxBounds: LatLngBounds,
+        remainingTimeInMs: number,
+    ): Promise<IGuessResult> {
+        return this.roundService.guess(
+            this.getCurrentRound(),
+            guessedCoordinates,
+            satelliteMaxBounds,
+            this.guessingMapBounds,
+            remainingTimeInMs,
+            defaultMappingOptions.millisecondsInARound
+        )
+    }
 }
