@@ -1,6 +1,8 @@
 {
     "type": "FeatureCollection",
     "properties": {
+        "name": "testing",
+        "desc": "TileGuessr is in development, this is a map for testing",
         "initZoom": 18,
         "mapMinZoom": 17,
         "boundSizeInMeters": 1000
@@ -25,7 +27,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Nantes"
+                "name": "Nantes",
+                "mapMinZoom": 16
             },
             "geometry": {
                 "coordinates": [
@@ -39,7 +42,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Strasbourg"
+                "name": "Strasbourg",
+                "mapMinZoom": 16
             },
             "geometry": {
                 "coordinates": [
@@ -53,7 +57,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Lyon"
+                "name": "Lyon",
+                "mapMinZoom": 16
             },
             "geometry": {
                 "coordinates": [
@@ -67,7 +72,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Marseille"
+                "name": "Marseille",
+                "mapMinZoom": 16
             },
             "geometry": {
                 "coordinates": [
