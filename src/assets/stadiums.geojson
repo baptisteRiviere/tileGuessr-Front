@@ -1,0 +1,632 @@
+{
+    "type": "FeatureCollection",
+    "name": "stadiums2",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "Team": "Ajaccio",
+                "Stadium": "Stade François Coty",
+                "initZoom": 20,
+                "mapMinZoom": 17,
+                "boundSizeInMeters": 600,
+                "id": 0,
+                "city": "Ajaccio",
+                "name": "Stade François Coty - Ajaccio"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.776725,
+                    41.931081
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Team": "Bastia",
+                "Stadium": "Stade Armand Cesari",
+                "initZoom": 20,
+                "mapMinZoom": 17,
+                "boundSizeInMeters": 600,
+                "id": 1,
+                "city": "Bastia",
+                "name": "Stade Armand Cesari - Bastia"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.442619,
+                    42.6514
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Team": "Bordeaux",
+                "Stadium": "Stade Chaban-Delmas",
+                "initZoom": 20,
+                "mapMinZoom": 17,
+                "boundSizeInMeters": 600,
+                "id": 2,
+                "city": "Bordeaux",
+                "name": "Stade Chaban-Delmas - Bordeaux"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.597778,
+                    44.829167
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Team": "Évian",
+                "Stadium": "Parc des Sports",
+                "initZoom": 20,
+                "mapMinZoom": 17,
+                "boundSizeInMeters": 600,
+                "id": 3,
+                "city": "Annecy",
+                "name": "Parc des Sports - Évian"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.118054,
+                    45.916497
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Team": "Guingamp",
+                "Stadium": "Stade du Roudourou",
+                "initZoom": 20,
+                "mapMinZoom": 17,
+                "boundSizeInMeters": 600,
+                "id": 4,
+                "city": "Guingamp",
+                "name": "Stade du Roudourou - Guingamp"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.164599,
+                    48.566285
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Team": "Lille",
+                "Stadium": "Stade Pierre-Mauroy",
+                "initZoom": 20,
+                "mapMinZoom": 17,
+                "boundSizeInMeters": 600,
+                "id": 5,
+                "city": "Villeneuve-d'Ascq",
+                "name": "Stade Pierre-Mauroy - Lille"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.130428,
+                    50.611883
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Team": "Lorient",
+                "Stadium": "Stade du Moustoir",
+                "initZoom": 20,
+                "mapMinZoom": 17,
+                "boundSizeInMeters": 600,
+                "id": 6,
+                "city": "Lorient",
+                "name": "Stade du Moustoir - Lorient"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.369367,
+                    47.748747
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Team": "Lyon",
+                "Stadium": "Stade de Gerland",
+                "initZoom": 20,
+                "mapMinZoom": 17,
+                "boundSizeInMeters": 600,
+                "id": 7,
+                "city": "Lyon",
+                "name": "Stade de Gerland - Lyon"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.832222,
+                    45.723889
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Team": "Marseille",
+                "Stadium": "Stade Velodrome",
+                "initZoom": 20,
+                "mapMinZoom": 17,
+                "boundSizeInMeters": 600,
+                "id": 8,
+                "city": "Marseille",
+                "name": "Stade Velodrome - Marseille"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.395833,
+                    43.269722
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Team": "AS Monaco",
+                "Stadium": "Stade Louis II",
+                "initZoom": 20,
+                "mapMinZoom": 17,
+                "boundSizeInMeters": 600,
+                "id": 9,
+                "city": "Monaco",
+                "name": "Stade Louis II - AS Monaco"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.415614,
+                    43.727606
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Team": "Montpellier",
+                "Stadium": "Stade de la Mosson",
+                "initZoom": 20,
+                "mapMinZoom": 17,
+                "boundSizeInMeters": 600,
+                "id": 10,
+                "city": "Montpellier",
+                "name": "Stade de la Mosson - Montpellier"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.811944,
+                    43.622222
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Team": "Nantes",
+                "Stadium": "Stade de la Beaujoire",
+                "initZoom": 20,
+                "mapMinZoom": 17,
+                "boundSizeInMeters": 600,
+                "id": 11,
+                "city": "Nantes",
+                "name": "Stade de la Beaujoire - Nantes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.525375,
+                    47.255631
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Team": "Nice",
+                "Stadium": "Allianz Riviera",
+                "initZoom": 20,
+                "mapMinZoom": 17,
+                "boundSizeInMeters": 600,
+                "id": 12,
+                "city": "Nice",
+                "name": "Allianz Riviera - Nice"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.258756,
+                    43.723328
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Team": "Paris Saint-Germain",
+                "Stadium": "Parc des Princes",
+                "initZoom": 20,
+                "mapMinZoom": 17,
+                "boundSizeInMeters": 600,
+                "id": 13,
+                "city": "Paris",
+                "name": "Parc des Princes - Paris Saint-Germain"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.253056,
+                    48.841389
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Team": "Reims",
+                "Stadium": "Stade Auguste-Delaune II",
+                "initZoom": 20,
+                "mapMinZoom": 17,
+                "boundSizeInMeters": 600,
+                "id": 14,
+                "city": "Reims",
+                "name": "Stade Auguste-Delaune II - Reims"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.025,
+                    49.246667
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Team": "Rennes",
+                "Stadium": "Stade de la Route de Lorient",
+                "initZoom": 20,
+                "mapMinZoom": 17,
+                "boundSizeInMeters": 600,
+                "id": 15,
+                "city": "Rennes",
+                "name": "Stade de la Route de Lorient - Rennes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.712839,
+                    48.107458
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Team": "Saint-Étienne",
+                "Stadium": "Stade Geoffroy-Guichard",
+                "initZoom": 20,
+                "mapMinZoom": 17,
+                "boundSizeInMeters": 600,
+                "id": 16,
+                "city": "Saint-Étienne",
+                "name": "Stade Geoffroy-Guichard - Saint-Étienne"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.390278,
+                    45.460833
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Team": "Sochaux",
+                "Stadium": "Stade Auguste Bonal",
+                "initZoom": 20,
+                "mapMinZoom": 17,
+                "boundSizeInMeters": 600,
+                "id": 17,
+                "city": "Montbéliard",
+                "name": "Stade Auguste Bonal - Sochaux"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.8112,
+                    47.512417
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Team": "Toulouse",
+                "Stadium": "Stadium Municipal",
+                "initZoom": 20,
+                "mapMinZoom": 17,
+                "boundSizeInMeters": 600,
+                "id": 18,
+                "city": "Toulouse",
+                "name": "Stadium Municipal - Toulouse"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.434167,
+                    43.583056
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Team": "Valenciennes",
+                "Stadium": "Stade du Hainaut",
+                "initZoom": 20,
+                "mapMinZoom": 17,
+                "boundSizeInMeters": 600,
+                "id": 19,
+                "city": "Valenciennes",
+                "name": "Stade du Hainaut - Valenciennes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.533027,
+                    50.348131
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Team": "Nancy",
+                "Stadium": "Stade Marcel Picot",
+                "initZoom": 20,
+                "mapMinZoom": 17,
+                "boundSizeInMeters": 600,
+                "id": 20,
+                "city": "Tomblaine",
+                "name": "Stade Marcel Picot - Nancy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.210687,
+                    48.6955
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Team": "Dijon",
+                "Stadium": "Stade Gaston Gérard",
+                "initZoom": 20,
+                "mapMinZoom": 17,
+                "boundSizeInMeters": 600,
+                "id": 21,
+                "city": "Dijon",
+                "name": "Stade Gaston Gérard - Dijon"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.068342,
+                    47.324383
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Team": "Troyes",
+                "Stadium": "Stade de l'Aube",
+                "initZoom": 20,
+                "mapMinZoom": 17,
+                "boundSizeInMeters": 600,
+                "id": 22,
+                "city": "Troyes",
+                "name": "Stade de l'Aube - Troyes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.098458,
+                    48.307561
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Team": "Auxerre",
+                "Stadium": "Stade de l'Abbé-Deschamps",
+                "initZoom": 20,
+                "mapMinZoom": 17,
+                "boundSizeInMeters": 600,
+                "id": 23,
+                "city": "Auxerre",
+                "name": "Stade de l'Abbé-Deschamps - Auxerre"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.588664,
+                    47.786753
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Team": "Brest",
+                "Stadium": "Stade Francis-Le Blé",
+                "initZoom": 20,
+                "mapMinZoom": 17,
+                "boundSizeInMeters": 600,
+                "id": 24,
+                "city": "Brest",
+                "name": "Stade Francis-Le Blé - Brest"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.461694,
+                    48.402932
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Team": "Caen",
+                "Stadium": "Stade Michel d'Ornano",
+                "initZoom": 20,
+                "mapMinZoom": 17,
+                "boundSizeInMeters": 600,
+                "id": 25,
+                "city": "Caen",
+                "name": "Stade Michel d'Ornano - Caen"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.396767,
+                    49.179461
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Team": "RC Lens",
+                "Stadium": "Bollaert-Delelis",
+                "initZoom": 20,
+                "mapMinZoom": 17,
+                "boundSizeInMeters": 600,
+                "id": 26,
+                "city": "Lens",
+                "name": "Bollaert-Delelis - RC Lens"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.8145789913568,
+                    50.43293161780722
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Team": "RC Strasbourg",
+                "Stadium": "Stade de la Meinau",
+                "initZoom": 20,
+                "mapMinZoom": 17,
+                "boundSizeInMeters": 600,
+                "id": 27,
+                "city": "Strasbourg",
+                "name": "Stade de la Meinau - RC Strasbourg"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.755112619408685,
+                    48.560114758923461
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Team": "Le Havre Athletic Club",
+                "Stadium": "Stade Océane",
+                "initZoom": 20,
+                "mapMinZoom": 17,
+                "boundSizeInMeters": 600,
+                "id": 28,
+                "city": "Le Havre",
+                "name": "Stade Océane - Le Havre Athletic Club"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.169358661511198,
+                    49.498758000404649
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Team": "Metz",
+                "Stadium": "Saint-Symphorien",
+                "initZoom": 20,
+                "mapMinZoom": 17,
+                "boundSizeInMeters": 600,
+                "id": 29,
+                "city": "Metz",
+                "name": "Saint-Symphorien - Metz"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.159237584417082,
+                    49.109814505941145
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Team": "Clermont Foot 63",
+                "Stadium": "Gabriel-Montpied",
+                "initZoom": 20,
+                "mapMinZoom": 17,
+                "boundSizeInMeters": 600,
+                "id": 30,
+                "city": "Clermont-Ferrand",
+                "name": "Gabriel-Montpied - Clermont Foot 63"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.121482856904413,
+                    45.815853173279663
+                ]
+            }
+        }
+    ]
+}

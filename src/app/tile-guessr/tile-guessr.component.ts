@@ -18,6 +18,10 @@ export class TileGuessrComponent {
   }, {
     name: "Capitals",
     id: "capitals"
+  },
+  {
+    name: "French Landmarks",
+    id: "frenchLandmarks"
   }, {
     name: "Random in France",
     id: "randomFrance"
@@ -30,6 +34,9 @@ export class TileGuessrComponent {
   }, {
     name: "Nantes",
     id: "nantes"
+  }, {
+    name: "Stadiums",
+    id: "stadiums"
   }]
 
   constructor(
