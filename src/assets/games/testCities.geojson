@@ -1,11 +1,13 @@
 {
     "type": "FeatureCollection",
     "properties": {
-        "name": "testing",
-        "desc": "TileGuessr is in development, this is a map for testing",
-        "initZoom": 18,
-        "mapMinZoom": 17,
-        "boundSizeInMeters": 1000
+        "name": "TEST",
+        "desc": "TEST",
+        "defaultRoundOptions": {
+            "initZoom": 16,
+            "mapMinZoom": 14,
+            "boundSizeInMeters": 1000
+        }
     },
     "features": [
         {

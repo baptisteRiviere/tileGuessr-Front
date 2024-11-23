@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IGameMap, IGameMapProperties } from '../interfaces/game'
-import { geoJSON } from 'leaflet';
+import { geoJSON, Layer } from 'leaflet';
 import pickRandom from 'pick-random';
 import { Point } from 'geojson';
 import { IRound, IRoundOption } from '../interfaces/round';
@@ -18,7 +18,7 @@ export class GameInitService {
   * Fetch game map and return it as an observable
   */
   public fetchGameMapFromId$(id: string): Observable<IGameMap> {
-    return this.http.get(`assets/${id}.geojson`).pipe(
+    return this.http.get(`assets/games/${id}.geojson`).pipe(
       map((res: any) => {
         return {
           id: id,
@@ -45,16 +45,14 @@ export class GameInitService {
   * opt : Default options for a round
   */
   public drawRoundsFromGameMap(
-    gameMap: IGameMap,
+    places: Layer[],
     numberOfRound: number,
-    opt: IRoundOption
+    defaultRoundOption: IRoundOption
   ) {
-    // checking number of features
-    let places = gameMap.features.getLayers()
     if (places.length >= numberOfRound) {
       // randomly picking places in features and building rounds from them
       const choosenPlaces = pickRandom(places, { count: numberOfRound })
-      return choosenPlaces.map((place) => this.buildRound(place, opt))
+      return choosenPlaces.map((place) => this.buildRound(place, defaultRoundOption))
     } else {
       throw new Error('Not enough rounds');
     }
@@ -64,7 +62,7 @@ export class GameInitService {
   * Build rounds from place description and options
   *
   */
-  private buildRound(place: any, opt: any): IRound {
+  private buildRound(place: any, defaultRoundOption: IRoundOption): IRound {
     const coordinates = (place.feature.geometry as Point).coordinates
     const placeProperties = place.feature.properties
     if (placeProperties == undefined) {
@@ -74,9 +72,8 @@ export class GameInitService {
       latitude: coordinates[1],
       longitude: coordinates[0],
       name: placeProperties["name"] ?? undefined,
-      mapMinZoom: placeProperties["mapMinZoom"] ?? opt.satelliteMapMinZoom,
-      initZoom: placeProperties["initZoom"] ?? opt.initZoom,
-      boundSizeInMeters: placeProperties["boundSizeInMeters"] ?? opt.boundSizeInMeters,
+      ...placeProperties.roundOptions,
+      ...defaultRoundOption
     }
   }
 }

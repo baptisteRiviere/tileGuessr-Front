@@ -1,4 +1,5 @@
 import { FeatureGroup, LatLngBounds } from "leaflet";
+import { IRoundOption } from "./round";
 
 export interface IGameMap {
   id: string,
@@ -9,9 +10,7 @@ export interface IGameMap {
 export interface IGameMapProperties {
   name: string,
   desc: string,
-  initZoom: number,
-  mapMinZoom: number,
-  boundSizeInMeters: number,
+  defaultRoundOptions?: IRoundOption,
 }
 
 export enum GameStatus {

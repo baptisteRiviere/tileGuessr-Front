@@ -18,8 +18,7 @@ export class TileGuessrComponent {
   }, {
     name: "Capitals",
     id: "capitals"
-  },
-  {
+  }, {
     name: "French Landmarks",
     id: "frenchLandmarks"
   }, {

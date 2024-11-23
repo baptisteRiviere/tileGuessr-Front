@@ -7,14 +7,20 @@
             "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
         }
     },
+    "properties": {
+        "name": "Des paysages français",
+        "desc": "On se promème en France avec des lieux qui se reconnaissent du ciel",
+        "defaultRoundOptions": {
+            "initZoom": 16,
+            "mapMinZoom": 14,
+            "boundSizeInMeters": 5000
+        }
+    },
     "features": [
         {
             "type": "Feature",
             "properties": {
-                "name": "Tour Eiffel",
-                "initZoom": 18,
-                "mapMinZoom": 16,
-                "boundSizeInMeters": 800
+                "name": "Tour Eiffel"
             },
             "geometry": {
                 "type": "Point",
@@ -27,10 +33,7 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Mont St Michel",
-                "initZoom": 18,
-                "mapMinZoom": 16,
-                "boundSizeInMeters": 800
+                "name": "Mont St Michel"
             },
             "geometry": {
                 "type": "Point",
@@ -43,10 +46,7 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Citadelle de Lille",
-                "initZoom": 18,
-                "mapMinZoom": 16,
-                "boundSizeInMeters": 800
+                "name": "Citadelle de Lille"
             },
             "geometry": {
                 "type": "Point",
@@ -59,10 +59,7 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Parlement européen",
-                "initZoom": 18,
-                "mapMinZoom": 16,
-                "boundSizeInMeters": 800
+                "name": "Parlement européen"
             },
             "geometry": {
                 "type": "Point",
@@ -75,10 +72,7 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Château de Versailles",
-                "initZoom": 18,
-                "mapMinZoom": 16,
-                "boundSizeInMeters": 800
+                "name": "Château de Versailles"
             },
             "geometry": {
                 "type": "Point",
@@ -91,10 +85,7 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Barrage de la Rance",
-                "initZoom": 18,
-                "mapMinZoom": 16,
-                "boundSizeInMeters": 800
+                "name": "Barrage de la Rance"
             },
             "geometry": {
                 "type": "Point",
@@ -107,10 +98,7 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Château de Chenonceau",
-                "initZoom": 18,
-                "mapMinZoom": 16,
-                "boundSizeInMeters": 800
+                "name": "Château de Chenonceau"
             },
             "geometry": {
                 "type": "Point",
@@ -123,10 +111,7 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Pont de l'Île de Ré",
-                "initZoom": 18,
-                "mapMinZoom": 16,
-                "boundSizeInMeters": 1000
+                "name": "Pont de l'Île de Ré"
             },
             "geometry": {
                 "type": "Point",
@@ -139,10 +124,7 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Marais salants de Noirmoutier",
-                "initZoom": 18,
-                "mapMinZoom": 16,
-                "boundSizeInMeters": 1000
+                "name": "Marais salants de Noirmoutier"
             },
             "geometry": {
                 "type": "Point",
@@ -155,10 +137,7 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Marais salants de Guérande",
-                "initZoom": 18,
-                "mapMinZoom": 16,
-                "boundSizeInMeters": 1000
+                "name": "Marais salants de Guérande"
             },
             "geometry": {
                 "type": "Point",
@@ -171,10 +150,7 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Aiguille du midi et mer de glace",
-                "initZoom": 18,
-                "mapMinZoom": 16,
-                "boundSizeInMeters": 2000
+                "name": "Aiguille du midi et mer de glace"
             },
             "geometry": {
                 "type": "Point",
@@ -187,10 +163,7 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Dune du Pilat",
-                "initZoom": 18,
-                "mapMinZoom": 16,
-                "boundSizeInMeters": 800
+                "name": "Dune du Pilat"
             },
             "geometry": {
                 "type": "Point",
@@ -203,10 +176,7 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Plateau de Valensole",
-                "initZoom": 18,
-                "mapMinZoom": 16,
-                "boundSizeInMeters": 800
+                "name": "Plateau de Valensole"
             },
             "geometry": {
                 "type": "Point",
@@ -219,10 +189,7 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Forteresse de Bonifacio",
-                "initZoom": 18,
-                "mapMinZoom": 16,
-                "boundSizeInMeters": 800
+                "name": "Forteresse de Bonifacio"
             },
             "geometry": {
                 "type": "Point",
@@ -235,10 +202,7 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Hospices de Beaune",
-                "initZoom": 18,
-                "mapMinZoom": 16,
-                "boundSizeInMeters": 800
+                "name": "Hospices de Beaune"
             },
             "geometry": {
                 "type": "Point",
@@ -251,10 +215,7 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Oppidum d'Ensérune",
-                "initZoom": 18,
-                "mapMinZoom": 16,
-                "boundSizeInMeters": 800
+                "name": "Oppidum d'Ensérune"
             },
             "geometry": {
                 "type": "Point",
@@ -267,10 +228,7 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Alésia",
-                "initZoom": 18,
-                "mapMinZoom": 16,
-                "boundSizeInMeters": 800
+                "name": "Alésia"
             },
             "geometry": {
                 "type": "Point",
@@ -283,10 +241,7 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Forteresse de Salses",
-                "initZoom": 18,
-                "mapMinZoom": 16,
-                "boundSizeInMeters": 800
+                "name": "Forteresse de Salses"
             },
             "geometry": {
                 "type": "Point",
@@ -299,10 +254,7 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Villa Cavrois",
-                "initZoom": 18,
-                "mapMinZoom": 16,
-                "boundSizeInMeters": 800
+                "name": "Villa Cavrois"
             },
             "geometry": {
                 "type": "Point",
@@ -315,10 +267,7 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Mont Dauphin",
-                "initZoom": 18,
-                "mapMinZoom": 16,
-                "boundSizeInMeters": 800
+                "name": "Mont Dauphin"
             },
             "geometry": {
                 "type": "Point",
@@ -331,10 +280,7 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Port de Plaisance de Port-Camargue",
-                "initZoom": 18,
-                "mapMinZoom": 16,
-                "boundSizeInMeters": 800
+                "name": "Port de Plaisance de Port-Camargue"
             },
             "geometry": {
                 "type": "Point",
@@ -347,10 +293,7 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Vieux port de la Rochelle",
-                "initZoom": 18,
-                "mapMinZoom": 16,
-                "boundSizeInMeters": 800
+                "name": "Vieux port de la Rochelle"
             },
             "geometry": {
                 "type": "Point",
@@ -363,10 +306,7 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Fort Boyard",
-                "initZoom": 18,
-                "mapMinZoom": 16,
-                "boundSizeInMeters": 800
+                "name": "Fort Boyard"
             },
             "geometry": {
                 "type": "Point",
@@ -379,10 +319,7 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Salin de Giraud",
-                "initZoom": 18,
-                "mapMinZoom": 16,
-                "boundSizeInMeters": 1000
+                "name": "Salin de Giraud"
             },
             "geometry": {
                 "type": "Point",
@@ -395,10 +332,7 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Île aux oiseaux",
-                "initZoom": 18,
-                "mapMinZoom": 16,
-                "boundSizeInMeters": 1200
+                "name": "Île aux oiseaux"
             },
             "geometry": {
                 "type": "Point",
@@ -411,10 +345,7 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Lourdes",
-                "initZoom": 18,
-                "mapMinZoom": 16,
-                "boundSizeInMeters": 800
+                "name": "Lourdes"
             },
             "geometry": {
                 "type": "Point",
@@ -427,10 +358,7 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Circuit des 24h du Mans",
-                "initZoom": 18,
-                "mapMinZoom": 16,
-                "boundSizeInMeters": 900
+                "name": "Circuit des 24h du Mans"
             },
             "geometry": {
                 "type": "Point",
@@ -443,10 +371,7 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Aéroport de Paris-Charles de Gaulle",
-                "initZoom": 18,
-                "mapMinZoom": 16,
-                "boundSizeInMeters": 1200
+                "name": "Aéroport de Paris-Charles de Gaulle"
             },
             "geometry": {
                 "type": "Point",

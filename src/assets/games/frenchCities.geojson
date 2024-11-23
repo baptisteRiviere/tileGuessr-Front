@@ -1,6 +1,15 @@
 {
     "type": "FeatureCollection",
     "name": "frenchCitiesMetropole",
+    "properties": {
+        "name": "Les villes de France",
+        "desc": "Un petit tour des plus grandes villes de France",
+        "defaultRoundOptions": {
+            "initZoom": 16,
+            "mapMinZoom": 14,
+            "boundSizeInMeters": 5000
+        }
+    },
     "features": [
         {
             "type": "Feature",

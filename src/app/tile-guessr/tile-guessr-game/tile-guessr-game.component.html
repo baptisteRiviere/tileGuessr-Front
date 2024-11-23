@@ -9,7 +9,7 @@
         </p>
     </div>
 
-    <div #satelliteMap *ngIf="[gameStatusEnum.PLAYING,gameStatusEnum.RESULT].includes(gameStatus)" class="mapContainer"
+    <div *ngIf="[gameStatusEnum.PLAYING,gameStatusEnum.RESULT].includes(gameStatus)" class="mapContainer"
         id="satelliteMapContainer">
         <div leaflet id="satelliteMap" class="map" [leafletOptions]="satelliteMapOptions"
             [(leafletCenter)]="satelliteMapCenter" [leafletMaxBounds]="satelliteMaxBounds"

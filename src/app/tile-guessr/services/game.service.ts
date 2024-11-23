@@ -56,9 +56,12 @@ export class GameService {
         this.guessingMapBounds = gameMap.features.getBounds()
 
         this.rounds = await this.gameInitService.drawRoundsFromGameMap(
-            gameMap,
+            gameMap.features.getLayers(),
             defaultMappingOptions.numberOfRounds,
-            defaultMappingOptions
+            {
+                ...defaultMappingOptions,
+                ...gameMap.properties.defaultRoundOptions,
+            }
         )
     }
 

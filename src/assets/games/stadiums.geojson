@@ -7,15 +7,24 @@
             "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
         }
     },
+    "properties": {
+        "name": "Stadiums",
+        "desc": "Do you know the main french stadiums ?",
+        "defaultRoundOptions": {
+            "initZoom": 18,
+            "mapMinZoom": 16,
+            "boundSizeInMeters": 1000
+        }
+    },
     "features": [
         {
             "type": "Feature",
             "properties": {
                 "Team": "Ajaccio",
                 "Stadium": "Stade François Coty",
-                "initZoom": 20,
-                "mapMinZoom": 17,
-                "boundSizeInMeters": 600,
+                "roundOptions": {
+                    "initZoom": 20
+                },
                 "id": 0,
                 "city": "Ajaccio",
                 "name": "Stade François Coty - Ajaccio"
@@ -33,9 +42,9 @@
             "properties": {
                 "Team": "Bastia",
                 "Stadium": "Stade Armand Cesari",
-                "initZoom": 20,
-                "mapMinZoom": 17,
-                "boundSizeInMeters": 600,
+                "roundOptions": {
+                    "initZoom": 20
+                },
                 "id": 1,
                 "city": "Bastia",
                 "name": "Stade Armand Cesari - Bastia"
@@ -53,9 +62,9 @@
             "properties": {
                 "Team": "Bordeaux",
                 "Stadium": "Stade Chaban-Delmas",
-                "initZoom": 20,
-                "mapMinZoom": 17,
-                "boundSizeInMeters": 600,
+                "roundOptions": {
+                    "initZoom": 20
+                },
                 "id": 2,
                 "city": "Bordeaux",
                 "name": "Stade Chaban-Delmas - Bordeaux"
@@ -73,9 +82,9 @@
             "properties": {
                 "Team": "Évian",
                 "Stadium": "Parc des Sports",
-                "initZoom": 20,
-                "mapMinZoom": 17,
-                "boundSizeInMeters": 600,
+                "roundOptions": {
+                    "initZoom": 20
+                },
                 "id": 3,
                 "city": "Annecy",
                 "name": "Parc des Sports - Évian"
@@ -93,9 +102,9 @@
             "properties": {
                 "Team": "Guingamp",
                 "Stadium": "Stade du Roudourou",
-                "initZoom": 20,
-                "mapMinZoom": 17,
-                "boundSizeInMeters": 600,
+                "roundOptions": {
+                    "initZoom": 20
+                },
                 "id": 4,
                 "city": "Guingamp",
                 "name": "Stade du Roudourou - Guingamp"
@@ -113,9 +122,9 @@
             "properties": {
                 "Team": "Lille",
                 "Stadium": "Stade Pierre-Mauroy",
-                "initZoom": 20,
-                "mapMinZoom": 17,
-                "boundSizeInMeters": 600,
+                "roundOptions": {
+                    "initZoom": 20
+                },
                 "id": 5,
                 "city": "Villeneuve-d'Ascq",
                 "name": "Stade Pierre-Mauroy - Lille"
@@ -133,9 +142,9 @@
             "properties": {
                 "Team": "Lorient",
                 "Stadium": "Stade du Moustoir",
-                "initZoom": 20,
-                "mapMinZoom": 17,
-                "boundSizeInMeters": 600,
+                "roundOptions": {
+                    "initZoom": 20
+                },
                 "id": 6,
                 "city": "Lorient",
                 "name": "Stade du Moustoir - Lorient"
@@ -153,9 +162,9 @@
             "properties": {
                 "Team": "Lyon",
                 "Stadium": "Stade de Gerland",
-                "initZoom": 20,
-                "mapMinZoom": 17,
-                "boundSizeInMeters": 600,
+                "roundOptions": {
+                    "initZoom": 20
+                },
                 "id": 7,
                 "city": "Lyon",
                 "name": "Stade de Gerland - Lyon"
@@ -173,9 +182,9 @@
             "properties": {
                 "Team": "Marseille",
                 "Stadium": "Stade Velodrome",
-                "initZoom": 20,
-                "mapMinZoom": 17,
-                "boundSizeInMeters": 600,
+                "roundOptions": {
+                    "initZoom": 20
+                },
                 "id": 8,
                 "city": "Marseille",
                 "name": "Stade Velodrome - Marseille"
@@ -193,9 +202,9 @@
             "properties": {
                 "Team": "AS Monaco",
                 "Stadium": "Stade Louis II",
-                "initZoom": 20,
-                "mapMinZoom": 17,
-                "boundSizeInMeters": 600,
+                "roundOptions": {
+                    "initZoom": 20
+                },
                 "id": 9,
                 "city": "Monaco",
                 "name": "Stade Louis II - AS Monaco"
@@ -213,9 +222,9 @@
             "properties": {
                 "Team": "Montpellier",
                 "Stadium": "Stade de la Mosson",
-                "initZoom": 20,
-                "mapMinZoom": 17,
-                "boundSizeInMeters": 600,
+                "roundOptions": {
+                    "initZoom": 20
+                },
                 "id": 10,
                 "city": "Montpellier",
                 "name": "Stade de la Mosson - Montpellier"
@@ -233,9 +242,9 @@
             "properties": {
                 "Team": "Nantes",
                 "Stadium": "Stade de la Beaujoire",
-                "initZoom": 20,
-                "mapMinZoom": 17,
-                "boundSizeInMeters": 600,
+                "roundOptions": {
+                    "initZoom": 20
+                },
                 "id": 11,
                 "city": "Nantes",
                 "name": "Stade de la Beaujoire - Nantes"
@@ -253,9 +262,9 @@
             "properties": {
                 "Team": "Nice",
                 "Stadium": "Allianz Riviera",
-                "initZoom": 20,
-                "mapMinZoom": 17,
-                "boundSizeInMeters": 600,
+                "roundOptions": {
+                    "initZoom": 20
+                },
                 "id": 12,
                 "city": "Nice",
                 "name": "Allianz Riviera - Nice"
@@ -273,9 +282,9 @@
             "properties": {
                 "Team": "Paris Saint-Germain",
                 "Stadium": "Parc des Princes",
-                "initZoom": 20,
-                "mapMinZoom": 17,
-                "boundSizeInMeters": 600,
+                "roundOptions": {
+                    "initZoom": 20
+                },
                 "id": 13,
                 "city": "Paris",
                 "name": "Parc des Princes - Paris Saint-Germain"
@@ -293,9 +302,9 @@
             "properties": {
                 "Team": "Reims",
                 "Stadium": "Stade Auguste-Delaune II",
-                "initZoom": 20,
-                "mapMinZoom": 17,
-                "boundSizeInMeters": 600,
+                "roundOptions": {
+                    "initZoom": 20
+                },
                 "id": 14,
                 "city": "Reims",
                 "name": "Stade Auguste-Delaune II - Reims"
@@ -313,9 +322,9 @@
             "properties": {
                 "Team": "Rennes",
                 "Stadium": "Stade de la Route de Lorient",
-                "initZoom": 20,
-                "mapMinZoom": 17,
-                "boundSizeInMeters": 600,
+                "roundOptions": {
+                    "initZoom": 20
+                },
                 "id": 15,
                 "city": "Rennes",
                 "name": "Stade de la Route de Lorient - Rennes"
@@ -333,9 +342,9 @@
             "properties": {
                 "Team": "Saint-Étienne",
                 "Stadium": "Stade Geoffroy-Guichard",
-                "initZoom": 20,
-                "mapMinZoom": 17,
-                "boundSizeInMeters": 600,
+                "roundOptions": {
+                    "initZoom": 20
+                },
                 "id": 16,
                 "city": "Saint-Étienne",
                 "name": "Stade Geoffroy-Guichard - Saint-Étienne"
@@ -353,9 +362,9 @@
             "properties": {
                 "Team": "Sochaux",
                 "Stadium": "Stade Auguste Bonal",
-                "initZoom": 20,
-                "mapMinZoom": 17,
-                "boundSizeInMeters": 600,
+                "roundOptions": {
+                    "initZoom": 20
+                },
                 "id": 17,
                 "city": "Montbéliard",
                 "name": "Stade Auguste Bonal - Sochaux"
@@ -373,9 +382,9 @@
             "properties": {
                 "Team": "Toulouse",
                 "Stadium": "Stadium Municipal",
-                "initZoom": 20,
-                "mapMinZoom": 17,
-                "boundSizeInMeters": 600,
+                "roundOptions": {
+                    "initZoom": 20
+                },
                 "id": 18,
                 "city": "Toulouse",
                 "name": "Stadium Municipal - Toulouse"
@@ -393,9 +402,9 @@
             "properties": {
                 "Team": "Valenciennes",
                 "Stadium": "Stade du Hainaut",
-                "initZoom": 20,
-                "mapMinZoom": 17,
-                "boundSizeInMeters": 600,
+                "roundOptions": {
+                    "initZoom": 20
+                },
                 "id": 19,
                 "city": "Valenciennes",
                 "name": "Stade du Hainaut - Valenciennes"
@@ -413,9 +422,9 @@
             "properties": {
                 "Team": "Nancy",
                 "Stadium": "Stade Marcel Picot",
-                "initZoom": 20,
-                "mapMinZoom": 17,
-                "boundSizeInMeters": 600,
+                "roundOptions": {
+                    "initZoom": 20
+                },
                 "id": 20,
                 "city": "Tomblaine",
                 "name": "Stade Marcel Picot - Nancy"
@@ -433,9 +442,9 @@
             "properties": {
                 "Team": "Dijon",
                 "Stadium": "Stade Gaston Gérard",
-                "initZoom": 20,
-                "mapMinZoom": 17,
-                "boundSizeInMeters": 600,
+                "roundOptions": {
+                    "initZoom": 20
+                },
                 "id": 21,
                 "city": "Dijon",
                 "name": "Stade Gaston Gérard - Dijon"
@@ -453,9 +462,9 @@
             "properties": {
                 "Team": "Troyes",
                 "Stadium": "Stade de l'Aube",
-                "initZoom": 20,
-                "mapMinZoom": 17,
-                "boundSizeInMeters": 600,
+                "roundOptions": {
+                    "initZoom": 20
+                },
                 "id": 22,
                 "city": "Troyes",
                 "name": "Stade de l'Aube - Troyes"
@@ -473,9 +482,9 @@
             "properties": {
                 "Team": "Auxerre",
                 "Stadium": "Stade de l'Abbé-Deschamps",
-                "initZoom": 20,
-                "mapMinZoom": 17,
-                "boundSizeInMeters": 600,
+                "roundOptions": {
+                    "initZoom": 20
+                },
                 "id": 23,
                 "city": "Auxerre",
                 "name": "Stade de l'Abbé-Deschamps - Auxerre"
@@ -493,9 +502,9 @@
             "properties": {
                 "Team": "Brest",
                 "Stadium": "Stade Francis-Le Blé",
-                "initZoom": 20,
-                "mapMinZoom": 17,
-                "boundSizeInMeters": 600,
+                "roundOptions": {
+                    "initZoom": 20
+                },
                 "id": 24,
                 "city": "Brest",
                 "name": "Stade Francis-Le Blé - Brest"
@@ -513,9 +522,9 @@
             "properties": {
                 "Team": "Caen",
                 "Stadium": "Stade Michel d'Ornano",
-                "initZoom": 20,
-                "mapMinZoom": 17,
-                "boundSizeInMeters": 600,
+                "roundOptions": {
+                    "initZoom": 20
+                },
                 "id": 25,
                 "city": "Caen",
                 "name": "Stade Michel d'Ornano - Caen"
@@ -533,9 +542,9 @@
             "properties": {
                 "Team": "RC Lens",
                 "Stadium": "Bollaert-Delelis",
-                "initZoom": 20,
-                "mapMinZoom": 17,
-                "boundSizeInMeters": 600,
+                "roundOptions": {
+                    "initZoom": 20
+                },
                 "id": 26,
                 "city": "Lens",
                 "name": "Bollaert-Delelis - RC Lens"
@@ -553,9 +562,9 @@
             "properties": {
                 "Team": "RC Strasbourg",
                 "Stadium": "Stade de la Meinau",
-                "initZoom": 20,
-                "mapMinZoom": 17,
-                "boundSizeInMeters": 600,
+                "roundOptions": {
+                    "initZoom": 20
+                },
                 "id": 27,
                 "city": "Strasbourg",
                 "name": "Stade de la Meinau - RC Strasbourg"
@@ -573,9 +582,9 @@
             "properties": {
                 "Team": "Le Havre Athletic Club",
                 "Stadium": "Stade Océane",
-                "initZoom": 20,
-                "mapMinZoom": 17,
-                "boundSizeInMeters": 600,
+                "roundOptions": {
+                    "initZoom": 20
+                },
                 "id": 28,
                 "city": "Le Havre",
                 "name": "Stade Océane - Le Havre Athletic Club"
@@ -593,9 +602,9 @@
             "properties": {
                 "Team": "Metz",
                 "Stadium": "Saint-Symphorien",
-                "initZoom": 20,
-                "mapMinZoom": 17,
-                "boundSizeInMeters": 600,
+                "roundOptions": {
+                    "initZoom": 20
+                },
                 "id": 29,
                 "city": "Metz",
                 "name": "Saint-Symphorien - Metz"
@@ -613,9 +622,9 @@
             "properties": {
                 "Team": "Clermont Foot 63",
                 "Stadium": "Gabriel-Montpied",
-                "initZoom": 20,
-                "mapMinZoom": 17,
-                "boundSizeInMeters": 600,
+                "roundOptions": {
+                    "initZoom": 20
+                },
                 "id": 30,
                 "city": "Clermont-Ferrand",
                 "name": "Gabriel-Montpied - Clermont Foot 63"

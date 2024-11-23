@@ -10,26 +10,28 @@ export class TileGuessrUtils {
 
     public static computeMinZoom(bounds: LatLngBounds, mapDim: IElemntDimensions) {
 
-        var WORLD_DIM = { height: 256, width: 256 };
-        var ZOOM_MAX = 21;
+        const WORLD_DIM = { height: 256, width: 256 };
+        const ZOOM_MAX = 21;
 
-        var ne = bounds.getNorthEast();
-        var sw = bounds.getSouthWest();
+        const ne = bounds.getNorthEast();
+        const sw = bounds.getSouthWest();
 
-        var latFraction = (this.latRad(ne.lat) - this.latRad(sw.lat)) / Math.PI;
+        const latFraction = (this.latRad(ne.lat) - this.latRad(sw.lat)) / Math.PI;
 
-        var lngDiff = ne.lng - sw.lng;
-        var lngFraction = ((lngDiff < 0) ? (lngDiff + 360) : lngDiff) / 360;
+        const lngDiff = ne.lng - sw.lng;
+        const lngFraction = ((lngDiff < 0) ? (lngDiff + 360) : lngDiff) / 360;
 
-        var latZoom = this.zoom(mapDim.height, WORLD_DIM.height, latFraction);
-        var lngZoom = this.zoom(mapDim.width, WORLD_DIM.width, lngFraction);
+        const latZoom = this.zoom(mapDim.height, WORLD_DIM.height, latFraction);
+        const lngZoom = this.zoom(mapDim.width, WORLD_DIM.width, lngFraction);
 
-        return Math.min(latZoom, lngZoom, ZOOM_MAX);
+        const computedMaxZoom = Math.min(latZoom, lngZoom)
+
+        return Math.min(computedMaxZoom, ZOOM_MAX);
     }
 
     private static latRad(lat: number) {
-        var sin = Math.sin(lat * Math.PI / 180);
-        var radX2 = Math.log((1 + sin) / (1 - sin)) / 2;
+        const sin = Math.sin(lat * Math.PI / 180);
+        const radX2 = Math.log((1 + sin) / (1 - sin)) / 2;
         return Math.max(Math.min(radX2, Math.PI), -Math.PI) / 2;
     }
 
