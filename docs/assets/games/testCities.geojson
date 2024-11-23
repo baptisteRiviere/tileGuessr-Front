@@ -1,17 +1,21 @@
 {
     "type": "FeatureCollection",
     "properties": {
-        "initZoom": 18,
-        "mapMinZoom": 17,
-        "boundSizeInMeters": 1000
+        "name": "TEST",
+        "desc": "TEST",
+        "defaultRoundOptions": {
+            "initZoom": 17,
+            "mapMinZoom": 16,
+            "boundSizeInMeters": 1000
+        }
     },
     "features": [
         {
             "type": "Feature",
             "properties": {
                 "name": "Paris",
-                "initZoom": 18,
-                "mapMinZoom": 16
+                "initZoom": 19,
+                "mapMinZoom": 17
             },
             "geometry": {
                 "coordinates": [
@@ -25,7 +29,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Nantes"
+                "name": "Nantes",
+                "mapMinZoom": 16
             },
             "geometry": {
                 "coordinates": [
@@ -39,7 +44,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Strasbourg"
+                "name": "Strasbourg",
+                "mapMinZoom": 16
             },
             "geometry": {
                 "coordinates": [
@@ -53,7 +59,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Lyon"
+                "name": "Lyon",
+                "mapMinZoom": 16
             },
             "geometry": {
                 "coordinates": [
@@ -67,7 +74,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Marseille"
+                "name": "Marseille",
+                "mapMinZoom": 16
             },
             "geometry": {
                 "coordinates": [
