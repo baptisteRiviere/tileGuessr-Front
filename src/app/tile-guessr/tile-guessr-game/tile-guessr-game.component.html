@@ -1,15 +1,16 @@
 <div id="game-window">
-    <div id="informationContainer">
-        <p id="round" *ngIf="gameStatus=='PLAYING'">round {{this.currentRoundIndex + 1}} / 5</p>
+    <div class="informationContainer">
+        <p id="round" *ngIf="gameStatus==gameStatusEnum.PLAYING">round {{this.currentRoundIndex + 1}} / 5</p>
         <p id="description">{{description}}</p>
-        <p id="roundScore" *ngIf="gameStatus=='RESULT'">Score : {{roundScore}}</p>
-        <p id="gameScore" *ngIf="gameStatus=='ENDED'">Total Score : {{gameScore}}</p>
-        <p id="time" *ngIf="gameStatus=='PLAYING'">
+        <p id="roundScore" *ngIf="gameStatus==gameStatusEnum.RESULT">Score : {{roundScore}}</p>
+        <p id="gameScore" *ngIf="gameStatus==gameStatusEnum.ENDED">Total Score : {{gameScore}}</p>
+        <p id="time" *ngIf="gameStatus==gameStatusEnum.PLAYING">
             time : {{this.remainingTime/1000}}
         </p>
     </div>
 
-    <div *ngIf="['PLAYING','RESULT'].includes(gameStatus)" class="mapContainer" id="satelliteMapContainer">
+    <div *ngIf="[gameStatusEnum.PLAYING,gameStatusEnum.RESULT].includes(gameStatus)" class="mapContainer"
+        id="satelliteMapContainer">
         <div leaflet id="satelliteMap" class="map" [leafletOptions]="satelliteMapOptions"
             [(leafletCenter)]="satelliteMapCenter" [leafletMaxBounds]="satelliteMaxBounds"
             [(leafletZoom)]="satelliteMapZoom" [leafletMinZoom]="satelliteMapMinZoom">
@@ -17,32 +18,34 @@
         </div>
     </div>
 
-    <div *ngIf="['PLAYING','RESULT'].includes(gameStatus)" class="mapContainer" id="guessingMapContainer">
+    <div *ngIf="[gameStatusEnum.PLAYING,gameStatusEnum.RESULT].includes(gameStatus)" class="mapContainer"
+        id="guessingMapContainer">
         <div leaflet id="guessingMap" class="map" [leafletOptions]="guessingMapOptions"
             (leafletClick)="onGuessingMapClicked($event)" [leafletMaxBounds]="guessingMapMaxBounds"
             [leafletFitBounds]="guessingMapFitBounds">
-            <div *ngIf="guessingMarker != undefined" [leafletLayer]="guessingMarker"></div>
-            <div *ngIf="resultLine != undefined" [leafletLayer]="resultLine"></div>
-            <div *ngIf="gameStatus=='RESULT'" [leafletLayer]="materializedGuessingMapTile"></div>
+            <div *ngIf="guessingMarker != undefined" [leafletLayer]="guessingMarker">
+            </div>
+            <div *ngIf="resultLine != undefined" [leafletLayer]="resultLine">
+            </div>
+            <div *ngIf="gameStatus==gameStatusEnum.RESULT" [leafletLayer]="materializedGuessingMapTile">
+            </div>
         </div>
     </div>
 
     <div id="buttonsContainer">
-        <button *ngIf="gameStatus=='WAITING_FOR_START'" id="startGameButton" class="button"
-            (click)="onStartClicked()">Start</button>
-        <button *ngIf="gameStatus=='PLAYING'" id="respawnButton" class="button"
+        <button *ngIf="gameStatus==gameStatusEnum.PLAYING" id="respawnButton" class="button"
             (click)="onRespawnClicked()">Respawn</button>
-        <button *ngIf="gameStatus=='PLAYING'" id="guessButton" class="button" role="button"
+        <button *ngIf="gameStatus==gameStatusEnum.PLAYING" id="guessButton" class="button" role="button"
             (click)="onGuessClicked()">Guess</button>
-        <button *ngIf="gameStatus=='RESULT' && (!currentRoundIsTheLast)" id="launchNextRoundButton" class="button"
-            role="button" (click)="onLaunchNextRoundClicked()">
-            Launch next round
+        <button *ngIf="gameStatus==gameStatusEnum.RESULT && (!currentRoundIsTheLast)" id="launchNextRoundButton"
+            class="button" role="button" (click)="onLaunchNextRoundClicked()">
+            Next
         </button>
-        <button *ngIf="gameStatus=='RESULT' && (currentRoundIsTheLast)" id="launchOverviewRoundButton" class="button"
-            role="button" (click)="onEndGame()">
+        <button *ngIf="gameStatus==gameStatusEnum.RESULT && (currentRoundIsTheLast)" id="launchOverviewRoundButton"
+            class="button" role="button" (click)="onEndGame()">
             End game
         </button>
-        <button *ngIf="gameStatus=='ENDED'" id="playAgainButton" class="button" role="button"
+        <button *ngIf="gameStatus==gameStatusEnum.ENDED" id="playAgainButton" class="button" role="button"
             (click)="onPlayAgainClicked()">Play again</button>
     </div>
 </div>

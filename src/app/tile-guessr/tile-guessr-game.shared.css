@@ -1,4 +1,11 @@
+.informationContainer {
+    color: aliceblue;
+    font-size: 2vw;
+}
+
 .button {
+    width: 100%;
+    height: 100%;
     align-items: center;
     appearance: none;
     background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
