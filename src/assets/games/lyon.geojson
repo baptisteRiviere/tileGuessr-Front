@@ -10,8 +10,8 @@
         "name": "Lyon",
         "desc": "Lyon, ville française de la région historique Rhône-Alpes, se trouve à la jonction du Rhône et de la Saône",
         "defaultRoundOptions": {
-            "initZoom": 18,
-            "mapMinZoom": 17,
+            "initZoom": 19,
+            "mapMinZoom": 18,
             "boundSizeInMeters": 600
         }
     },

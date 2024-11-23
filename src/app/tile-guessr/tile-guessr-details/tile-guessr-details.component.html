@@ -1,12 +1,15 @@
 <div class="tile-guessr-details-component">
     <div *ngIf="gameMapProperties$ | async as gameMapProperties">
         <div class="informationContainer">
-            <p class="name">{{ gameMapProperties.name }}</p>
-            <p class="description">{{ gameMapProperties.desc }}</p>
+            <h1 class="name">{{ gameMapProperties.name }}</h1>
+            <h3 class="description">{{ gameMapProperties.desc }}</h3>
+        </div>
+        <div *ngIf="isLoading">
+            <p>Loading</p>
         </div>
     </div>
     <div class="buttonsContainer">
-        <button class="chooseButton" class="button" (click)="onChooseGameClicked()">Choose
+        <button *ngIf="!isLoading" class="chooseButton" class="button" (click)="onChooseGameClicked()">Play
         </button>
     </div>
 </div>

@@ -4,8 +4,8 @@
         "name": "TEST",
         "desc": "TEST",
         "defaultRoundOptions": {
-            "initZoom": 16,
-            "mapMinZoom": 14,
+            "initZoom": 17,
+            "mapMinZoom": 16,
             "boundSizeInMeters": 1000
         }
     },
@@ -14,8 +14,8 @@
             "type": "Feature",
             "properties": {
                 "name": "Paris",
-                "initZoom": 18,
-                "mapMinZoom": 16
+                "initZoom": 19,
+                "mapMinZoom": 17
             },
             "geometry": {
                 "coordinates": [

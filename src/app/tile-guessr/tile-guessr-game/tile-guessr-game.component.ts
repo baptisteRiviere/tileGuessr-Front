@@ -3,20 +3,19 @@ import { tileLayer, MapOptions, LatLng, LatLngExpression, LatLngBounds, Rectangl
 import { Observable, Subject, takeUntil } from 'rxjs';
 import { GameInitService } from '../services/game-init.service';
 import { IGameMap, GameStatus } from '../interfaces/game';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { defaultGeometryStyles } from '../parameters/geometry-styles.default'
 import { defaultMappingOptions } from '../parameters/mapping-options.default'
 import messages from '../parameters/en'
-import { IGuessResult, RoundService } from '../services/round.service';
+import { IGuessResult } from '../services/round.service';
 import { GameService } from '../services/game.service';
 import { TimeService } from '../services/time.service';
-import { TileGuessrUtils } from '../tile-guessr-utils';
 
 
 @Component({
   selector: 'app-tg-map',
   templateUrl: './tile-guessr-game.component.html',
-  styleUrls: ['./tile-guessr-game.component.css', '../tile-guessr-game.buttonSyle.css']
+  styleUrls: ['./tile-guessr-game.component.css', '../tile-guessr-game.shared.css']
 })
 export class TileGuessrGameComponent implements OnInit, OnDestroy {
   private gameMapId: string | undefined = undefined
@@ -24,7 +23,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
   protected currentRoundIndex: number = 0
   protected roundScore: number = 0
   protected gameScore: number = 0
-  protected description: string = messages.playingDescription
+  protected description: string = messages.loadingGame
   protected remainingTime: number = defaultMappingOptions.millisecondsInARound
   protected gameMap$: Observable<IGameMap> = new Observable<IGameMap>()
   protected gameStatus: GameStatus = GameStatus.LOADING
@@ -83,6 +82,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private gameInitService: GameInitService,
     private gameService: GameService,
     private timeService: TimeService
@@ -125,8 +125,8 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
     this.guessingMapFitBounds = this.gameService.getGuessingMapBounds()
 
     // Displaying title and changing game status to start the game
-    this.description = messages.playingDescription
-    this.gameStatus = GameStatus.WAITING_FOR_START
+    this.launchNextRound()
+    this.gameStatus = GameStatus.PLAYING
   }
 
   private displayResult(result: IGuessResult) {
@@ -251,10 +251,6 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
   /////// LISTENERS
   ///////////////////////////////////////////////////////////////////////
 
-  protected onStartClicked() {
-    this.launchNextRound()
-  }
-
   protected onLaunchNextRoundClicked() {
     this.launchNextRound()
   }
@@ -276,6 +272,10 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
   protected onEndGame() {
     this.description = messages.endOfTheGame
     this.gameStatus = GameStatus.ENDED
+  }
+
+  protected onPlayAgainClicked() {
+    this.router.navigate(['/tileGuessr/details', this.gameMapId]);
   }
 
   ///////////////////////////////////////////////////////////////////////

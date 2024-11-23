@@ -6,13 +6,10 @@ import { GameInitService } from './services/game-init.service';
 @Component({
   selector: 'app-tile-guessr',
   templateUrl: './tile-guessr.component.html',
-  styleUrls: ['./tile-guessr.component.css', 'tile-guessr-game.buttonSyle.css']
+  styleUrls: ['./tile-guessr.component.css', './tile-guessr-game.shared.css']
 })
 export class TileGuessrComponent {
   protected availableMaps = [{
-    name: "Test",
-    id: "testCities"
-  }, {
     name: "French cities",
     id: "frenchCities"
   }, {

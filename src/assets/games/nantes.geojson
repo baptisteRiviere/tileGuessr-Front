@@ -11,8 +11,8 @@
         "name": "Nantes",
         "desc": "Nantes, Naoned ou la Venise de l'Ouest découpée en petites tuiles",
         "defaultRoundOptions": {
-            "initZoom": 18,
-            "mapMinZoom": 17,
+            "initZoom": 19,
+            "mapMinZoom": 18,
             "boundSizeInMeters": 600
         }
     },

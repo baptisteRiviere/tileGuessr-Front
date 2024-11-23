@@ -12,7 +12,7 @@
         "desc": "On se promème en France avec des lieux qui se reconnaissent du ciel",
         "defaultRoundOptions": {
             "initZoom": 16,
-            "mapMinZoom": 14,
+            "mapMinZoom": 15,
             "boundSizeInMeters": 5000
         }
     },

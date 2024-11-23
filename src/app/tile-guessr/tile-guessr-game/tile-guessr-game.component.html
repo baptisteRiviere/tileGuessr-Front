@@ -1,5 +1,5 @@
 <div id="game-window">
-    <div id="informationContainer">
+    <div class="informationContainer">
         <p id="round" *ngIf="gameStatus==gameStatusEnum.PLAYING">round {{this.currentRoundIndex + 1}} / 5</p>
         <p id="description">{{description}}</p>
         <p id="roundScore" *ngIf="gameStatus==gameStatusEnum.RESULT">Score : {{roundScore}}</p>
@@ -33,21 +33,19 @@
     </div>
 
     <div id="buttonsContainer">
-        <button *ngIf="gameStatus==gameStatusEnum.WAITING_FOR_START" id="startGameButton" class="button"
-            (click)="onStartClicked()">Start</button>
         <button *ngIf="gameStatus==gameStatusEnum.PLAYING" id="respawnButton" class="button"
             (click)="onRespawnClicked()">Respawn</button>
         <button *ngIf="gameStatus==gameStatusEnum.PLAYING" id="guessButton" class="button" role="button"
             (click)="onGuessClicked()">Guess</button>
         <button *ngIf="gameStatus==gameStatusEnum.RESULT && (!currentRoundIsTheLast)" id="launchNextRoundButton"
             class="button" role="button" (click)="onLaunchNextRoundClicked()">
-            Launch next round
+            Next
         </button>
         <button *ngIf="gameStatus==gameStatusEnum.RESULT && (currentRoundIsTheLast)" id="launchOverviewRoundButton"
             class="button" role="button" (click)="onEndGame()">
             End game
         </button>
-        <!-- <button *ngIf="gameStatus=='ENDED'" id="playAgainButton" class="button" role="button"
-            (click)="onPlayAgainClicked()">Play again</button> -->
+        <button *ngIf="gameStatus==gameStatusEnum.ENDED" id="playAgainButton" class="button" role="button"
+            (click)="onPlayAgainClicked()">Play again</button>
     </div>
 </div>

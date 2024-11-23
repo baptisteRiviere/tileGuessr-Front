@@ -11,7 +11,7 @@
         "desc": "Do you know your capitals ?",
         "defaultRoundOptions": {
             "initZoom": 16,
-            "mapMinZoom": 14,
+            "mapMinZoom": 15,
             "boundSizeInMeters": 5000
         }
     },

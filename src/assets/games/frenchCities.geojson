@@ -6,7 +6,7 @@
         "desc": "Un petit tour des plus grandes villes de France",
         "defaultRoundOptions": {
             "initZoom": 16,
-            "mapMinZoom": 14,
+            "mapMinZoom": 15,
             "boundSizeInMeters": 5000
         }
     },

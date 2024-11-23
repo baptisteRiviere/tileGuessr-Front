@@ -1,6 +1,6 @@
 export default {
     "loadingGame": "Loading game",
     "start": "Are you ready ?",
-    "playingDescription": "Where is this location ?",
+    "playingDescription": "Search tile",
     "endOfTheGame": "End of the game"
 }

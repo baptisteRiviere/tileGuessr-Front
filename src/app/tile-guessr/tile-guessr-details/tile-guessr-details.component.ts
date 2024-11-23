@@ -8,11 +8,13 @@ import { map, Observable } from 'rxjs';
 @Component({
   selector: 'app-tile-guessr-details',
   templateUrl: './tile-guessr-details.component.html',
-  styleUrls: ['./tile-guessr-details.component.css']
+  styleUrls: ['./tile-guessr-details.component.css', '../tile-guessr-game.shared.css']
 })
 export class TileGuessrDetailsComponent implements OnInit {
+  protected isLoading = true;
   protected gameMapProperties$: Observable<IGameMapProperties> = new Observable<IGameMapProperties>()
   private gameMapId: string | undefined
+
 
   constructor(
     private route: ActivatedRoute,
@@ -23,8 +25,9 @@ export class TileGuessrDetailsComponent implements OnInit {
   public async ngOnInit() {
     this.gameMapId = this.route.snapshot.paramMap.get("id") ?? undefined
     if (this.gameMapId != undefined) {
-      this.gameMapProperties$ =
+      this.gameMapProperties$ = await
         this.gameInitService.fetchGameMapPropertiesFromId$(this.gameMapId)
+      this.isLoading = false
     }
   }
 

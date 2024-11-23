@@ -11,8 +11,8 @@
         "name": "Random World",
         "desc": "Good luck",
         "defaultRoundOptions": {
-            "initZoom": 16,
-            "mapMinZoom": 14,
+            "initZoom": 17,
+            "mapMinZoom": 15,
             "boundSizeInMeters": 10000
         }
     },

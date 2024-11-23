@@ -11,8 +11,8 @@
         "name": "Stadiums",
         "desc": "Do you know the main french stadiums ?",
         "defaultRoundOptions": {
-            "initZoom": 18,
-            "mapMinZoom": 16,
+            "initZoom": 19,
+            "mapMinZoom": 17,
             "boundSizeInMeters": 1000
         }
     },

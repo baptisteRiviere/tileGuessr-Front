@@ -14,5 +14,5 @@ export interface IGameMapProperties {
 }
 
 export enum GameStatus {
-  LOADING, WAITING_FOR_START, PLAYING, RESULT, ENDED, ERROR,
+  LOADING, PLAYING, RESULT, ENDED, ERROR,
 }
