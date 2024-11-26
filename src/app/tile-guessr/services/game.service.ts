@@ -6,6 +6,7 @@ import { LatLng, LatLngBounds } from "leaflet";
 import { defaultMappingOptions } from '../parameters/mapping-options.default'
 import { BehaviorSubject, Observable } from "rxjs";
 import { IGuessResult, RoundService } from "./round.service";
+import { ParamMap } from "@angular/router";
 
 
 @Injectable({
@@ -46,14 +47,15 @@ export class GameService {
         return this.guessingMapBounds
     }
 
-    public async initGame(gameMap: IGameMap): Promise<void> {
+    public async initGame(gameMap: IGameMap, params: ParamMap): Promise<void> {
         // initializing index and scores
         this.roundIndex.next(-1)
-        // this.roundScore = 0
-        // this.gameScore = 0
 
         // getting game map bounds
         this.guessingMapBounds = gameMap.features.getBounds()
+
+        // build user options
+        const userOptions: Partial<IRoundOption> = this._buildUserOptions(params)
 
         this.rounds = await this.gameInitService.drawRoundsFromGameMap(
             gameMap.features.getLayers(),
@@ -61,6 +63,7 @@ export class GameService {
             {
                 ...defaultMappingOptions,
                 ...gameMap.properties.defaultRoundOptions,
+                ...userOptions
             }
         )
     }
@@ -78,5 +81,11 @@ export class GameService {
             remainingTimeInMs,
             defaultMappingOptions.millisecondsInARound
         )
+    }
+
+    private _buildUserOptions(params: ParamMap): Partial<IRoundOption> {
+        return {
+            moveAcrossBorders: params.get("moveAcrossBorders") == "true"
+        }
     }
 }

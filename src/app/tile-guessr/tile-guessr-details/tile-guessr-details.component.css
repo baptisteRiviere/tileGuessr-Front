@@ -5,6 +5,13 @@
     justify-content: center;
 }
 
+.parameters-container {
+    display: flex;
+    flex-direction: row;
+    color: aliceblue;
+    font-size: 1vw;
+}
+
 .buttonsContainer {
     width: 10vw;
     height: 6vh;

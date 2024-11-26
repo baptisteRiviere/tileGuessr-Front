@@ -8,6 +8,10 @@
             <p>Loading</p>
         </div>
     </div>
+    <div class="parameters-container">
+        <input type="checkbox" [checked]="moveAcrossBorders" (change)="moveAcrossBorders = !moveAcrossBorders" />
+        <p>Move across border</p>
+    </div>
     <div class="buttonsContainer">
         <button *ngIf="!isLoading" class="chooseButton" class="button" (click)="onChooseGameClicked()">Play
         </button>

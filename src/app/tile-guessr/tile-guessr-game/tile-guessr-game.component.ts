@@ -10,6 +10,7 @@ import messages from '../parameters/en'
 import { IGuessResult } from '../services/round.service';
 import { GameService } from '../services/game.service';
 import { TimeService } from '../services/time.service';
+import { IRound } from '../interfaces/round';
 
 
 @Component({
@@ -119,7 +120,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
     this.gameStatus = GameStatus.LOADING
     this.description = messages.loadingGame
 
-    await this.gameService.initGame(gameMap)
+    await this.gameService.initGame(gameMap, this.route.snapshot.queryParamMap)
 
     // fitting guessing map bounds in the playing area
     this.guessingMapFitBounds = this.gameService.getGuessingMapBounds()
@@ -188,7 +189,7 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
     this.guessingMapFitBounds = this.gameService.getGuessingMapBounds()
 
     // getting current round
-    const currentRound = this.gameService.getCurrentRound()
+    const currentRound: IRound = this.gameService.getCurrentRound()
 
     if (currentRound !== undefined) {
       const coordinates = new LatLng(currentRound.latitude, currentRound.longitude)
@@ -198,10 +199,15 @@ export class TileGuessrGameComponent implements OnInit, OnDestroy {
       this.materializedSatelliteMapTile.setStyle(defaultGeometryStyles.rectangle)
 
       // each boundary is DEFAULT_BOUND_SIZE_IN_METERS/2 meters apart from coordinates
-      this.satelliteMaxBounds = coordinates.toBounds(currentRound.boundSizeInMeters)
+      const tileBounds = coordinates.toBounds(currentRound.boundSizeInMeters)
+      if ((currentRound as any).moveAcrossBorders) {
+        this.satelliteMaxBounds = new LatLngBounds(new LatLng(-90, -180), new LatLng(90, 180))
+      } else {
+        this.satelliteMaxBounds = tileBounds
+      }
       this.coordinatesToGuess = coordinates.clone()
-      this.materializedGuessingMapTile.setBounds(this.satelliteMaxBounds)
-      this.materializedSatelliteMapTile.setBounds(this.satelliteMaxBounds)
+      this.materializedGuessingMapTile.setBounds(tileBounds)
+      this.materializedSatelliteMapTile.setBounds(tileBounds)
 
       this.satelliteMapMinZoom = currentRound.mapMinZoom
 

@@ -2,17 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IGameMapProperties } from '../interfaces/game'
 import { GameInitService } from '../services/game-init.service';
-import { map, Observable } from 'rxjs';
+import { defaultMappingOptions } from '../parameters/mapping-options.default'
+import { Observable } from 'rxjs';
 
 
 @Component({
   selector: 'app-tile-guessr-details',
   templateUrl: './tile-guessr-details.component.html',
-  styleUrls: ['./tile-guessr-details.component.css', '../tile-guessr-game.shared.css']
+  styleUrls: ['./tile-guessr-details.component.css', '../tile-guessr-game.shared.css'],
 })
 export class TileGuessrDetailsComponent implements OnInit {
   protected isLoading = true;
   protected gameMapProperties$: Observable<IGameMapProperties> = new Observable<IGameMapProperties>()
+  protected moveAcrossBorders = defaultMappingOptions.moveAcrossBorders
   private gameMapId: string | undefined
 
 
@@ -32,6 +34,10 @@ export class TileGuessrDetailsComponent implements OnInit {
   }
 
   protected onChooseGameClicked() {
-    this.router.navigate(['./tileGuessr/map', this.gameMapId]);
+    this.router.navigate(['./tileGuessr/map', this.gameMapId], {
+      queryParams: {
+        moveAcrossBorders: this.moveAcrossBorders
+      }
+    });
   }
 }

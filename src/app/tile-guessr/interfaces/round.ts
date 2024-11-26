@@ -18,7 +18,8 @@ export interface IRound2 {
 export interface IRoundOption {
   satelliteMapMinZoom: number,
   boundSizeInMeters: number,
-  initZoom: number
+  initZoom: number,
+  moveAcrossBorders: boolean
 }
 
 export interface IRoundOption2 {

@@ -6,5 +6,6 @@ export const defaultMappingOptions = {
     numberOfRounds: 5,
     millisecondsInARound: 1000 * 60 * 3,
     satelliteMapMaxZoom: 21,
-    guessingMapMinZoom: 20
+    guessingMapMinZoom: 20,
+    moveAcrossBorders: false
 }
